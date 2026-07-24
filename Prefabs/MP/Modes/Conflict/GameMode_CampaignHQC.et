@@ -12,7 +12,7 @@ SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Cam
   }
  }
  {
-  PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+  PerceptionManager "69F036892D11467F" : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
    ID "69F0368999294A54"
    coords 0 0 0
   }
@@ -24,16 +24,32 @@ SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Cam
    ID "69F03689B7B933F0"
    coords 0 0 0
   }
-  SCR_CampaignFactionManager : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+  SCR_CampaignFactionManager "69F036892D176616" : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
    ID "69F0368A56712680"
    coords 0 0 0
+   Factions {
+    SCR_CampaignFaction "{50B30C3AF4BFD934}" {
+     FactionKey "OPFOR"
+     UIInfo SCR_FactionUIInfo "{528C96127F8B6B08}" {
+      Name "OPFOR"
+      Icon "{EB340E34F59DF4D7}Images/brics.edds"
+      m_sNameUpper "OPFOR"
+     }
+     m_sFactionFlag "{EB340E34F59DF4D7}Images/brics.edds"
+    }
+    SCR_CampaignFaction "{50B30C3ADB052C80}" {
+     FactionKey "BLUFOR"
+     UIInfo SCR_FactionUIInfo "{528C961236B7DCD3}" {
+      Name "BLUFOR"
+      Icon "{3E390B2873AE30BD}Images/NATO.edds"
+      m_sNameUpper "NATO"
+     }
+     m_sFactionFlag "{3E390B2873AE30BD}Images/NATO.edds"
+    }
+   }
   }
   SCR_LoadoutManager : "{58FBD035E53D95C1}Prefabs/MP/Campaign/CampaignLoadoutManager.et" {
    ID "69F0368A4A88400B"
-   coords 0 0 0
-  }
-  SCR_EditorManagerEntity : "{788933FFDC706A68}Prefabs/Editor/EditorManager.et" {
-   ID "69F0368988854AC5"
    coords 0 0 0
   }
  }
