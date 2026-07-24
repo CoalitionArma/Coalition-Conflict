@@ -1,0 +1,40 @@
+SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ ID "56B2B479C6B96951"
+ components {
+  SCR_DataCollectorComponent "{5ADE83EE64329989}" {
+   m_bOptionalKicking 1
+   m_iOptionalKickingFriendlyPlayerKillPenalty 5
+  }
+  SCR_GameModeHealthSettings "{5A22E11F9ACBB1DF}" {
+   m_fDOTScale 0.3
+   m_bPermitUnconsciousVON 0
+   m_fRegenerationDelay 30
+  }
+ }
+ {
+  PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+   ID "69F0368999294A54"
+   coords 0 0 0
+  }
+  ScriptedChatEntity : "{536D80EB494DDC43}Prefabs/MP/Campaign/CampaignMPChatEntity.et" {
+   ID "69F0368A75C06388"
+   coords 0 0 0
+  }
+  RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Systems/Radio/RadioManager.et" {
+   ID "69F03689B7B933F0"
+   coords 0 0 0
+  }
+  SCR_CampaignFactionManager : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+   ID "69F0368A56712680"
+   coords 0 0 0
+  }
+  SCR_LoadoutManager : "{58FBD035E53D95C1}Prefabs/MP/Campaign/CampaignLoadoutManager.et" {
+   ID "69F0368A4A88400B"
+   coords 0 0 0
+  }
+  SCR_EditorManagerEntity : "{788933FFDC706A68}Prefabs/Editor/EditorManager.et" {
+   ID "69F0368988854AC5"
+   coords 0 0 0
+  }
+ }
+}
