@@ -1,0 +1,56 @@
+HorizontalLayoutWidgetClass {
+ Name "Rule"
+ Slot LayoutSlot "{CDB19A2203EE74CD}" {
+  HorizontalAlign 3
+  Padding 0 0 0 18
+ }
+ {
+  RichTextWidgetClass "{51E2F28BD63ACEFF}" {
+   Name "RuleNumber"
+   Slot LayoutSlot "{D352E36C7E705146}" {
+    Padding 0 0 14 0
+   }
+   Text "01"
+   "Font Size" 22
+   "Min Font Size" 18
+   Color 0.5841 0.0369 0.0369 1
+   FontProperties FontProperties "{F0D06BD2AC1B7FBD}" {
+    Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+   }
+  }
+  VerticalLayoutWidgetClass "{7DB00D0CDB167FB5}" {
+   Name "RuleText"
+   Slot LayoutSlot "{A4657866EBF1145C}" {
+    SizeMode Fill
+   }
+   {
+    RichTextWidgetClass "{F1A5851CAF1965DC}" {
+     Name "RuleTitle"
+     Slot LayoutSlot "{61E2C88D02E9424E}" {
+      Padding 0 2 0 2
+     }
+     Text "--"
+     "Font Size" 16
+     "Min Font Size" 12
+     Color 0.8632 0.8879 0.9301 1
+     FontProperties FontProperties "{B6871F5877AC2E1A}" {
+      Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+     }
+    }
+    RichTextWidgetClass "{BFB4AF8E13C9FB3E}" {
+     Name "RuleBody"
+     Slot LayoutSlot "{A0DCE94D85C407E2}" {
+     }
+     Text ""
+     "Font Size" 14
+     "Min Font Size" 10
+     Wrap 1
+     Color 0.3968 0.4564 0.6038 1
+     FontProperties FontProperties "{0281E445B865A53B}" {
+      Font "{3E7733BAC8C831F6}UI/Fonts/RobotoCondensed/RobotoCondensed_Regular.fnt"
+     }
+    }
+   }
+  }
+ }
+}

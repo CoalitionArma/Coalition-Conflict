@@ -1,0 +1,1204 @@
+SCR_CampaignFactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/FactionManager_Base.et" {
+ ID "C4DC8500AA8FD40C"
+ Factions {
+  SCR_CampaignFaction "{50B30C3AF4BFD934}" : "{15B582F8FA0B0940}Configs/Factions/USSR_Campaign.conf" {
+   UIInfo SCR_FactionUIInfo "{528C96127F8B6B08}" {
+    Name "Chernarus Defence Forces"
+    Icon "{DE55627AA5070F59}Prefabs/Assets/Props/Fabric/Data/Flags/Flag_1_2_CDF.edds"
+    m_sNameUpper "CDF"
+   }
+   m_sFactionFlag "{DE55627AA5070F59}Prefabs/Assets/Props/Fabric/Data/Flags/Flag_1_2_CDF.edds"
+   m_FactionFlagMaterial "{3ADB589657393EF1}Assets/Flags/COA_Flag_CDF.emat"
+   m_aGroupRolePresetConfigs {
+    SCR_GroupRolePresetConfig "{6176E1354DB9EE26}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61B08891604E86B1}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61B0889162E62027}" {
+     m_eRequiredRank CORPORAL
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61B0889160C9218A}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61B0889161340871}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631F062D4EB2C956}" {
+     m_iGroupSize 2
+     m_eRequiredRank RENEGADE
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EECB195B8DA90}" {
+     m_eRequiredRank SERGEANT
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EECB1EFF9CFB0}" {
+     m_eRequiredRank SERGEANT
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EECB1D1B29DE3}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EECB11AB76AEC}" {
+     m_eRequiredRank CORPORAL
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{65C4E784787FEC22}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{65C4E784641CFB58}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{6576F62B0AD17D73}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{68C882E6F0E1EE90}" {
+     m_aLoadoutResources {
+      "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et"
+      "{429C1F7E284B89CA}Prefabs/Characters/Factions/CDF/Character_Base_CDF_SL.et"
+      "{455BE52F4ECD3309}Prefabs/Characters/Factions/CDF/Character_Base_CDF_TL.et"
+      "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et"
+      "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et"
+      "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et"
+      "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et"
+      "{7B6FD92A020429CB}Prefabs/Characters/Factions/CDF/Character_Base_CDF_ATA.et"
+      "{7D03307B74803F3A}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MG.et"
+      "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et"
+      "{9709EBF511BA4679}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Medic.et"
+      "{6DB784A874AA8051}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Scout.et"
+      "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et"
+     }
+    }
+   }
+   m_CallsignInfo SCR_FactionCallsignInfo "{5DA0F2A67DFB8809}" {
+    m_bIsAssignedRandomly 0
+    m_bAssignCallsignBasedOnGroupRole 1
+    m_iCompanyOverflowIndex 8
+   }
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C68A0E9BD5E5DD9}" {
+     m_aEntityEntryList {
+      SCR_EntityCatalogEntry "{6116BA7628321805}" {
+       m_aEntityDataList {
+        SCR_EntityCatalogLoadoutData "{6302DC7B40442D64}" {
+         m_fSpawnSupplyCost 20
+        }
+       }
+      }
+      SCR_EntityCatalogEntry "{5C548ABBCD8D59E2}" {
+       m_aEntityDataList {
+        SCR_EntityCatalogLoadoutData "{6302DC7ECDBCD810}" {
+        }
+       }
+      }
+      SCR_EntityCatalogEntry "{62BEF704EE232B4F}" {
+       m_aEntityDataList {
+        SCR_EntityCatalogLoadoutData "{6498C617EF77FFEC}" {
+        }
+       }
+      }
+     }
+    }
+    SCR_EntityCatalogMultiList "{5C68A0E9AFE1E631}" {
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{5C68AD5F148714C4}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{5C62F7DF55FE15F2}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DE875034B8}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DF53ED1A87}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DE83B0AB3B}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DF51F85BAB}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DE8CA9F176}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5CB89941E8227C34}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5CB89941DED00526}" {
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DF5FE4E0E9}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DEB7247E08}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DF5E3D0485}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DEB6985D2F}" {
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5CB8994131EF701D}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5CB899413DA31DAC}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{615C9756415D96A0}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{615C97564BA2A952}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DF594F5F3C}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DEA31337A1}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DF598D6455}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DEA28B4362}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{605ECB3AD2FDCC23}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{605ECB3A2A1B5316}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{605ECB3AD425A1DC}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{605ECB3A2C1AB3D9}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{62D8BA85269B012F}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{62D8BA85192BF160}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{62D8BA852EC230A4}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{62D8BA850EDA249C}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DF58ED03D0}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DEAF6748F3}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{62DE9B733C9BA2D5}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{62DE9B733C9BA366}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{61A481A3C32CFA7E}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61A481A334E78212}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{5C68AD5F1351A624}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{5C62F7DF47B8BF41}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DEAEC68866}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{658A8B1EC24085AF}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{658A8B1EC2408200}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{615CB923CC26005F}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{60AAE47ADF734B45}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{615CB923D2B479EC}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{60AAE47ADF734B45}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{615CB923D0AA0325}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{60AAE47ADF734B45}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{5C68AD5F7414CA4A}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{5C62F7DF32FB7626}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DF4DC2857D}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5E0304F3AECF0F6E}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5E0304F3C2661223}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{61B0B87C17ABF7C0}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61B0B87C17ABF7AC}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{61B2A217821CAFC2}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{61B4880C0BAA9695}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61B2A217A4D08975}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{61B4AA57FE311872}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61B2A217A4D08975}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{61B2A2178BAE1D4E}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61B2A217A4D08975}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{61B2A2178A866385}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61B2A376C439919C}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{61B2A217B5D7D900}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61B2A376C84F2BCE}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{6556A2FDDAA2E551}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{6556A2FFC2BC7500}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61ECC6DC8DB987BC}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556A2FFDA3E53E5}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFDA3E5050}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556A2FDA32C9627}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FDA32C969D}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556A2FFC51E2722}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFC51E27EA}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556A2FFC438824C}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFC43882D0}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556A2FFD34470D2}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFD34470B0}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556B93BD7B6E148}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556B93BD7B6E13B}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6938CC108F723FE7}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6938CC15A9655400}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   m_sFactionBackground "{21533F2089005056}UI/Textures/DeployMenu/Loadout-BG/Loadout_BG_USSR.imageset"
+  }
+  SCR_CampaignFaction "{50B30C3ADB052C80}" : "{02D40AEC45F57851}Configs/Factions/RHS_US_USMC_Campaign.conf" {
+   FactionKey "US"
+   UIInfo SCR_FactionUIInfo "{5CC8B5EDA0CDBD62}" {
+    Name "US Marine Corps"
+    m_sNameUpper "USMC"
+   }
+   m_FactionLabel FACTION_US
+   m_CallsignInfo SCR_FactionCallsignInfo "{5CC8BB97E017CDBC}" {
+    m_bAssignCallsignBasedOnGroupRole 1
+    m_iCompanyOverflowIndex 8
+   }
+   m_aGroupRolePresetConfigs {
+    SCR_GroupRolePresetConfig "{6176805F751756E5}" : "{47D20ABC23277884}Configs/GroupPresets/US/GroupPreset_US_Assault.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61A6B125A59ED77D}" : "{EFA331A3E3B785A5}Configs/GroupPresets/US/GroupPreset_US_Recon.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61A6B125A4D8D0AB}" : "{FE2A1078F3844DE2}Configs/GroupPresets/US/GroupPreset_US_MachineGun.conf" {
+     m_eRequiredRank CORPORAL
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61A6B125F93440FE}" : "{70C27CCDDABC1B1F}Configs/GroupPresets/US/GroupPreset_US_Engineer.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{61A6B125F8591980}" : "{8BB33143F7FEC5B2}Configs/GroupPresets/US/GroupPreset_US_Medic.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631F062CBD851F18}" : "{CB8EC126C25EC0CA}Configs/GroupPresets/US/GroupPreset_US_Transport.conf" {
+     m_iGroupSize 2
+     m_eRequiredRank RENEGADE
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EF873EE4B7FA3}" : "{CA8276E9F4CD3D5B}Configs/GroupPresets/US/GroupPreset_US_HeliTransport.conf" {
+     m_eRequiredRank SERGEANT
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EF873D39E9F52}" : "{46BA39CED8D5CBE0}Configs/GroupPresets/US/GroupPreset_US_Mechanized.conf" {
+     m_eRequiredRank SERGEANT
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EF873D0646F2D}" : "{479C88623950244D}Configs/GroupPresets/US/GroupPreset_US_AntiTank.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{631EF873D10A7877}" : "{8092AA84B77B7675}Configs/GroupPresets/US/GroupPreset_US_Mortar.conf" {
+     m_eRequiredRank CORPORAL
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{65C4BE1D064163D6}" : "{95171295D7532DAE}Configs/GroupPresets/US/GroupPreset_US_SF_Assault.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{65C4BE1D6555DC99}" : "{AC86BA2B1167F761}Configs/GroupPresets/US/GroupPreset_US_SF_Recon.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{6576F62BF5F09E9D}" : "{B4F2F24D6B4C3A39}Configs/GroupPresets/US/GroupPreset_US_Commander.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+    SCR_GroupRolePresetConfig "{68CB0568589604C0}" : "{12A99B6DC4C970CD}Configs/GroupPresets/US/GroupPreset_US_Reserves.conf" {
+     m_aLoadoutResources {
+      "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et"
+      "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+      "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+      "{CB4B1645B748D5D4}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman.et"
+      "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+      "{6B5214972C952A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_GL.et"
+      "{AE2E93B28352053F}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_LAT.et"
+      "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+      "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+      "{3758C8E49E3C344A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AMG.et"
+      "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+      "{9A38B3DFD014403C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_RTO.et"
+      "{FAC429BE41EFFA37}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sapper.et"
+      "{6572AE8D144102B3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Scout.et"
+      "{19678B9267B3574A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
+      "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+      "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+     }
+    }
+   }
+   m_aPredefinedGroups {
+    SCR_GroupPreset "{6576F62BB24484CF}" {
+     m_eGroupRole COMMANDER
+    }
+    SCR_GroupRolePresetConfig "{68C8A4364EDD3DD1}" : "{12A99B6DC4C970CD}Configs/GroupPresets/US/GroupPreset_US_Reserves.conf" {
+    }
+    SCR_GroupPreset "{648EC0248ABD596B}" {
+     m_eGroupRole ASSAULT
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{648EC024A6B72088}" {
+     m_eGroupRole RECON
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{648EC0244EBE9E77}" {
+     m_eGroupRole ANTITANK
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{648EC0244E6578A3}" {
+     m_eGroupRole ENGINEER
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{648EC0244D14FA62}" {
+     m_eGroupRole TRANSPORT
+     m_bIsPrivacyChangeable 0
+    }
+   }
+   m_bEnableAutoGroupCreationWhenFull 0
+   m_sCommanderMenuEntries "{3F001B67628E0EF1}Configs/FactionCommander/CampaignFactionCommanderMenuEntries.conf"
+   m_sBaseBuildingSourceBase "{836D5475DD7C8819}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_SourceBase_S_US_01.et"
+   m_RadioMsgWhitelistConfig SCR_CampaignRadioMsgWhitelistConfig "{65C2AAEFB1475923}" : "{E4DFFC55BD100DCA}Configs/Campaign/CampaignRadioMsgWhitelistConfig.conf" {
+   }
+   m_sFactionBackground "{F8AC305446D5D480}UI/Textures/DeployMenu/Loadout-BG/Loadout_US_BG.imageset"
+  }
+  SCR_CampaignFaction "{56F0C3A6336375DC}" : "{CF9447B87AB774DB}Configs/Factions/FIA_Campaign.conf" {
+   UIInfo SCR_FactionUIInfo "{5570936866E0AD08}" {
+    Name "ChDKZ"
+    Icon "{8C31F08506B981C4}Prefabs/Assets/Props/Fabric/Data/Flags/chdkzIcon.edds"
+    m_sNameUpper "CHDKZ"
+   }
+   m_sFactionFlag "{07C963E7DDA6341D}Prefabs/Assets/Props/Fabric/Data/Flags/Arma2-flag-chdkz.edds"
+   m_FactionFlagMaterial "{5168E53B70F11950}Assets/Flags/COA_Flag_CHDKZ.emat"
+   m_bIsPlayable 0
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C68A0EAB887A0C4}" {
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{6056978561718DDB}" {
+       m_aEntities {
+        SCR_EntityCatalogEntry "{5CCEA181947C4060}" {
+         m_sEntityPrefab "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{6488AA334A47909D}" {
+         m_sEntityPrefab "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{648888450B9E110F}" {
+         m_sEntityPrefab "{695EEB1AAE7E3B3F}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_LoneWolfSniper_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{5CCEA181928A4CA5}" {
+         m_sEntityPrefab "{3396D736D25B7BB7}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{6488AA360965C499}" {
+         m_sEntityPrefab "{6A68B9351E8BF48F}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_Elite_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{5CCEA181914326A2}" {
+         m_sEntityPrefab "{461E94E5AA31913D}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_ReconTeam_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{5CCEA181901D0475}" {
+         m_sEntityPrefab "{FDB6FD6DE4B3E7EE}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_RifleSquad_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{5CCEA18190D50A71}" {
+         m_sEntityPrefab "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et"
+        }
+        SCR_EntityCatalogEntry "{647CAACA1604DE95}" {
+         m_sEntityPrefab "{4D603DB9E34C29F8}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_SniperTeam_NotSpawned.et"
+        }
+       }
+      }
+     }
+    }
+    SCR_EntityCatalogMultiList "{5C68A0EABE8B7B2A}" {
+     m_aEntityEntryList {
+      SCR_EntityCatalogEntry "{60F6DBAB1F48211E}" {
+       m_aEntityDataList {
+        SCR_EntityCatalogEditorData "{60F6DBAB1A6D15AE}" {
+        }
+       }
+      }
+     }
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{6886F6D8052FB6C6}" {
+       m_sIdentifier "Campaign"
+       m_aEntities {
+        SCR_EntityCatalogEntry "{6886F6D82A1EF5A6}" {
+         m_sEntityPrefab "{B40BFA1A43973320}Prefabs/Characters/Campaign/Final/INDFOR/FIA/Campaign_FIA_Player.et"
+         m_aEntityDataList {
+          SCR_EntityCatalogSpawnerData "{6886F6C4045C5997}" {
+           m_eSlotTypes GROUP_SMALL
+          }
+          SCR_EntityCatalogLoadoutData "{6886F6C4DA99D6D7}" {
+           m_fSpawnSupplyCost 20
+           m_eRequiredRank RENEGADE
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+    SCR_EntityCatalogMultiList "{5C68C44CB0CFC935}" {
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{5C630E4538D3163D}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{5C62F7DFBB817028}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DFEEC0E3C7}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{5C62F7DFB84B5DE2}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DFE9873F2E}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6062A42C225B8B63}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6062A42C192CB5AA}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6112B10ED427FBD6}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6112B10EC92A9120}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{607EC071EDF38F46}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{607EC071C2F001E3}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{607EC071EE63208F}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{607EC071153C09BB}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{68E49736DDE559D2}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{605ECB3A2A1B5316}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{68E49736D26557AF}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{605ECB3A2C1AB3D9}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{62D8BA85AEAE96E5}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{62D8BA85E3B935D0}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{607EC071EF4E64B8}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{607EC07163C30A1C}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{62D8BA858A73DC54}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{62D8BA85CA0DF6A5}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{61A481A3444B359F}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61A481A34D52AAA7}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{5C68AD58703CABF4}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{5C62F7DFA0DB470B}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DF07907D8A}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{658A8B1F625B7107}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{658A8B1F625B71ED}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{64CC8C07E7EC635C}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{60AAE47ADF734B45}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{64CC8C07E4C6F81D}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{60AAE47ADF734B45}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{64CC8C07E424EEE7}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{60AAE47ADF734B45}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{5C630E453BCB39DC}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{5C62F7DF8D346873}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{5C62F7DFA91B1485}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{6556B93BF51CD869}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{6556A2FFC51E2722}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFC51E27EA}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556A2FFC438824C}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFC43882D0}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6556A2FFD34470D2}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFD34470B0}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{68E0A60A01BB4083}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{61ECC6DC8DB987BC}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{68E0A60A1B9F78CB}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FFDA3E5050}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{68E0A60A18077288}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6556A2FDA32C969D}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+        SCR_EntityCatalogInventoryItem "{6938CC15A9655457}" {
+         m_aEntityDataList {
+          SCR_ArsenalItem "{6938CC15A9655400}" {
+           m_bUseMilitarySupplyAllocation 0
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   m_sFactionBackground "{81BF3B1DCC106577}UI/Textures/DeployMenu/Loadout-BG/Loadout_BG_FIA.imageset"
+   m_sBaseBuildingSourceBase "{4F9FE516AEBE56E4}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_SourceBase_S_FIA_01.et"
+  }
+  SCR_Faction "{60DCF47AEF40BD72}" : "{3FA20B01D950D31F}Configs/Factions/CIV.conf" {
+  }
+  SCR_CampaignFaction "{68F2E5C05A1440DC}" : "{4F4E0DD03A3C3E3D}Configs/Factions/RNGD_Campaign.conf" {
+  }
+ }
+ m_bCanChangeFactionsPlayable 0
+}

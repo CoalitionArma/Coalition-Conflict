@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{FDB6FD6DE4B3E7EE}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_RifleSquad_NotSpawned.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

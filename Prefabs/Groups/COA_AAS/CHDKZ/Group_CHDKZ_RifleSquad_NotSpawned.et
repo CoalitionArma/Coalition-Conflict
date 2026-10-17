@@ -1,0 +1,6 @@
+SCR_AIGroup : "{265B11E8E53F9FBA}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_RifleSquad_NotSpawned.et" {
+ ID "6819E5EA66986BFA"
+ m_aUnitPrefabSlots {
+  "{352B4695DDB21FFE}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_SL.et" "{0AB469908179A90E}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MG.et" "{6C9CCC39A0C97AEA}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MGA.et" "{800BDE4B96BFA3B1}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_AT.et" "{3256FDB354A005BF}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_ATA.et" "{288DC5CE90333A42}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Rifle.et" "{1F9E1D3B5AA56923}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Gren.et" "{4DE96232751C91FD}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Medic.et"
+ }
+}

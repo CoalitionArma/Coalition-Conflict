@@ -1,0 +1,6 @@
+SCR_AIGroup : "{421CA62CC2E5F16A}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_MachineGunTeam_NotSpawned.et" {
+ ID "13EC129129163682"
+ m_aUnitPrefabSlots {
+  "{0AB469908179A90E}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MG.et" "{6C9CCC39A0C97AEA}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MGA.et"
+ }
+}

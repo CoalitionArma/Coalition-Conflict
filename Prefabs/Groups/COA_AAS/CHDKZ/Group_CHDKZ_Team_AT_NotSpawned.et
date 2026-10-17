@@ -1,0 +1,6 @@
+SCR_AIGroup : "{6F8CE29DEFA96B0D}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_Team_AT_NotSpawned.et" {
+ ID "601CE016D22B2FA9"
+ m_aUnitPrefabSlots {
+  "{32ECBCC4BB34A53D}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_TL.et" "{800BDE4B96BFA3B1}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_AT.et" "{3256FDB354A005BF}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_ATA.et" "{288DC5CE90333A42}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Rifle.et"
+ }
+}

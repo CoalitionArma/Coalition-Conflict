@@ -1,0 +1,6 @@
+SCR_AIGroup : "{0C9C86FCE951AF19}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_LoneWolfSniper_NotSpawned.et" {
+ ID "6CC56AC2FFEA3FEA"
+ m_aUnitPrefabSlots {
+  "{7EC90F266FFE6EF6}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Sniper.et"
+ }
+}

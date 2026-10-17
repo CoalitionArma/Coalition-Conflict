@@ -1,0 +1,131 @@
+OverlayWidgetClass {
+ Name "Node"
+ Slot LayoutSlot "{8A15366A406F8F87}" {
+  HorizontalAlign 3
+  Padding 0 0 0 2
+ }
+ {
+  ImageWidgetClass "{7B561C763AE223DC}" {
+   Name "NodeBg"
+   Slot OverlayWidgetSlot "{88715F20CFB55802}" {
+    HorizontalAlign 3
+    VerticalAlign 3
+   }
+   Color 0.011 0.0137 0.0212 1
+   Size 1 1
+  }
+  HorizontalLayoutWidgetClass "{2D50DAFAD089E80D}" {
+   Name "NodeRow"
+   Slot OverlayWidgetSlot "{EC32B579E8A0C4D7}" {
+    HorizontalAlign 3
+    VerticalAlign 3
+   }
+   {
+    SizeLayoutWidgetClass "{3FB03D587B966270}" {
+     Name "TrackSize"
+     Slot LayoutSlot "{D80ADB0A6FB4E3A9}" {
+      VerticalAlign 3
+     }
+     AllowWidthOverride 1
+     WidthOverride 4
+     {
+      ImageWidgetClass "{F994269D57E8DB87}" {
+       Name "Track"
+       Slot AlignableSlot "{DE0EC15C54CF8DA4}" {
+        HorizontalAlign 3
+        VerticalAlign 3
+       }
+       Color 0.3968 0.4564 0.6038 1
+       Size 1 1
+      }
+     }
+    }
+    SizeLayoutWidgetClass "{B73D68CEBE4A3ED2}" {
+     Name "IndexSize"
+     Slot LayoutSlot "{78DBFF5AA6EE0C16}" {
+      VerticalAlign 1
+     }
+     AllowWidthOverride 1
+     WidthOverride 44
+     {
+      RichTextWidgetClass "{3B46C4C4A9CC38BD}" {
+       Name "NodeIndex"
+       Slot AlignableSlot "{47460542987452C7}" {
+        HorizontalAlign 1
+        VerticalAlign 1
+       }
+       Text "00"
+       "Font Size" 13
+       "Min Font Size" 9
+       "Horizontal Alignment" Center
+       Color 0.3968 0.4564 0.6038 1
+       FontProperties FontProperties "{830E6ECBD73CC699}" {
+        Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+       }
+      }
+     }
+    }
+    RichTextWidgetClass "{BAB7509D683EFE28}" {
+     Name "NodeName"
+     Slot LayoutSlot "{BB54DCB387710FDD}" {
+      Padding 0 9 0 9
+      SizeMode Fill
+      VerticalAlign 1
+     }
+     Text "--"
+     "Font Size" 16
+     "Min Font Size" 12
+     Color 0.8632 0.8879 0.9301 1
+     FontProperties FontProperties "{D4343C959ED6FA66}" {
+      Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+     }
+    }
+    RichTextWidgetClass "{4B6DF9DACAC362B4}" {
+     Name "NodeOwner"
+     Slot LayoutSlot "{737A0EB1516E1AA7}" {
+      Padding 0 0 12 0
+      VerticalAlign 1
+     }
+     Text ""
+     "Font Size" 13
+     "Min Font Size" 9
+     Color 0.3968 0.4564 0.6038 1
+     FontProperties FontProperties "{833FE27463956A42}" {
+      Font "{3E7733BAC8C831F6}UI/Fonts/RobotoCondensed/RobotoCondensed_Regular.fnt"
+     }
+    }
+    OverlayWidgetClass "{53E5961FA072ED95}" {
+     Name "LiveBadge"
+     Slot LayoutSlot "{64B47F4A54D521B7}" {
+      Padding 0 0 10 0
+      VerticalAlign 1
+     }
+     {
+      ImageWidgetClass "{0A515BF2421F2F4D}" {
+       Name "LiveBg"
+       Slot OverlayWidgetSlot "{53ED38A2828517DA}" {
+        HorizontalAlign 3
+        VerticalAlign 3
+       }
+       Color 0.5841 0.0369 0.0369 1
+       Size 1 1
+      }
+      RichTextWidgetClass "{5EA6287F11A99DF7}" {
+       Name "LiveText"
+       Slot OverlayWidgetSlot "{CF81FBA588B4F2AD}" {
+        Padding 8 3 8 3
+       }
+       Text "LIVE"
+       "Font Size" 11
+       "Min Font Size" 8
+       Color 1 1 1 1
+       FontProperties FontProperties "{4F8AF785F2EBC2A2}" {
+        Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
