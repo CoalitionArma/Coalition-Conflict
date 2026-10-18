@@ -1,0 +1,24 @@
+SCR_ChimeraCharacter : "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et" {
+ ID "B04B6C89209B0EE4"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Grenadier"
+    m_sFaction "USSR"
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   AttachType InventoryStorageSlot "{0C3DA650B52E120B}" {
+    Prefab "{BC6C9476FB3219A7}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_GP25.et"
+   }
+   WeaponTemplate "{BC6C9476FB3219A7}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_GP25.et"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{C666B46D8529EB3E}Prefabs/Clothing/CDF/Headgear/PASGT/CDF_Helmet_PASGT_01_v1.et"
+    }
+   }
+  }
+ }
+}

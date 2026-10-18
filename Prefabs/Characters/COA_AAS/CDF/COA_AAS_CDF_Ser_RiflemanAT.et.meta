@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{CD13CC55D334C286}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Ser_RiflemanAT.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

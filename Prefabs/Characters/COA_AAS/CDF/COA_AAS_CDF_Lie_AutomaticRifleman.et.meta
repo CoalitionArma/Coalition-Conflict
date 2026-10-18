@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{583485D473F53146}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Lie_AutomaticRifleman.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

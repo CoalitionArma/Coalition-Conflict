@@ -1,0 +1,11 @@
+SCR_ChimeraCharacter : "{8DE8E6B2CB15EFA5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_Sniper.et" {
+ ID "16F5DE98171FB10B"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Sniper"
+    m_sFaction "US"
+   }
+  }
+ }
+}

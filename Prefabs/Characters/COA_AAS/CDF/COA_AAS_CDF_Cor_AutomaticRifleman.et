@@ -1,0 +1,24 @@
+SCR_ChimeraCharacter : "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AR.et" {
+ ID "45A540D5A9E2E0D9"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Automatic Rifleman - Veteran"
+    m_sFaction "USSR"
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   AttachType InventoryStorageSlot "{0C3DA650B52E120B}" {
+    Prefab "{5F365605E36597FB}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74N.et"
+   }
+   WeaponTemplate "{5F365605E36597FB}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74N.et"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{C666B46D8529EB3E}Prefabs/Clothing/CDF/Headgear/PASGT/CDF_Helmet_PASGT_01_v1.et"
+    }
+   }
+  }
+ }
+}

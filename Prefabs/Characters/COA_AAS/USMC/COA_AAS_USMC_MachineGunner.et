@@ -1,0 +1,14 @@
+SCR_ChimeraCharacter : "{27AF3615C3808D11}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_FORECON/Character_RHS_USAF_FORECON_MG.et" {
+ ID "F5F48054DD512F2E"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Machine Gunner"
+    m_sFaction "US"
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{A87B0A22462E20B1}Prefabs/Weapons/MachineGuns/M240/MG_M240.et"
+  }
+ }
+}

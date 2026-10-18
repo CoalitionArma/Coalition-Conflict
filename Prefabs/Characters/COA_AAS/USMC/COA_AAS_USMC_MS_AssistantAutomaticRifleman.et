@@ -1,0 +1,14 @@
+SCR_ChimeraCharacter : "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_Rifleman.et" {
+ ID "30C616478D7CF82C"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Assistant Automatic Rifleman - MARSOC"
+    m_sFaction "US"
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{FFFF7EE71DDF3CE9}Prefabs/Weapons/Rifles/M4A1/Rifle_M4A1_BLOCK_II_FSP_EXPS.et"
+  }
+ }
+}

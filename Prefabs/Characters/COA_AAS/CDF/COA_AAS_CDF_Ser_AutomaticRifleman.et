@@ -1,0 +1,47 @@
+SCR_ChimeraCharacter : "{DE4C67D3C8F6704D}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AR.et" {
+ ID "3A81C6BFCD09A5D8"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Automatic Rifleman - Senior"
+    m_sFaction "USSR"
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   AttachType InventoryStorageSlot "{0C3DA650B52E120B}" {
+    Prefab "{4EF6890D756306D1}Prefabs/Weapons/MachineGuns/RPK74M/MG_RPK74M.et"
+   }
+   WeaponTemplate "{4EF6890D756306D1}Prefabs/Weapons/MachineGuns/RPK74M/MG_RPK74M.et"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Jacket {
+     Prefab "{ECCFBF86DA2C72B8}Prefabs/Clothing/CDF/Jacket/CDF_Jacket_M88_rolledup.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{6307465BB003DF06}Prefabs/Clothing/CDF/Pants/CDF_Pants_M88.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{6062F65EC3690C43}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
+    }
+    ItemsInitConfigurationItem "{607C14DEC7C9FD51}" {
+     PrefabsToSpawn {
+      "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et" "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et" "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et" "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{607C14DEC7C9FD5B}" {
+     PrefabsToSpawn {
+      "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et" "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et" "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et" "{52FE3E0398FEEBC4}Prefabs/Weapons/Magazines/6l26/Magazine_545x39_plastic_6l26_45_4Ball_1Tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{607C14DEC7C9FD5A}" {
+     TargetStorage "Jacket/CDF_Jacket_M88_rolledup.et"
+    }
+   }
+  }
+ }
+}

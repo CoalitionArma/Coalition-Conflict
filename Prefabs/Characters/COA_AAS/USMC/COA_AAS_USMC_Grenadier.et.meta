@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{106ED1533C617C8D}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Grenadier.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

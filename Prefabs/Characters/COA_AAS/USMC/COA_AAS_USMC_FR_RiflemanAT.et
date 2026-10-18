@@ -1,0 +1,11 @@
+SCR_ChimeraCharacter : "{1555DD4816FDEF84}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_FORECON/Character_RHS_USAF_FORECON_LAT.et" {
+ ID "AF2060BF3C0A4B08"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Rifleman (Anti-Tank) - Force Recon"
+    m_sFaction "US"
+   }
+  }
+ }
+}

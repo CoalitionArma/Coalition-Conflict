@@ -8,6 +8,61 @@ SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Cam
    m_fDefenseHoldTime 900
    m_fHoldWarningTime 300
   }
+  COA_AAS_BaseServicesComponent "{5E2B7C91D04A3F68}" {
+   m_aMainBaseServices {
+    COA_AAS_ServiceSlot "{5E2B7C91D04A3F01}" {
+     m_sBluforPrefab "{1BED8F81D2FA2137}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_AmmoStorage_S_US_01.et"
+     m_sOpforPrefab "{CD9004C6229D900B}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_AmmoStorage_S_USSR_01.et"
+     m_fDistance 30
+     m_fBearing 0
+     m_fClearance 7
+    }
+    COA_AAS_ServiceSlot "{5E2B7C91D04A3F02}" {
+     m_sBluforPrefab "{A0FEA3E718F5B605}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_VehicleMaintenance_S_Conflict_US_01.et"
+     m_sOpforPrefab "{5ACECF41C167567D}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_VehicleMaintenance_S_Conflict_USSR_01.et"
+     m_fDistance 45
+     m_fBearing 90
+     m_fClearance 8
+    }
+    COA_AAS_ServiceSlot "{5E2B7C91D04A3F03}" {
+     m_sBluforPrefab "{7AD06D9CF2672AC5}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatMedium/E_VehicleMaintenance_M_Conflict_US_01.et"
+     m_sOpforPrefab "{6676FBB212B337D6}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatMedium/E_VehicleMaintenance_M_Conflict_USSR_01.et"
+     m_fDistance 55
+     m_fBearing 180
+     m_fClearance 11
+    }
+    COA_AAS_ServiceSlot "{5E2B7C91D04A3F04}" {
+     m_sBluforPrefab "{D0281DAF0B131743}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatMedium/E_FieldHospital_M_Conflict_US_01.et"
+     m_sOpforPrefab "{505F78512FE8B697}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatMedium/E_FieldHospital_M_Conflict_USSR_01.et"
+     m_fDistance 45
+     m_fBearing 270
+     m_fClearance 11
+    }
+    COA_AAS_ServiceSlot "{5E2B7C91D04A3F05}" {
+     m_sBluforPrefab "{D3DDB76548C16BDB}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatLarge/E_Helipad_L_Conflict_US_01.et"
+     m_sOpforPrefab "{C4114DAE8FDCE080}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatLarge/E_Helipad_L_Conflict_USSR_01.et"
+     m_fDistance 85
+     m_fBearing 135
+     m_fClearance 16
+    }
+   }
+   m_aBaseServices {
+    COA_AAS_ServiceSlot "{5E2B7C91D04A3F11}" {
+     m_sBluforPrefab "{1BED8F81D2FA2137}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_AmmoStorage_S_US_01.et"
+     m_sOpforPrefab "{CD9004C6229D900B}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_AmmoStorage_S_USSR_01.et"
+     m_fDistance 30
+     m_fBearing 0
+     m_fClearance 7
+    }
+    COA_AAS_ServiceSlot "{5E2B7C91D04A3F12}" {
+     m_sBluforPrefab "{A0FEA3E718F5B605}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_VehicleMaintenance_S_Conflict_US_01.et"
+     m_sOpforPrefab "{5ACECF41C167567D}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_VehicleMaintenance_S_Conflict_USSR_01.et"
+     m_fDistance 45
+     m_fBearing 180
+     m_fClearance 8
+    }
+   }
+  }
   SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
    m_BaseLayout COA_AAS_WelcomeScreenLayout "{6A1E3F0C92B4D758}" {
    }

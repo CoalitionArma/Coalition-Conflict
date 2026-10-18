@@ -1,0 +1,11 @@
+SCR_ChimeraCharacter : "{39DE841FBF372194}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_AR.et" {
+ ID "1D82FFE4DB988F6B"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Automatic Rifleman - MARSOC"
+    m_sFaction "US"
+   }
+  }
+ }
+}

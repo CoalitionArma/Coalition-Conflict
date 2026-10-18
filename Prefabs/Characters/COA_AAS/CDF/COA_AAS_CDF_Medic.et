@@ -1,0 +1,40 @@
+SCR_ChimeraCharacter : "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et" {
+ ID "F295C94099815F00"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Medic"
+    m_sFaction "USSR"
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   AttachType InventoryStorageSlot "{0C3DA650B52E120B}" {
+    Prefab "{FA0E25CE35EE945F}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN.et"
+   }
+   WeaponTemplate "{FA0E25CE35EE945F}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN.et"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Jacket {
+     Prefab "{ECCFBF86DA2C72B8}Prefabs/Clothing/CDF/Jacket/CDF_Jacket_M88_rolledup.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{6307465BB003DF06}Prefabs/Clothing/CDF/Pants/CDF_Pants_M88.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{6062F65EC3690C43}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
+    }
+    ItemsInitConfigurationItem "{6062F65EC3690C4B}" {
+     TargetStorage "Jacket/CDF_Jacket_M88_rolledup.et"
+    }
+    ItemsInitConfigurationItem "{607C14DECF91E313}" {
+     TargetStorage "Jacket/CDF_Jacket_M88_rolledup.et"
+    }
+   }
+  }
+ }
+}

@@ -49,6 +49,8 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 
 	protected static COA_AAS_ConflictComponent s_Instance;
 	protected static const int TICK_MS = 1000;
+	protected static const int SETUP_DELAY_MS = 2000;
+	protected static const int MAP_REFRESH_DELAY_MS = 1500;
 	protected static const float NOTIFICATION_DURATION = 8;
 
 	//------------------------------------------------------------------------------------------------
@@ -154,9 +156,6 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	{
 		super.OnGameModeStart();
 
-		if (!Replication.IsServer())
-			return;
-
 		m_Campaign = SCR_GameModeCampaign.Cast(GetGameMode());
 		if (!m_Campaign)
 		{
@@ -164,15 +163,134 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 			return;
 		}
 
+		if (RplSession.Mode() != RplMode.Dedicated)
+			m_Campaign.GetOnFactionAssignedLocalPlayer().Insert(OnLocalPlayerFactionAssigned);
+
+		if (!Replication.IsServer())
+			return;
+
 		SCR_CampaignMilitaryBaseManager baseManager = m_Campaign.GetBaseManager();
 		if (!baseManager)
 			return;
 
 		// Base ownership is only final once Conflict has set up HQs and default owners
 		if (baseManager.IsBasesInitDone())
-			Setup();
+			OnBasesInitialized();
 		else
-			baseManager.GetOnAllBasesInitialized().Insert(Setup);
+			baseManager.GetOnAllBasesInitialized().Insert(OnBasesInitialized);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Leave Conflict a moment to finish its own start-up (HQs, coverage) before taking over
+	protected void OnBasesInitialized()
+	{
+		GetGame().GetCallqueue().CallLater(Setup, SETUP_DELAY_MS);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Owners preset in the world (each base's SCR_FactionAffiliationComponent) are already set when the
+	//! base loads, so Conflict never sees an ownership change for them and skips everything it does in
+	//! SCR_CampaignMilitaryBaseComponent.OnFactionChanged: the radio is never tuned to the owner (no
+	//! radio coverage - the map shows the bases as unknown) and the spawn point is never opened to the
+	//! owner. Hand every owned base over again so Conflict sets it up, then rebuild the coverage.
+	protected void ApplyPresetOwners()
+	{
+		SCR_CampaignMilitaryBaseManager baseManager = m_Campaign.GetBaseManager();
+		array<SCR_CampaignMilitaryBaseComponent> bases = {};
+		baseManager.GetBases(bases);
+
+		SCR_CampaignFaction noOwner;
+		foreach (SCR_CampaignMilitaryBaseComponent base : bases)
+		{
+			SCR_CampaignFaction owner = base.GetCampaignFaction();
+			if (!owner || !base.IsInitialized())
+				continue;
+
+			base.SetFaction(noOwner);
+			base.SetFaction(owner);
+		}
+
+		SCR_CampaignFaction blufor = m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.BLUFOR);
+		if (blufor)
+			baseManager.RecalculateRadioCoverageForced(blufor);
+
+		SCR_CampaignFaction opfor = m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.OPFOR);
+		if (opfor)
+			baseManager.RecalculateRadioCoverageForced(opfor);
+
+		LogBases("server, after hand-over");
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The map's base icons are only redrawn on ownership/coverage changes and when the local player
+	//! gets a faction - redraw them all once more after the faction is in, so they match the start state
+	protected void OnLocalPlayerFactionAssigned(Faction faction)
+	{
+		GetGame().GetCallqueue().CallLater(RefreshMapIcons, MAP_REFRESH_DELAY_MS);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void RefreshMapIcons()
+	{
+		SCR_CampaignFaction playerFaction = SCR_CampaignFaction.Cast(SCR_FactionManager.SGetLocalPlayerFaction());
+		if (!playerFaction || !m_Campaign || !m_Campaign.GetBaseManager())
+			return;
+
+		array<SCR_CampaignMilitaryBaseComponent> bases = {};
+		m_Campaign.GetBaseManager().GetBases(bases);
+		foreach (SCR_CampaignMilitaryBaseComponent base : bases)
+		{
+			SCR_CampaignMilitaryBaseMapDescriptorComponent descriptor = base.GetMapDescriptor();
+			if (descriptor)
+				descriptor.HandleMapInfo(playerFaction);
+		}
+
+		LogBases("client, player faction " + playerFaction.GetFactionKey());
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Diagnostics for the map/radio start state: owner, HQ flag, radio and each side's coverage per base
+	protected void LogBases(string when)
+	{
+		SCR_CampaignFaction blufor = m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.BLUFOR);
+		SCR_CampaignFaction opfor = m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.OPFOR);
+		string bluforHQ = "none";
+		if (blufor && blufor.GetMainBase())
+			bluforHQ = blufor.GetMainBase().GetBaseName();
+
+		string opforHQ = "none";
+		if (opfor && opfor.GetMainBase())
+			opforHQ = opfor.GetMainBase().GetBaseName();
+
+		Print(string.Format("[COA_AAS] Bases (%1) - BLUFOR main base: %2, OPFOR main base: %3", when, bluforHQ, opforHQ), LogLevel.NORMAL);
+
+		array<SCR_CampaignMilitaryBaseComponent> bases = {};
+		m_Campaign.GetBaseManager().GetBases(bases);
+		foreach (SCR_CampaignMilitaryBaseComponent base : bases)
+		{
+			string owner = "none";
+			if (base.GetCampaignFaction())
+				owner = base.GetCampaignFaction().GetFactionKey();
+
+			string radioState = "no radio";
+			SCR_CoverageRadioComponent radio = SCR_CoverageRadioComponent.Cast(base.GetOwner().FindComponent(SCR_CoverageRadioComponent));
+			if (radio)
+			{
+				float range = -1;
+				if (radio.TransceiversCount() > 0 && radio.GetTransceiver(0))
+					range = radio.GetTransceiver(0).GetRange();
+
+				radioState = string.Format("powered %1, key '%2', range %3", radio.IsPowered(), radio.GetEncryptionKey(), range);
+			}
+
+			bool bluforCoverage, opforCoverage;
+			if (blufor)
+				bluforCoverage = base.IsHQRadioTrafficPossible(blufor);
+			if (opfor)
+				opforCoverage = base.IsHQRadioTrafficPossible(opfor);
+
+			Print(string.Format("[COA_AAS]   %1: owner %2, HQ %3, init %4, %5, BLUFOR coverage %6, OPFOR coverage %7", base.GetBaseName(), owner, base.IsHQ(), base.IsInitialized(), radioState, bluforCoverage, opforCoverage), LogLevel.NORMAL);
+		}
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -207,6 +325,9 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 		ResolveChain();
 		if (m_aChain.IsEmpty())
 			return;
+
+		// Before listening to ownership changes, so these hand-overs don't move the front
+		ApplyPresetOwners();
 
 		// The opening objective is the one neither side owns (the CHDKz-held centre), open to both sides.
 		// Without one, BLUFOR opens on the first base it doesn't own.
@@ -455,7 +576,11 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 			s_Instance = null;
 
 		if (GetGame() && GetGame().GetCallqueue())
+		{
 			GetGame().GetCallqueue().Remove(Tick);
+			GetGame().GetCallqueue().Remove(Setup);
+			GetGame().GetCallqueue().Remove(RefreshMapIcons);
+		}
 
 		if (m_bActive)
 			SCR_CampaignMilitaryBaseComponent.GetOnFactionChangedExtended().Remove(OnBaseFactionChanged);

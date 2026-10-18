@@ -1,0 +1,14 @@
+SCR_ChimeraCharacter : "{1CB7D86C0E75328C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_GL.et" {
+ ID "96AAE633D0398BD2"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Grenadier"
+    m_sFaction "US"
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{A77A68D971BAAB22}Prefabs/Weapons/Rifles/M16/Rifle_M16A4_M203.et"
+  }
+ }
+}

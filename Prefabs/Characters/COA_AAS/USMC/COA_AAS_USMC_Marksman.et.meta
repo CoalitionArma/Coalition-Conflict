@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{0B5CF973A3527F5F}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Marksman.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

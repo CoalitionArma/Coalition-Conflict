@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E1E7F5A204F98891}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_MachineGunner.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

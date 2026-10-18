@@ -1,0 +1,31 @@
+SCR_ChimeraCharacter : "{8C5BB9C9A6B964AE}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_MG.et" {
+ ID "6D1A0338CB403A8C"
+ components {
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Machine Gunner"
+    m_sFaction "USSR"
+   }
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Jacket {
+     Prefab "{ECCFBF86DA2C72B8}Prefabs/Clothing/CDF/Jacket/CDF_Jacket_M88_rolledup.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{6307465BB003DF06}Prefabs/Clothing/CDF/Pants/CDF_Pants_M88.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{6062F65EC3690C43}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
+    }
+    ItemsInitConfigurationItem "{607C14DECDC44617}" {
+     TargetStorage "Jacket/CDF_Jacket_M88_rolledup.et"
+    }
+   }
+  }
+ }
+}
