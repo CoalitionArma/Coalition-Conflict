@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Character_Base_CDF_MGA.et" {
- ID "F16F56DC2B070AE8"
+ ID "FA62C4065FCA9822"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
@@ -18,10 +18,22 @@ SCR_ChimeraCharacter : "{25A5E8A0F66D569E}Prefabs/Characters/Factions/CDF/Charac
     LoadoutSlotInfo Hat {
      Prefab "{C666B46D8529EB3E}Prefabs/Clothing/CDF/Headgear/PASGT/CDF_Helmet_PASGT_01_v1.et"
     }
+    LoadoutSlotInfo ArmoredVest {
+     Prefab "{ADE19B33DCBB9005}Prefabs/Characters/Vests/Vest_6B2/Vest_6B2.et"
+    }
+    LoadoutSlotInfo Vest {
+     Prefab "{9713FE6DDCC9510D}Prefabs/Characters/Vests/Vest_Lifchik/Vest_Lifchik.et"
+    }
    }
   }
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
+    ItemsInitConfigurationItem "{650321E62701E699}" {
+     TargetStorage "Vest/Vest_Lifchik.et"
+    }
+    ItemsInitConfigurationItem "{650321E62701E69C}" {
+     TargetStorage "Vest/Vest_Lifchik.et"
+    }
     ItemsInitConfigurationItem "{650321FD449CA650}" {
      PrefabsToSpawn {
       "{D78C667F59829717}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et" "{D78C667F59829717}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et" "{D78C667F59829717}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et" "{D78C667F59829717}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et" "{D78C667F59829717}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et" "{D78C667F59829717}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et"

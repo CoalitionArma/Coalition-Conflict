@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Gren.et" {
- ID "B04B6C89209B0EE4"
+ ID "BECC6C5E1FF05FB8"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
@@ -17,6 +17,22 @@ SCR_ChimeraCharacter : "{2C29AB19A18AD321}Prefabs/Characters/Factions/CDF/Charac
    Slots {
     LoadoutSlotInfo Hat {
      Prefab "{C666B46D8529EB3E}Prefabs/Clothing/CDF/Headgear/PASGT/CDF_Helmet_PASGT_01_v1.et"
+    }
+    LoadoutSlotInfo ArmoredVest {
+     Prefab "{ADE19B33DCBB9005}Prefabs/Characters/Vests/Vest_6B2/Vest_6B2.et"
+    }
+    LoadoutSlotInfo Vest {
+     Prefab "{9713FE6DDCC9510D}Prefabs/Characters/Vests/Vest_Lifchik/Vest_Lifchik.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{650321E611AF828D}" {
+     TargetStorage "Vest/Vest_Lifchik.et"
+    }
+    ItemsInitConfigurationItem "{650321E611AF8291}" {
+     TargetStorage "Vest/Vest_Lifchik.et"
     }
    }
   }

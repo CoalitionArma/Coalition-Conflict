@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{9FBBD0D57F3EED94}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/VV/RG/Olive/Character_RHS_RF_SOBROlive_Rifleman.et" {
- ID "1EA4CDF37EDB9000"
+ ID "B3733FA5A8359732"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
@@ -36,6 +36,12 @@ SCR_ChimeraCharacter : "{9FBBD0D57F3EED94}Prefabs/Characters/Factions/OPFOR/RHS_
     LoadoutSlotInfo Back {
      Prefab "{0D39750E5695B9D8}Prefabs/Items/Equipment/Backpacks/Backpack_RPG_Gunner.et"
     }
+    LoadoutSlotInfo ArmoredVest {
+     Prefab "{7BDA6879F4F67E68}Prefabs/Clothing/CDF/Armor/6B3/CDF_Vest_6B3.et"
+    }
+    LoadoutSlotInfo Vest {
+     Prefab ""
+    }
    }
   }
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
@@ -47,36 +53,60 @@ SCR_ChimeraCharacter : "{9FBBD0D57F3EED94}Prefabs/Characters/Factions/OPFOR/RHS_
      TargetStorage "Jacket/CDF_Jacket_M88.et"
     }
     ItemsInitConfigurationItem "{6236608DA8E64CC7}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
      PrefabsToSpawn {
-      "{A8B4089ACB473848}Prefabs/Weapons/Handguns/MP443/Handgun_MP443.et"
+      "{C3F1FA1E2EC2B345}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01.et"
      }
     }
     ItemsInitConfigurationItem "{6236608D8BA36395}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
      PrefabsToSpawn {
       "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et" "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6236608EA586AD35}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
+     PrefabsToSpawn {
+      "{B343AB76B0725657}Prefabs/Items/Equipment/Radios/Radio_R187P1_OLD.et"
      }
     }
     ItemsInitConfigurationItem "{6248A001AC6318A3}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
      PrefabsToSpawn {
       "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et" "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et"
      }
     }
+    ItemsInitConfigurationItem "{6248A0014AAEDC9B}" {
+     TargetStorage "Jacket/CDF_Jacket_M88.et"
+     PrefabsToSpawn {
+      "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et" "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6248A0014EC9B7C3}" {
+     TargetStorage "Jacket/CDF_Jacket_M88.et"
+     PrefabsToSpawn {
+      "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et" "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+     }
+    }
     ItemsInitConfigurationItem "{6178ED6C5B11302E}" {
+     TargetStorage "ArmoredVest/CDF_Vest_6B3.et"
      PrefabsToSpawn {
       "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et"
      }
     }
     ItemsInitConfigurationItem "{61AAABECEBFF64CA}" {
+     TargetStorage "ArmoredVest/CDF_Vest_6B3.et"
      PrefabsToSpawn {
       "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et"
      }
     }
     ItemsInitConfigurationItem "{61AAABECF9CC7AB0}" {
+     TargetStorage "ArmoredVest/CDF_Vest_6B3.et"
      PrefabsToSpawn {
-      "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et"
+      "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et"
      }
     }
-    ItemsInitConfigurationItem "{751F62101BD0734D}" {
+    ItemsInitConfigurationItem "{4C79ABABE8559CA6}" {
      TargetStorage "Back/Backpack_RPG_Gunner.et"
      PrefabsToSpawn {
       "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et" "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"

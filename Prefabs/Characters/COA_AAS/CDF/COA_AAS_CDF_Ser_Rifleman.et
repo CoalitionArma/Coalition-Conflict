@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et" {
- ID "48F7EA894C2974DB"
+ ID "EA06C954A24BC949"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {

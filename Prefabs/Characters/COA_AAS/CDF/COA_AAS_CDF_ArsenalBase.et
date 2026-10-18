@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{BBEAE2DCC59FA9C4}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Unarmed.et" {
- ID "D14BF4B900AD7127"
+ ID "1AA1C0F17A5E37B1"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {

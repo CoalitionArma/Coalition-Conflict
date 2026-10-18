@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{E92B2A4970D82027}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_FORECON/Character_RHS_USAF_FORECON_Rifleman.et" {
- ID "66E55AA54A47D7D2"
+ ID "004CCF53F6A40A4F"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {

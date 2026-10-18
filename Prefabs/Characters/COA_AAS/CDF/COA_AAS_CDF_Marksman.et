@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{78976C69F927A7B1}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Sharpshooter.et" {
- ID "575ED166E3B0B90E"
+ ID "816D521FC269758B"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {

@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{CCA1FB485A191D56}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_FORECON/Character_RHS_USAF_FORECON_TL_Marksman.et" {
- ID "01630A967CE2A3FD"
+ ID "E3659C0D265D2F6A"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {

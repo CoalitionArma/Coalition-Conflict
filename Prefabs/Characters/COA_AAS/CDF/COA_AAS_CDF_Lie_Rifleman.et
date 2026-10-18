@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{9FBBD0D57F3EED94}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/VV/RG/Olive/Character_RHS_RF_SOBROlive_Rifleman.et" {
- ID "BDA66D293BE33114"
+ ID "F29B89881B208D40"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
@@ -27,6 +27,12 @@ SCR_ChimeraCharacter : "{9FBBD0D57F3EED94}Prefabs/Characters/Factions/OPFOR/RHS_
     LoadoutSlotInfo Pants {
      Prefab "{6307465BB003DF06}Prefabs/Clothing/CDF/Pants/CDF_Pants_M88.et"
     }
+    LoadoutSlotInfo ArmoredVest {
+     Prefab "{7BDA6879F4F67E68}Prefabs/Clothing/CDF/Armor/6B3/CDF_Vest_6B3.et"
+    }
+    LoadoutSlotInfo Vest {
+     Prefab ""
+    }
    }
   }
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
@@ -38,33 +44,57 @@ SCR_ChimeraCharacter : "{9FBBD0D57F3EED94}Prefabs/Characters/Factions/OPFOR/RHS_
      TargetStorage "Jacket/CDF_Jacket_M88.et"
     }
     ItemsInitConfigurationItem "{6236608DA8E64CC7}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
      PrefabsToSpawn {
-      "{A8B4089ACB473848}Prefabs/Weapons/Handguns/MP443/Handgun_MP443.et"
+      "{C3F1FA1E2EC2B345}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01.et"
      }
     }
     ItemsInitConfigurationItem "{6236608D8BA36395}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
      PrefabsToSpawn {
       "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et" "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6236608EA586AD35}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
+     PrefabsToSpawn {
+      "{B343AB76B0725657}Prefabs/Items/Equipment/Radios/Radio_R187P1_OLD.et"
      }
     }
     ItemsInitConfigurationItem "{6248A001AC6318A3}" {
+     TargetStorage "Pants/CDF_Pants_M88.et"
      PrefabsToSpawn {
       "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et" "{D2E91B2DD0D3EF30}Prefabs/Weapons/Magazines/MP443/Magazine_9x19_MP443_17rnd_7N21.et"
      }
     }
+    ItemsInitConfigurationItem "{6248A0014AAEDC9B}" {
+     TargetStorage "Jacket/CDF_Jacket_M88.et"
+     PrefabsToSpawn {
+      "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et" "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6248A0014EC9B7C3}" {
+     TargetStorage "Jacket/CDF_Jacket_M88.et"
+     PrefabsToSpawn {
+      "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et" "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+     }
+    }
     ItemsInitConfigurationItem "{6178ED6C5B11302E}" {
+     TargetStorage "ArmoredVest/CDF_Vest_6B3.et"
      PrefabsToSpawn {
       "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et" "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et" "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et"
      }
     }
     ItemsInitConfigurationItem "{61AAABECEBFF64CA}" {
+     TargetStorage "ArmoredVest/CDF_Vest_6B3.et"
      PrefabsToSpawn {
       "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et" "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et" "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et" "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et"
      }
     }
     ItemsInitConfigurationItem "{61AAABECF9CC7AB0}" {
+     TargetStorage "ArmoredVest/CDF_Vest_6B3.et"
      PrefabsToSpawn {
-      "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et" "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et" "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et"
+      "{BBB50A815A2F916C}Prefabs/Weapons/Magazines/6l23_plum/Magazine_545x39_plum_AK_30rnd_Ball.et"
      }
     }
    }

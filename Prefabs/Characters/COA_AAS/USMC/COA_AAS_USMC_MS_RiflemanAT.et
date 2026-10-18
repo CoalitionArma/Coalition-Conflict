@@ -1,5 +1,5 @@
 SCR_ChimeraCharacter : "{7269658016EE9DCA}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_LAT.et" {
- ID "7CD84C7C12381780"
+ ID "5FC56688B1641B80"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {

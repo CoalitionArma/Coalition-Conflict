@@ -1,222 +1,222 @@
 SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutManager_Base.et" {
- ID "250ECDEE8CE63CCB"
+ ID "BFA6782E214CC6A9"
  m_aPlayerLoadouts {
-  SCR_FactionPlayerLoadout "{73F3D029E187D18A}" {
+  SCR_FactionPlayerLoadout "{FE43FA64AC7BB11E}" {
    m_sLoadoutName "Rifleman"
    m_sLoadoutResource "{DB20574F741F5364}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Rifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{EC49BAF3AD9CE228}" {
+  SCR_FactionPlayerLoadout "{3E8D15453F51C880}" {
    m_sLoadoutName "Automatic Rifleman"
    m_sLoadoutResource "{38FA4E3D8384A207}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_AutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{91FB0B4130BA2A8F}" {
+  SCR_FactionPlayerLoadout "{F141F99FC264DB6E}" {
    m_sLoadoutName "Assistant Automatic Rifleman"
    m_sLoadoutResource "{804BDA840B37256C}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{B6FC6A87C6541A17}" {
+  SCR_FactionPlayerLoadout "{742017C9E4D46F16}" {
    m_sLoadoutName "Rifleman (Anti-Tank)"
    m_sLoadoutResource "{997E78F3BDBD3C90}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_RiflemanAT.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{2F5CD4BADEFC2167}" {
+  SCR_FactionPlayerLoadout "{DCCAE387CF0BEC09}" {
    m_sLoadoutName "Rifleman - Desert"
    m_sLoadoutResource "{FEB0E71EA341634E}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_Rifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{0EFD876781F16FAE}" {
+  SCR_FactionPlayerLoadout "{E4A32045BE16FF54}" {
    m_sLoadoutName "Automatic Rifleman - Desert"
    m_sLoadoutResource "{0B287D14ADD6C400}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_AutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{5FF9B3F0A175BE00}" {
+  SCR_FactionPlayerLoadout "{A00DCFE81EBDE679}" {
    m_sLoadoutName "Assistant Automatic Rifleman - Desert"
    m_sLoadoutResource "{8BF94987DFE94C4F}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{29FC7CB949683C7C}" {
+  SCR_FactionPlayerLoadout "{ABA242DD7CBA877F}" {
    m_sLoadoutName "Rifleman (Anti-Tank) - Desert"
    m_sLoadoutResource "{857E4297FCE2D0AB}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_RiflemanAT.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{AA8384C6589BF22A}" {
+  SCR_FactionPlayerLoadout "{69B0D2C49408F0A5}" {
    m_sLoadoutName "Grenadier"
    m_sLoadoutResource "{106ED1533C617C8D}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Grenadier.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{16DF052EFE166FD7}" {
+  SCR_FactionPlayerLoadout "{E22E614E2BA71D9F}" {
    m_sLoadoutName "Rifleman - Force Recon"
    m_sLoadoutResource "{290F6604AA36E11A}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_FR_Rifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{91DFF2A3762F83CD}" {
+  SCR_FactionPlayerLoadout "{FAD6B0E32ECAC9E6}" {
    m_sLoadoutName "Automatic Rifleman - Force Recon"
    m_sLoadoutResource "{8C7F346693CD910D}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_FR_AutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{589704F7378CFD7D}" {
+  SCR_FactionPlayerLoadout "{FB28B49C91C6CDBD}" {
    m_sLoadoutName "Assistant Automatic Rifleman - Force Recon"
    m_sLoadoutResource "{32AF6E7E4009D481}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_FR_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{9CC528C35AD54174}" {
+  SCR_FactionPlayerLoadout "{92531B82407CC1F2}" {
    m_sLoadoutName "Rifleman (Anti-Tank) - Force Recon"
    m_sLoadoutResource "{B1180564BBAE1B6E}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_FR_RiflemanAT.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{3A8D23D72FF67EB3}" {
+  SCR_FactionPlayerLoadout "{A356D5B09D29FC64}" {
    m_sLoadoutName "Machine Gunner"
    m_sLoadoutResource "{E332D56E8B42B7A2}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_MachineGunner.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{AF59F202DA541806}" {
+  SCR_FactionPlayerLoadout "{4893D20951B8C672}" {
    m_sLoadoutName "Marksman"
    m_sLoadoutResource "{0B5CF973A3527F5F}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Marksman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{400176A09BFE344D}" {
+  SCR_FactionPlayerLoadout "{DDE949A0199C0CB0}" {
    m_sLoadoutName "Corpsman"
    m_sLoadoutResource "{558C2DF531E8CE85}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Corpsman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{78ECA31733911CAB}" {
+  SCR_FactionPlayerLoadout "{2074CCC7C519A622}" {
    m_sLoadoutName "Rifleman - MARSOC"
    m_sLoadoutResource "{2851CD5FE61205CA}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_MS_Rifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{8BAFB6FD1F180D26}" {
+  SCR_FactionPlayerLoadout "{6A8E9E440101B7F9}" {
    m_sLoadoutName "Automatic Rifleman - MARSOC"
    m_sLoadoutResource "{D76FB1CAF0CCD8F3}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_MS_AutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{09E04F655862F7C7}" {
+  SCR_FactionPlayerLoadout "{D2F2B46EA14A2FB4}" {
    m_sLoadoutName "Assistant Automatic Rifleman - MARSOC"
    m_sLoadoutResource "{A9026CCD4619461B}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_MS_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{0339F633791FA472}" {
+  SCR_FactionPlayerLoadout "{84E00BCAB9115436}" {
    m_sLoadoutName "Rifleman (Anti-Tank) - MARSOC"
    m_sLoadoutResource "{57A2B5634D96CC6D}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_MS_RiflemanAT.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{10D290C568B89F0B}" {
+  SCR_FactionPlayerLoadout "{5CDD8166F26095E9}" {
    m_sLoadoutName "Sniper"
    m_sLoadoutResource "{FC2C6FAD52BC4FE2}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Sniper.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{981433D16E2BEBAF}" {
+  SCR_FactionPlayerLoadout "{6E4D71F8C046ACC1}" {
    m_sLoadoutName "Anti-Tank (SMAW)"
    m_sLoadoutResource "{043E83A8F191AB4D}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_AntiTank.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{0A99EFEC4444040F}" {
+  SCR_FactionPlayerLoadout "{529C90ECA80FDDD2}" {
    m_sLoadoutName "Rifleman"
    m_sLoadoutResource "{D1E5E1C07638BE46}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Rifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{65D0997D84B0BA8B}" {
+  SCR_FactionPlayerLoadout "{8676CB4359A20E5B}" {
    m_sLoadoutName "Automatic Rifleman"
    m_sLoadoutResource "{BB23D6EAB225F0A8}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_AutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{1C91959AD030C49B}" {
+  SCR_FactionPlayerLoadout "{6F5639E1B0EDFB81}" {
    m_sLoadoutName "Assistant Automatic Rifleman"
    m_sLoadoutResource "{30CB5788327E445C}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{F3D0C9146A0265DB}" {
+  SCR_FactionPlayerLoadout "{E6B074FD1A7CC430}" {
    m_sLoadoutName "Rifleman (Anti-Tank)"
    m_sLoadoutResource "{DB6D019D9BD5CEE0}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_RiflemanAT.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{B736E428D82495A4}" {
+  SCR_FactionPlayerLoadout "{678FCA9BA2B0795A}" {
    m_sLoadoutName "Rifleman - Veteran"
    m_sLoadoutResource "{30EE8C1B9DFBFDAD}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Cor_Rifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{0E4A55427B6476FA}" {
+  SCR_FactionPlayerLoadout "{B5781E7CA9E8320F}" {
    m_sLoadoutName "Automatic Rifleman - Veteran"
    m_sLoadoutResource "{9C05FDF20E8723BA}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Cor_AutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{0F6A74DD11219DBF}" {
+  SCR_FactionPlayerLoadout "{DE772274AE7C31D1}" {
    m_sLoadoutName "Assistant Automatic Rifleman - Veteran"
    m_sLoadoutResource "{5D9A778AAEB0076A}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Cor_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{1CC10E74F13B631A}" {
+  SCR_FactionPlayerLoadout "{39D5ECCC4CE1E35D}" {
    m_sLoadoutName "Rifleman (Anti-Tank) - Veteran"
    m_sLoadoutResource "{18C0CED843E9F98D}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Cor_RiflemanAT.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{32A55AD304096660}" {
+  SCR_FactionPlayerLoadout "{A8A14C47430FBCD6}" {
    m_sLoadoutName "Grenadier"
    m_sLoadoutResource "{1F2951BA1BA96453}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Grenadier.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{2125186E5B54315E}" {
+  SCR_FactionPlayerLoadout "{A1196897F3175E7A}" {
    m_sLoadoutName "Rifleman - Senior"
    m_sLoadoutResource "{BD1E3FDE2CFB95A0}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Ser_Rifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{644BC89383BB9B01}" {
+  SCR_FactionPlayerLoadout "{7C0BAF75F62AB081}" {
    m_sLoadoutName "Automatic Rifleman - Senior"
    m_sLoadoutResource "{B1125F47F0C05969}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Ser_AutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{C365724F23AF8DB1}" {
+  SCR_FactionPlayerLoadout "{94F7BEC37C10C52B}" {
    m_sLoadoutName "Assistant Automatic Rifleman - Senior"
    m_sLoadoutResource "{029D565CF14FABB4}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Ser_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{6E230A9ADA5ED7C5}" {
+  SCR_FactionPlayerLoadout "{F539403EAA4A3340}" {
    m_sLoadoutName "Rifleman (Anti-Tank) - Senior"
    m_sLoadoutResource "{CD13CC55D334C286}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Ser_RiflemanAT.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{286CBB82D4B825BD}" {
+  SCR_FactionPlayerLoadout "{B785D993128C2DF2}" {
    m_sLoadoutName "Machine Gunner"
    m_sLoadoutResource "{E1E7F5A204F98891}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_MachineGunner.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{268EFE6037637880}" {
+  SCR_FactionPlayerLoadout "{B19BBA7AD9BE4266}" {
    m_sLoadoutName "Marksman"
    m_sLoadoutResource "{F15E357DE53392EE}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Marksman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{8C4818780B2E7824}" {
+  SCR_FactionPlayerLoadout "{F6202BBF0632D750}" {
    m_sLoadoutName "Medic"
    m_sLoadoutResource "{BFDDFA4C5A942D91}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Medic.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{43F671B595FDD1A8}" {
+  SCR_FactionPlayerLoadout "{67C66AB65A195D49}" {
    m_sLoadoutName "Rifleman - Guards"
    m_sLoadoutResource "{DAEF5BC927D089CD}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Lie_Rifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{CDD8DD1144A75908}" {
+  SCR_FactionPlayerLoadout "{47C18DB67763C034}" {
    m_sLoadoutName "Automatic Rifleman - Guards"
    m_sLoadoutResource "{583485D473F53146}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Lie_AutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{F3E15C88D10FD9BD}" {
+  SCR_FactionPlayerLoadout "{F088F23DDBEB49BA}" {
    m_sLoadoutName "Assistant Automatic Rifleman - Guards"
    m_sLoadoutResource "{439B5A1213104B50}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Lie_AssistantAutomaticRifleman.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{8687C9C7597E1986}" {
+  SCR_FactionPlayerLoadout "{DFA3B9D97B572902}" {
    m_sLoadoutName "Rifleman (Anti-Tank) - Guards"
    m_sLoadoutResource "{3DE4CB2EBFB586A1}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Lie_RiflemanAT.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{A26431FCB414C51F}" {
+  SCR_FactionPlayerLoadout "{7140D66A3E562863}" {
    m_sLoadoutName "Sniper"
    m_sLoadoutResource "{219D65B99E3CAC4F}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Sniper.et"
    m_sAffiliatedFaction "USSR"
   }
-  SCR_FactionPlayerLoadout "{2BC377FDC41035D2}" {
+  SCR_FactionPlayerLoadout "{2EC4726429E2FFBE}" {
    m_sLoadoutName "Anti-Tank (PGO-7)"
    m_sLoadoutResource "{5F90B0272E82061F}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_AntiTank.et"
    m_sAffiliatedFaction "USSR"
