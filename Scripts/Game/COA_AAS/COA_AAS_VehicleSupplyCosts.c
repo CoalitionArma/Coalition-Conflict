@@ -172,6 +172,10 @@ class COA_AAS_VehicleSupplyCosts
 [BaseContainerProps(configRoot: true), BaseContainerCustomCheckIntTitleField("m_bEnabled", "SpawnerData", "DISABLED - SpawnerData", 1)]
 modded class SCR_EntityCatalogSpawnerData : SCR_BaseEntityCatalogData
 {
+	// What the config says, kept apart so nothing initialising after us (other mods) can undo it
+	protected int m_iCOA_AAS_SupplyCost = -1;
+	protected SCR_ECharacterRank m_eCOA_AAS_RequiredRank = SCR_ECharacterRank.INVALID;
+
 	//------------------------------------------------------------------------------------------------
 	override void InitData(notnull SCR_EntityCatalogEntry entry)
 	{
@@ -183,10 +187,34 @@ modded class SCR_EntityCatalogSpawnerData : SCR_BaseEntityCatalogData
 
 		int cost = costs.GetCost(entry, m_iSupplyCost);
 		if (cost >= 0)
+		{
 			m_iSupplyCost = cost;
+			m_iCOA_AAS_SupplyCost = cost;
+		}
 
 		SCR_ECharacterRank rank = costs.GetRequiredRank(entry);
 		if (rank != SCR_ECharacterRank.INVALID)
+		{
 			m_eMinimumRequiredRank = rank;
+			m_eCOA_AAS_RequiredRank = rank;
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override int GetSupplyCost()
+	{
+		if (m_iCOA_AAS_SupplyCost >= 0)
+			return m_iCOA_AAS_SupplyCost;
+
+		return super.GetSupplyCost();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override SCR_ECharacterRank GetMinimumRequiredRank()
+	{
+		if (m_eCOA_AAS_RequiredRank != SCR_ECharacterRank.INVALID)
+			return m_eCOA_AAS_RequiredRank;
+
+		return super.GetMinimumRequiredRank();
 	}
 }
