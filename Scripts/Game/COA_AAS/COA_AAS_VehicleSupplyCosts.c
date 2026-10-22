@@ -130,6 +130,28 @@ class COA_AAS_VehicleSupplyCosts
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! A listed vehicle's cost and rank (INVALID: its own), by prefab - with or without its GUID
+	//! \return false when the vehicle isn't in the list
+	bool GetListed(ResourceName prefab, out int cost, out SCR_ECharacterRank rank)
+	{
+		BuildLookup();
+		string key = Guid(prefab);
+		if (!m_mCostByGuid.Contains(key))
+		{
+			key = PathKey(prefab);
+			if (!m_mCostByGuid.Contains(key))
+				return false;
+		}
+
+		cost = m_mCostByGuid.Get(key);
+		rank = SCR_ECharacterRank.INVALID;
+		if (m_mRankByGuid.Contains(key))
+			rank = m_mRankByGuid.Get(key);
+
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	protected void BuildLookup()
 	{
 		if (m_mCostByGuid)
@@ -145,11 +167,28 @@ class COA_AAS_VehicleSupplyCosts
 			if (!vehicle || vehicle.m_sPrefab.IsEmpty())
 				continue;
 
-			string guid = Guid(vehicle.m_sPrefab);
-			m_mCostByGuid.Set(guid, vehicle.m_iCost);
-			if (vehicle.m_eRequiredRank != SCR_ECharacterRank.INVALID)
-				m_mRankByGuid.Set(guid, vehicle.m_eRequiredRank);
+			// By GUID, and by path for lookups that only have the path
+			array<string> keys = {Guid(vehicle.m_sPrefab), PathKey(vehicle.m_sPrefab)};
+			foreach (string key : keys)
+			{
+				m_mCostByGuid.Set(key, vehicle.m_iCost);
+				if (vehicle.m_eRequiredRank != SCR_ECharacterRank.INVALID)
+					m_mRankByGuid.Set(key, vehicle.m_eRequiredRank);
+			}
 		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! "{GUID}path" or "path" -> "path", lower case
+	protected static string PathKey(ResourceName prefab)
+	{
+		string text = prefab;
+		int close = text.IndexOf("}");
+		if (text.StartsWith("{") && close > 0)
+			text = text.Substring(close + 1, text.Length() - close - 1);
+
+		text.ToLower();
+		return text;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -162,6 +201,93 @@ class COA_AAS_VehicleSupplyCosts
 			return text.Substring(1, close - 1);
 
 		return text;
+	}
+}
+
+//------------------------------------------------------------------------------------------------
+//! Helipads and depots that open Conflict's placing editor (asset cards) price a vehicle by its editor
+//! budgets - a CAMPAIGN cost and a RANK_ requirement - read fresh from the prefab each time. Vehicles in
+//! COA_AAS_VehicleSupplyCosts get the listed cost and rank there too, so the card, the charge and the rank
+//! lock match the request actions. A config-built class: vanilla's attributes and parent are repeated.
+[BaseContainerProps()]
+modded class SCR_EditableEntityUIInfo : SCR_UIInfo
+{
+	protected int m_iCOA_AAS_Cost = -1;		// -1: not a listed vehicle
+	protected SCR_ECharacterRank m_eCOA_AAS_Rank = SCR_ECharacterRank.INVALID;
+
+	//------------------------------------------------------------------------------------------------
+	override void InitFromSource(IEntityComponentSource componentSource)
+	{
+		super.InitFromSource(componentSource);
+
+		if (!componentSource)
+			return;
+
+		COA_AAS_VehicleSupplyCosts costs = COA_AAS_VehicleSupplyCosts.Get();
+		if (!costs)
+			return;
+
+		ResourceName prefab = SCR_BaseContainerTools.GetPrefabResourceName(componentSource.GetParent());
+		int cost;
+		SCR_ECharacterRank rank;
+		if (prefab.IsEmpty() || !costs.GetListed(prefab, cost, rank))
+			return;
+
+		m_iCOA_AAS_Cost = cost;
+		m_eCOA_AAS_Rank = rank;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected override void CopyFrom(SCR_UIName source)
+	{
+		SCR_EditableEntityUIInfo editable = SCR_EditableEntityUIInfo.Cast(source);
+		if (editable)
+		{
+			m_iCOA_AAS_Cost = editable.m_iCOA_AAS_Cost;
+			m_eCOA_AAS_Rank = editable.m_eCOA_AAS_Rank;
+		}
+
+		super.CopyFrom(source);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override bool GetEntityBudgetCost(out notnull array<ref SCR_EntityBudgetValue> outBudgets)
+	{
+		super.GetEntityBudgetCost(outBudgets);
+		COA_AAS_ApplyListed(outBudgets);
+		return !outBudgets.IsEmpty();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void GetEntityAndChildrenBudgetCost(out notnull array<ref SCR_EntityBudgetValue> outBudgets)
+	{
+		super.GetEntityAndChildrenBudgetCost(outBudgets);
+		COA_AAS_ApplyListed(outBudgets);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The listed supply cost in place of the prefab's, and the listed rank when there is one
+	protected void COA_AAS_ApplyListed(notnull array<ref SCR_EntityBudgetValue> budgets)
+	{
+		if (m_iCOA_AAS_Cost < 0)
+			return;
+
+		bool replaceRank = m_eCOA_AAS_Rank != SCR_ECharacterRank.INVALID && m_eCOA_AAS_Rank <= SCR_ECharacterRank.GENERAL;
+		for (int i = budgets.Count() - 1; i >= 0; i--)
+		{
+			SCR_EntityBudgetValue budget = budgets[i];
+			if (!budget)
+				continue;
+
+			EEditableEntityBudget type = budget.GetBudgetType();
+			bool isRank = type >= EEditableEntityBudget.RANK_RENEGADE && type <= EEditableEntityBudget.RANK_GENERAL;
+			if (type == EEditableEntityBudget.CAMPAIGN || (isRank && replaceRank))
+				budgets.Remove(i);
+		}
+
+		budgets.Insert(new SCR_EntityBudgetValue(EEditableEntityBudget.CAMPAIGN, m_iCOA_AAS_Cost));
+		if (replaceRank)
+			budgets.Insert(new SCR_EntityBudgetValue(EEditableEntityBudget.RANK_RENEGADE + m_eCOA_AAS_Rank * 10, 1));
 	}
 }
 
