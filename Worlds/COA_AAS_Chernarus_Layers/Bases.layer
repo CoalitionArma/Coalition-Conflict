@@ -54,7 +54,7 @@ $grp GenericEntity : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBas
     m_sMapLocationName "Vyshnoye"
    }
   }
-  coords 6549.5 321.654 6067.84
+  coords 6543.322 321.874 6081.961
  }
  OBJ4_NovySobor {
   components {
@@ -73,7 +73,7 @@ $grp GenericEntity : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBas
     m_sMapLocationName "Novy Sobor"
    }
   }
-  coords 7160.78 294 7684.32
+  coords 7168.425 293.999 7671.985
  }
  OBJ5_Grishino {
   components {
@@ -92,7 +92,7 @@ $grp GenericEntity : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBas
     m_sMapLocationName "Grishino"
    }
   }
-  coords 5995.25 271.085 10285.2
+  coords 5987.472 271.306 10276.882
  }
  OBJ6_DevilsCastle {
   components {
@@ -130,7 +130,7 @@ $grp GenericEntity : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBas
     m_sMapLocationName "Ratnik"
    }
   }
-  coords 6353.96 155.659 12698.5
+  coords 6356.476 156.246 12716.12
  }
 }
 $grp GenericEntity : "{3772B47BCF3C62FB}Prefabs/Systems/MilitaryBase/ConflictBase_MOB.et" {
