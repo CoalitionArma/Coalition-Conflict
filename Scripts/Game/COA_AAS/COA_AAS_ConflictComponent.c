@@ -67,6 +67,9 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("1.5", desc: "Seizing time multiplier at the high player count (1.5 = half as long again)", params: "0.1 5 0.05", category: "Capture Time")]
 	protected float m_fPopulationHighMultiplier;
 
+	[Attribute("0.5", desc: "Scales all XP players earn (Conflict's rewards and the ones below) - lower = slower ranks and unlocks. Stacks with the server's own XP multiplier. Asset XP costs aren't scaled.", params: "0.05 5 0.05", category: "Rewards")]
+	protected float m_fXPGainMultiplier;
+
 	[Attribute("10", desc: "XP each player on a territory square gets when their side takes it", params: "0 1000 1", category: "Rewards")]
 	protected int m_iSquareCaptureXP;
 
@@ -467,9 +470,21 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	//------------------------------------------------------------------------------------------------
 	protected void AwardXP(int playerId, int xp)
 	{
+		// Custom XP skips Conflict's multiplier, so scale it here
+		xp = Math.Round(xp * m_fXPGainMultiplier);
+		if (xp <= 0)
+			return;
+
 		SCR_XPHandlerComponent handler = SCR_XPHandlerComponent.Cast(GetGameMode().FindComponent(SCR_XPHandlerComponent));
 		if (handler)
 			handler.AwardXP(playerId, SCR_EXPRewards.CUSTOM_19, 1, false, xp);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Scales all XP players earn (COA_AAS_SCR_XPHandlerComponent)
+	float GetXPGainMultiplier()
+	{
+		return m_fXPGainMultiplier;
 	}
 
 	//------------------------------------------------------------------------------------------------

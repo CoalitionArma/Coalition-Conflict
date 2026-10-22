@@ -7,7 +7,9 @@
 //!  - A square only one side's living players stand in, next to that side's territory, is taken once
 //!    they've held it for the capture time; defenders in it as well stop the clock, leaving resets it. The
 //!    "next to" rule keeps the front moving as a line - a lone infiltrator doesn't paint islands.
-//!  - A captured base takes the squares around it with it.
+//!  - A captured base takes the squares around it with it, and an objective or HQ its whole zone - every
+//!    square nearer to it than to any other of them that the previous owner held - so the front jumps
+//!    halfway to the next base instead of leaving the loser's ground stranded round it.
 //! Owned by COA_AAS_ConflictComponent, which replicates the result (m_sTerritory) to everyone.
 class COA_AAS_Frontline
 {
@@ -17,6 +19,8 @@ class COA_AAS_Frontline
 	protected SCR_GameModeCampaign m_Campaign;
 	protected ref COA_AAS_Territory m_Territory = new COA_AAS_Territory();
 	protected ref array<bool> m_aLand = {};		// per cell: false = sea, never anyone's
+	protected ref array<SCR_CampaignMilitaryBaseComponent> m_aSeedBases = {};	// the objectives and HQs
+	protected ref array<int> m_aZone = {};		// per cell: index into m_aSeedBases of the nearest, -1 = none
 
 	protected bool m_bWholeMap;
 	protected float m_fMargin;
@@ -109,8 +113,11 @@ class COA_AAS_Frontline
 		if (m_fSeedRadius > 0)
 			seedSq = m_fSeedRadius * m_fSeedRadius;
 
+		m_aSeedBases.Clear();
+		m_aSeedBases.InsertAll(bases);
 		m_Territory.m_aOwners.Clear();
 		m_aLand.Clear();
+		m_aZone.Clear();
 		for (int z = 0; z < m_Territory.m_iHeight; z++)
 		{
 			for (int x = 0; x < m_Territory.m_iWidth; x++)
@@ -122,11 +129,13 @@ class COA_AAS_Frontline
 				if (!land)
 				{
 					m_Territory.m_aOwners.Insert(owner);
+					m_aZone.Insert(-1);
 					continue;
 				}
 
 				float nearest = seedSq;
-				foreach (SCR_CampaignMilitaryBaseComponent seedBase : bases)
+				int zone = -1;
+				foreach (int i, SCR_CampaignMilitaryBaseComponent seedBase : bases)
 				{
 					vector basePosition = seedBase.GetOwner().GetOrigin();
 					float dx = basePosition[0] - centre[0];
@@ -136,10 +145,12 @@ class COA_AAS_Frontline
 					{
 						nearest = distance;
 						owner = OwnerCode(seedBase.GetFaction());
+						zone = i;
 					}
 				}
 
 				m_Territory.m_aOwners.Insert(owner);
+				m_aZone.Insert(zone);
 			}
 		}
 
@@ -276,19 +287,20 @@ class COA_AAS_Frontline
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! A base changed hands: the squares around it go with it
+	//! A base changed hands: the squares around it go with it, and for an objective or HQ, its zone
 	protected void OnBaseFactionChanged(SCR_CampaignMilitaryBaseComponent base, Faction previousFaction, Faction faction)
 	{
 		int side = OwnerCode(faction);
 		if (side == COA_AAS_ETerritoryOwner.NONE || m_Territory.m_aOwners.IsEmpty())
 			return;
 
+		bool changed = TakeZone(base, OwnerCode(previousFaction), side);
+
 		vector position = base.GetOwner().GetOrigin();
 		int reach = Math.Ceil(m_fBaseRadius / m_Territory.m_fCell);
 		int cx, cz;
 		m_Territory.CellAt(position, cx, cz);
 		float radiusSq = m_fBaseRadius * m_fBaseRadius;
-		bool changed;
 		for (int z = cz - reach; z <= cz + reach; z++)
 		{
 			for (int x = cx - reach; x <= cx + reach; x++)
@@ -313,6 +325,29 @@ class COA_AAS_Frontline
 
 		if (changed)
 			Publish();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The squares of an objective's or HQ's zone that the previous owner held go to the captor. Ground
+	//! another side had pushed into the zone stays theirs.
+	//! \return whether any square changed
+	protected bool TakeZone(notnull SCR_CampaignMilitaryBaseComponent base, int previousSide, int side)
+	{
+		int zone = m_aSeedBases.Find(base);
+		if (zone < 0 || previousSide == COA_AAS_ETerritoryOwner.NONE || previousSide == side)
+			return false;
+
+		bool changed;
+		foreach (int cell, int cellZone : m_aZone)
+		{
+			if (cellZone != zone || m_Territory.m_aOwners[cell] != previousSide)
+				continue;
+
+			m_Territory.m_aOwners[cell] = side;
+			changed = true;
+		}
+
+		return changed;
 	}
 
 	//------------------------------------------------------------------------------------------------
