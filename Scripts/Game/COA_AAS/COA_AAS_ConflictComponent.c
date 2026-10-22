@@ -37,6 +37,9 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("0", desc: "Bases other than the HQs (objectives, FOBs) generate supplies by themselves - else only the HQs do and the rest is trucked in", category: "Logistics")]
 	protected bool m_bBaseSupplyIncome;
 
+	[Attribute("10000", desc: "Supplies each HQ/MOB can hold. Income stops while storage is full, so keep this above the HQ starting supplies. 0 = Conflict's own (its supply piles, ~1000 for the HQ tent).", params: "0 100000 1", category: "Logistics")]
+	protected int m_iHQStorageCapacity;
+
 	[Attribute("1", desc: "Command trucks can build FOBs (Conflict's establish base) anywhere in their side's territory, without a commander or task. Needs the frontline for the territory - without it, anywhere.", category: "Logistics")]
 	protected bool m_bTerritoryFOBs;
 
@@ -124,6 +127,66 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("45", desc: "How long a ping stays on the enemy's map [s]", params: "5 600 1", category: "Behind Enemy Lines")]
 	protected float m_fBehindLinesPingDuration;
 
+	[Attribute("1", desc: "CHDKz patrol the front line and now and then attack a base on it (COA_AAS_Insurgents). Needs the frontline.", category: "CHDKz Insurgents")]
+	protected bool m_bInsurgents;
+
+	[Attribute(desc: "Groups sent out on patrol, one picked at random each time", params: "et", category: "CHDKz Insurgents")]
+	protected ref array<ResourceName> m_aInsurgentPatrolGroups;
+
+	[Attribute(desc: "Groups sent in to attack, one picked at random each time", params: "et", category: "CHDKz Insurgents")]
+	protected ref array<ResourceName> m_aInsurgentAttackGroups;
+
+	[Attribute("10", desc: "Patrols along the front at a time. They only have soldiers while players are near, so this costs little.", params: "0 100 1", category: "CHDKz Insurgents")]
+	protected int m_iInsurgentMaxPatrols;
+
+	[Attribute("2", desc: "Attacks under way at a time", params: "0 10 1", category: "CHDKz Insurgents")]
+	protected int m_iInsurgentMaxAttacks;
+
+	[Attribute("400", desc: "Patrols are placed up to this far from the front line [m]", params: "0 3000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentFrontDistance;
+
+	[Attribute("250", desc: "Radius of a patrol's loop [m]", params: "50 2000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentPatrolRadius;
+
+	[Attribute("1000", desc: "A patrol nobody is near is moved once the front is this far away from it [m]", params: "100 10000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentRetireDistance;
+
+	[Attribute("300", desc: "Shortest time between attacks [s]", params: "30 7200 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAttackIntervalMin;
+
+	[Attribute("600", desc: "Longest time between attacks [s]", params: "30 7200 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAttackIntervalMax;
+
+	[Attribute("600", desc: "Attackers start about this far from their target [m]", params: "100 3000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAttackDistance;
+
+	[Attribute("800", desc: "Besides the live objective, bases this close to the front can be attacked [m]", params: "0 5000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAttackFrontRange;
+
+	[Attribute("350", desc: "Insurgents never spawn this close to a player [m]", params: "0 2000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentMinPlayerDistance;
+
+	[Attribute(desc: "Groups that lie in wait beside roads behind the front, one picked at random each time", params: "et", category: "CHDKz Insurgents")]
+	protected ref array<ResourceName> m_aInsurgentAmbushGroups;
+
+	[Attribute("4", desc: "Road ambushes behind the front at a time. Dormant until players come near, like patrols.", params: "0 50 1", category: "CHDKz Insurgents")]
+	protected int m_iInsurgentMaxAmbushes;
+
+	[Attribute("500", desc: "Ambushes are at least this far behind the front [m]", params: "0 10000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAmbushMinBehind;
+
+	[Attribute("3000", desc: "Ambushes are at most this far behind the front [m]", params: "0 20000 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAmbushMaxBehind;
+
+	[Attribute("900", desc: "An ambush nobody has come near in this long moves to another road [s]", params: "60 7200 1", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAmbushLifetime;
+
+	[Attribute("3", desc: "Only roads at least this wide are ambushed (skips footpaths) [m]", params: "0 20 0.5", category: "CHDKz Insurgents")]
+	protected float m_fInsurgentAmbushMinRoadWidth;
+
+	[Attribute("0", desc: "Insurgents can seize bases they don't hold (FOBs, objectives held by a side). Off: they fight there and kill, but only players take ground.", category: "CHDKz Insurgents")]
+	protected bool m_bInsurgentsCanSeize;
+
 	//! The territory, run-length encoded (COA_AAS_Territory) - empty until the frontline starts
 	[RplProp(onRplName: "OnTerritoryReplicated")]
 	protected string m_sTerritory;
@@ -156,6 +219,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	protected bool m_bHasTerritory;
 	protected int m_iTerritoryVersion;
 	protected ref COA_AAS_BehindLines m_BehindLines;	// server: pings players deep in enemy territory
+	protected ref COA_AAS_Insurgents m_Insurgents;	// server: CHDKz patrols and attacks along the front
 	protected float m_fNextSpottedHint;	// where someone plays: world time [ms] the next "enemy spotted" hint may show
 
 	protected static COA_AAS_ConflictComponent s_Instance;
@@ -170,7 +234,9 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	protected static const int HQ_TOP_UP_DELAY_MS = 6000;		// after Setup: the services spawn 4 s after bases init
 	protected static const int HQ_TOP_UP_RETRY_MS = 2000;
 	protected static const int HQ_TOP_UP_ATTEMPTS = 5;
+	protected static const int FOB_PILES_DELAY_MS = 5000;
 	protected int m_iHQTopUpAttempts;
+	protected ref array<SCR_CampaignMilitaryBaseComponent> m_aHQsEnlarged = {};	// HQs whose storage was raised (m_iHQStorageCapacity)
 	protected static const int TASK_SYNC_INTERVAL_MS = 5000;
 	protected static const ResourceName HOLD_TASK_PREFAB = "{A14BCD8C52D8F686}Prefabs/Tasks/Campaign/HoldCampaignMilitaryBaseTaskEntity.et";
 	protected int m_iTaskSerial;
@@ -307,6 +373,16 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 				continue;
 
 			SCR_CampaignMilitaryBaseComponent hq = faction.GetMainBase();
+
+			// Room above the starting amount, or income has nowhere to go (COA_AAS_SupplyStorage)
+			if (m_iHQStorageCapacity > 0 && !m_aHQsEnlarged.Contains(hq))
+			{
+				if (COA_AAS_SupplyStorage.RaiseCapacity(hq, Math.Max(m_iHQStorageCapacity, target)))
+					m_aHQsEnlarged.Insert(hq);
+				else
+					belowTarget = true;
+			}
+
 			if (hq.GetSupplies() >= target)
 				continue;
 
@@ -360,6 +436,10 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	//! Server: a FOB went up - the side's players around it built it
 	protected void OnBaseBuilt(SCR_CampaignMilitaryBaseComponent base, Faction faction)
 	{
+		// Its supply pile stays visible when empty, once the HQ composition is up (COA_AAS_SupplyStorage)
+		if (base)
+			GetGame().GetCallqueue().CallLater(ShowSupplyPiles, FOB_PILES_DELAY_MS, false, base);
+
 		if (m_iFOBBuiltXP <= 0 || !base || !faction)
 			return;
 
@@ -375,6 +455,13 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 
 			AwardXP(playerId, m_iFOBBuiltXP);
 		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void ShowSupplyPiles(SCR_CampaignMilitaryBaseComponent base)
+	{
+		if (base)
+			COA_AAS_SupplyStorage.KeepPilesVisible(base);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -773,6 +860,41 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 
 		if (m_bBehindLines)
 			m_BehindLines = new COA_AAS_BehindLines(this, m_Campaign, m_fBehindLinesGrace, m_fBehindLinesDeep, m_fBehindLinesMaxInterval, m_fBehindLinesMinInterval, m_fBehindLinesObjectiveRadius, BEHIND_LINES_TICK);
+
+		if (m_bInsurgents)
+		{
+			m_Insurgents = new COA_AAS_Insurgents(this, m_Campaign, m_aInsurgentPatrolGroups, m_aInsurgentAttackGroups, m_iInsurgentMaxPatrols, m_iInsurgentMaxAttacks,
+				m_fInsurgentFrontDistance, m_fInsurgentPatrolRadius, m_fInsurgentRetireDistance, m_fInsurgentAttackIntervalMin, m_fInsurgentAttackIntervalMax,
+				m_fInsurgentAttackDistance, m_fInsurgentAttackFrontRange, m_fInsurgentMinPlayerDistance);
+			m_Insurgents.SetAmbushes(m_aInsurgentAmbushGroups, m_iInsurgentMaxAmbushes, m_fInsurgentAmbushMinBehind, m_fInsurgentAmbushMaxBehind,
+				m_fInsurgentAmbushLifetime, m_fInsurgentAmbushMinRoadWidth);
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Server (COA_AAS_Insurgents): CHDKz are moving on a base - both sides hear of it
+	void NotifyInsurgentAttack(string baseName)
+	{
+		string insurgents = "CHDKz";
+		SCR_CampaignFaction faction = m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.INDFOR);
+		if (faction)
+			insurgents = faction.GetFactionName();
+
+		Notify(string.Format("%1 attack", insurgents), string.Format("%1 are moving on %2", insurgents, baseName));
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Whether CHDKz standing at the base count toward seizing it - always where they hold it, elsewhere
+	//! only when m_bInsurgentsCanSeize
+	bool InsurgentsCountAt(notnull SCR_CampaignMilitaryBaseComponent base, Faction faction)
+	{
+		if (m_bInsurgentsCanSeize || !m_Campaign || !faction)
+			return true;
+
+		if (faction != m_Campaign.GetFactionByEnum(SCR_ECampaignFaction.INDFOR))
+			return true;
+
+		return base.GetFaction() == faction;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1159,6 +1281,11 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 		// The map keeps the territory as it ended
 		m_Frontline = null;
 		m_BehindLines = null;
+		if (m_Insurgents)
+		{
+			m_Insurgents.Stop();
+			m_Insurgents = null;
+		}
 
 		Notify(string.Format("%1 secured %2", GetFactionName(winner), lastObjective), string.Format("%1 has won the battle", GetFactionName(winner)));
 		m_Campaign.COA_AAS_EndMatch(m_Campaign.GetFactionByEnum(winner));
@@ -1266,6 +1393,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 			GetGame().GetCallqueue().Remove(SyncTasks);
 			GetGame().GetCallqueue().Remove(TopUpHQs);
 			GetGame().GetCallqueue().Remove(RetimeLiveCapture);
+			GetGame().GetCallqueue().Remove(ShowSupplyPiles);
 			GetGame().GetCallqueue().Remove(Setup);
 			GetGame().GetCallqueue().Remove(RefreshMapIcons);
 		}

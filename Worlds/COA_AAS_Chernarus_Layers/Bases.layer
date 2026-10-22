@@ -1,157 +1,167 @@
-GenericEntity HQ_Balota : "{3772B47BCF3C62FB}Prefabs/Systems/MilitaryBase/ConflictBase_MOB.et" {
- components {
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Balota Airfield"
-   m_sBaseNameUpper "BALOTA AIRFIELD"
+$grp GenericEntity : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
+ OBJ1_Chernogorsk {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 30
+    m_bCapturingRequiresPlayer 1
+   }
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "US"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Chernogorsk"
+    m_sBaseNameUpper "CHERNOGORSK"
+    m_sMapLocationName "Chernogorsk"
+   }
   }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "US"
-  }
+  coords 6717.95 5.999 2568
  }
- coords 3682.68 5.452 2388.8
+ OBJ2_Mogilevka {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 30
+    m_bCapturingRequiresPlayer 1
+   }
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "US"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Mogilevka"
+    m_sBaseNameUpper "MOGILEVKA"
+    m_sMapLocationName "Mogilevka"
+   }
+  }
+  coords 7589.72 214 5155.73
+ }
+ OBJ3_Vyshnoye {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 30
+    m_bCapturingRequiresPlayer 1
+   }
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "US"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Vyshnoye"
+    m_sBaseNameUpper "VYSHNOYE"
+    m_sMapLocationName "Vyshnoye"
+   }
+  }
+  coords 6549.5 321.654 6067.84
+ }
+ OBJ4_NovySobor {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 30
+    m_bCapturingRequiresPlayer 1
+   }
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "FIA"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Novy Sobor"
+    m_sBaseNameUpper "NOVY SOBOR"
+    m_sMapLocationName "Novy Sobor"
+   }
+  }
+  coords 7160.78 294 7684.32
+ }
+ OBJ5_Grishino {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 30
+    m_bCapturingRequiresPlayer 1
+   }
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "USSR"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Grishino"
+    m_sBaseNameUpper "GRISHINO"
+    m_sMapLocationName "Grishino"
+   }
+  }
+  coords 5995.25 271.085 10285.2
+ }
+ OBJ6_DevilsCastle {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 30
+    m_bCapturingRequiresPlayer 1
+   }
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "USSR"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Devil's Castle"
+    m_sBaseNameUpper "DEVIL'S CASTLE"
+    m_sMapLocationName "Devil's Castle"
+   }
+  }
+  coords 6888.82 394.164 11430.5
+ }
+ OBJ7_Ratnik {
+  components {
+   SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 30
+    m_bCapturingRequiresPlayer 1
+   }
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "USSR"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Ratnik"
+    m_sBaseNameUpper "RATNIK"
+    m_sMapLocationName "Ratnik"
+   }
+  }
+  coords 6353.96 155.659 12698.5
+ }
 }
-GenericEntity HQ_Kamenoe : "{3772B47BCF3C62FB}Prefabs/Systems/MilitaryBase/ConflictBase_MOB.et" {
- components {
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Kamenoe Base"
-   m_sBaseNameUpper "KAMENOE BASE"
+$grp GenericEntity : "{3772B47BCF3C62FB}Prefabs/Systems/MilitaryBase/ConflictBase_MOB.et" {
+ HQ_Balota {
+  components {
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "US"
+   }
+   SCR_ResourceComponent "{621EB97024DABA92}" {
+    m_aContainers {
+     SCR_ResourceContainerVirtual "{6AAD04EB8574AC64}" {
+     }
+    }
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Balota Airfield"
+    m_sBaseNameUpper "BALOTA AIRFIELD"
+   }
   }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "USSR"
-  }
+  coords 3682.68 5.452 2388.8
  }
- coords 7919.63 263.062 14690.6
-}
-GenericEntity OBJ1_Chernogorsk : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
- components {
-  SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
-   m_iRadius 100
-   m_fMaximumSeizingTime 120
-   m_fMinimumSeizingTime 30
-   m_bCapturingRequiresPlayer 1
+ HQ_Kamenoe {
+  components {
+   SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
+    "faction affiliation" "USSR"
+   }
+   SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
+    m_sBaseName "Kamenoe Base"
+    m_sBaseNameUpper "KAMENOE BASE"
+   }
   }
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Chernogorsk"
-   m_sBaseNameUpper "CHERNOGORSK"
-   m_sMapLocationName "Chernogorsk"
-  }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "US"
-  }
+  coords 7919.63 263.062 14690.6
  }
- coords 6717.95 5.999 2568
-}
-GenericEntity OBJ2_Mogilevka : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
- components {
-  SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
-   m_iRadius 100
-   m_fMaximumSeizingTime 120
-   m_fMinimumSeizingTime 30
-   m_bCapturingRequiresPlayer 1
-  }
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Mogilevka"
-   m_sBaseNameUpper "MOGILEVKA"
-   m_sMapLocationName "Mogilevka"
-  }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "US"
-  }
- }
- coords 7589.72 214 5155.73
-}
-GenericEntity OBJ3_Vyshnoye : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
- components {
-  SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
-   m_iRadius 100
-   m_fMaximumSeizingTime 120
-   m_fMinimumSeizingTime 30
-   m_bCapturingRequiresPlayer 1
-  }
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Vyshnoye"
-   m_sBaseNameUpper "VYSHNOYE"
-   m_sMapLocationName "Vyshnoye"
-  }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "US"
-  }
- }
- coords 6549.5 321.654 6067.84
-}
-GenericEntity OBJ4_NovySobor : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
- components {
-  SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
-   m_iRadius 100
-   m_fMaximumSeizingTime 120
-   m_fMinimumSeizingTime 30
-   m_bCapturingRequiresPlayer 1
-  }
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Novy Sobor"
-   m_sBaseNameUpper "NOVY SOBOR"
-   m_sMapLocationName "Novy Sobor"
-  }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "FIA"
-  }
- }
- coords 7160.78 294 7684.32
-}
-GenericEntity OBJ5_Grishino : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
- components {
-  SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
-   m_iRadius 100
-   m_fMaximumSeizingTime 120
-   m_fMinimumSeizingTime 30
-   m_bCapturingRequiresPlayer 1
-  }
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Grishino"
-   m_sBaseNameUpper "GRISHINO"
-   m_sMapLocationName "Grishino"
-  }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "USSR"
-  }
- }
- coords 5995.25 271.085 10285.2
-}
-GenericEntity OBJ6_DevilsCastle : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
- components {
-  SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
-   m_iRadius 100
-   m_fMaximumSeizingTime 120
-   m_fMinimumSeizingTime 30
-   m_bCapturingRequiresPlayer 1
-  }
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Devil's Castle"
-   m_sBaseNameUpper "DEVIL'S CASTLE"
-   m_sMapLocationName "Devil's Castle"
-  }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "USSR"
-  }
- }
- coords 6888.82 394.164 11430.5
-}
-GenericEntity OBJ7_Ratnik : "{2BCE96CD93121D01}Prefabs/Systems/MilitaryBase/ConflictBase_Base.et" {
- components {
-  SCR_CampaignSeizingComponent "{621EB97024DABABE}" {
-   m_iRadius 100
-   m_fMaximumSeizingTime 120
-   m_fMinimumSeizingTime 30
-   m_bCapturingRequiresPlayer 1
-  }
-  SCR_CampaignMilitaryBaseComponent "{621EB97024DABD3C}" {
-   m_sBaseName "Ratnik"
-   m_sBaseNameUpper "RATNIK"
-   m_sMapLocationName "Ratnik"
-  }
-  SCR_FactionAffiliationComponent "{621EB97024DABA88}" {
-   "faction affiliation" "USSR"
-  }
- }
- coords 6353.96 155.659 12698.5
 }

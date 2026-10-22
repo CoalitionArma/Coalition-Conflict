@@ -51,6 +51,7 @@ class COA_AAS_BaseServicesComponent : SCR_BaseGameModeComponent
 	protected static const int SPAWN_DELAY_MS = 4000;
 	protected static const int MAX_CANDIDATES = 80;
 	protected static const float TRACE_HEIGHT = 4;
+	protected static const int PILES_DELAY_MS = 2000;
 
 	//------------------------------------------------------------------------------------------------
 	override void OnGameModeStart()
@@ -109,6 +110,22 @@ class COA_AAS_BaseServicesComponent : SCR_BaseGameModeComponent
 		}
 
 		Print(string.Format("[COA_AAS] Base services: %1 compositions placed", spawned), LogLevel.NORMAL);
+
+		// Once the new storages have registered with their bases
+		GetGame().GetCallqueue().CallLater(ShowSupplyPiles, PILES_DELAY_MS);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Empty objectives still show the supply pile trucks unload at (COA_AAS_SupplyStorage)
+	protected void ShowSupplyPiles()
+	{
+		array<SCR_CampaignMilitaryBaseComponent> bases = {};
+		m_Campaign.GetBaseManager().GetBases(bases);
+		foreach (SCR_CampaignMilitaryBaseComponent base : bases)
+		{
+			if (base && base.IsInitialized())
+				COA_AAS_SupplyStorage.KeepPilesVisible(base);
+		}
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -218,6 +235,9 @@ class COA_AAS_BaseServicesComponent : SCR_BaseGameModeComponent
 	void ~COA_AAS_BaseServicesComponent()
 	{
 		if (GetGame() && GetGame().GetCallqueue())
+		{
 			GetGame().GetCallqueue().Remove(SpawnServices);
+			GetGame().GetCallqueue().Remove(ShowSupplyPiles);
+		}
 	}
 }

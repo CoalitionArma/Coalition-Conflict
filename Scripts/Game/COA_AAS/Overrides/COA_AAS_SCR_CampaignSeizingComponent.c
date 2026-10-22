@@ -4,6 +4,7 @@
 //! Capture time: the live objective seizes faster the more of the ground around it the seizing side
 //! holds - push the front up before the assault - and slower on a full server, faster on a quiet one
 //! (COA_AAS_ConflictComponent.GetCaptureTimeFactor).
+//! CHDKz only count at bases they hold, unless the game mode lets them seize (InsurgentsCountAt).
 modded class SCR_CampaignSeizingComponent
 {
 	//------------------------------------------------------------------------------------------------
@@ -44,7 +45,14 @@ modded class SCR_CampaignSeizingComponent
 			return faction;
 
 		COA_AAS_ConflictComponent aas = COA_AAS_ConflictComponent.GetInstance();
-		if (!aas || !aas.IsAASActive() || !aas.IsInChain(m_Base) || aas.IsLiveObjective(m_Base))
+		if (!aas || !aas.IsAASActive())
+			return faction;
+
+		// CHDKz raiding a base someone else holds fight there but don't take it (COA_AAS_Insurgents)
+		if (!aas.InsurgentsCountAt(m_Base, faction))
+			return null;
+
+		if (!aas.IsInChain(m_Base) || aas.IsLiveObjective(m_Base))
 			return faction;
 
 		if (faction != m_Base.GetFaction())

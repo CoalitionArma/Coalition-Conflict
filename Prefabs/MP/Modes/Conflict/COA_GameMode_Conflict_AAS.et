@@ -2,6 +2,15 @@ SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Cam
  ID "1FA386F1BCE8EB24"
  components {
   COA_AAS_ConflictComponent "{8B8BB11B3C3E0C6C}" {
+   m_aInsurgentPatrolGroups {
+    "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et" "{461E94E5AA31913D}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_ReconTeam_NotSpawned.et" "{3396D736D25B7BB7}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{4D603DB9E34C29F8}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_SniperTeam_NotSpawned.et"
+   }
+   m_aInsurgentAmbushGroups {
+    "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{3396D736D25B7BB7}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et"
+   }
+   m_aInsurgentAttackGroups {
+    "{FDB6FD6DE4B3E7EE}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_RifleSquad_NotSpawned.et" "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{6A68B9351E8BF48F}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_Elite_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et"
+   }
    m_aObjectiveChain {
     "OBJ1_Chernogorsk" "OBJ2_Mogilevka" "OBJ3_Vyshnoye" "OBJ4_NovySobor" "OBJ5_Grishino" "OBJ6_DevilsCastle" "OBJ7_Ratnik"
    }
