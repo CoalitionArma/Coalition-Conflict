@@ -164,7 +164,9 @@ class COA_AAS_ArsenalRanks
 	//------------------------------------------------------------------------------------------------
 	protected SCR_ECharacterRank Work(ResourceName prefab, SCR_EArsenalItemType type, bool weapon)
 	{
-		IEntitySource source = SCR_BaseContainerTools.FindEntitySource(Resource.Load(prefab));
+		// The resource owns the prefab's containers - keep it alive while they're read
+		Resource resource = Resource.Load(prefab);
+		IEntitySource source = SCR_BaseContainerTools.FindEntitySource(resource);
 		if (!source)
 			return SCR_ECharacterRank.INVALID;
 
@@ -178,6 +180,9 @@ class COA_AAS_ArsenalRanks
 			rank = TypeRank(type);
 		else
 			rank = AttachmentRank(source);
+
+		if (!m_aPatternRanks)
+			m_aPatternRanks = {};
 
 		foreach (COA_AAS_ArsenalPatternRank pattern : m_aPatternRanks)
 		{
@@ -240,7 +245,8 @@ class COA_AAS_ArsenalRanks
 			if (!enabled || attached.IsEmpty())
 				continue;
 
-			IEntitySource attachedSource = SCR_BaseContainerTools.FindEntitySource(Resource.Load(attached));
+			Resource attachedResource = Resource.Load(attached);
+			IEntitySource attachedSource = SCR_BaseContainerTools.FindEntitySource(attachedResource);
 			if (attachedSource)
 				rank = Math.Max(rank, AttachmentRank(attachedSource));
 		}
@@ -279,6 +285,9 @@ class COA_AAS_ArsenalRanks
 	{
 		SCR_ECharacterRank rank = SCR_ECharacterRank.PRIVATE;
 		float reached = -1;
+		if (!m_aZoomRanks)
+			return rank;
+
 		foreach (COA_AAS_ArsenalZoomRank tier : m_aZoomRanks)
 		{
 			if (tier && zoom >= tier.m_fMinZoom && tier.m_fMinZoom > reached)
@@ -294,6 +303,9 @@ class COA_AAS_ArsenalRanks
 	//------------------------------------------------------------------------------------------------
 	protected SCR_ECharacterRank TypeRank(SCR_EArsenalItemType type)
 	{
+		if (!m_aTypeRanks)
+			return SCR_ECharacterRank.PRIVATE;
+
 		foreach (COA_AAS_ArsenalTypeRank typeRank : m_aTypeRanks)
 		{
 			if (typeRank && (type & typeRank.m_eType))
@@ -344,8 +356,11 @@ class COA_AAS_ArsenalRanks
 }
 
 //------------------------------------------------------------------------------------------------
-//! Applies COA_AAS_ArsenalRanks to weapons and attachments once the catalog is set up
-modded class SCR_ArsenalItem
+//! Applies COA_AAS_ArsenalRanks to weapons and attachments once the catalog is set up.
+//! A config-built class: the modded declaration repeats vanilla's attributes and parent, or configs can
+//! no longer create it ("Unknown class 'SCR_ArsenalItem'") and every arsenal comes up empty.
+[BaseContainerProps(configRoot: true), BaseContainerCustomCheckIntTitleField("m_bEnabled", "Arsenal Data", "DISABLED - Arsenal Data", 1)]
+modded class SCR_ArsenalItem : SCR_BaseEntityCatalogData
 {
 	//------------------------------------------------------------------------------------------------
 	override void PostInitData(notnull SCR_EntityCatalogEntry entry)

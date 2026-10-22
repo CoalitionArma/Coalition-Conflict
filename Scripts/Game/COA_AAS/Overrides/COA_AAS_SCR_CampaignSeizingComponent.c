@@ -1,8 +1,9 @@
 //------------------------------------------------------------------------------------------------
 //! Advance & Secure: at any objective in the line that isn't the live one, only its owners count -
 //! attackers standing there can neither seize nor contest it (COA_AAS_ConflictComponent).
-//! Capture bonus: the live objective seizes faster the more of the ground around it the seizing side
-//! holds (COA_AAS_ConflictComponent.GetCaptureTimeFactor) - push the front up before the assault.
+//! Capture time: the live objective seizes faster the more of the ground around it the seizing side
+//! holds - push the front up before the assault - and slower on a full server, faster on a quiet one
+//! (COA_AAS_ConflictComponent.GetCaptureTimeFactor).
 modded class SCR_CampaignSeizingComponent
 {
 	//------------------------------------------------------------------------------------------------
@@ -18,10 +19,10 @@ modded class SCR_CampaignSeizingComponent
 			return;
 
 		float factor = aas.GetCaptureTimeFactor(m_Base, m_PrevailingFaction);
-		if (factor >= 1)
+		if (factor == 1)
 			return;
 
-		// Conflict's whole capture time (players, services, radio links), shortened
+		// Conflict's whole capture time (players, services, radio links), scaled
 		float duration = m_fSeizingEndTimestamp.DiffMilliseconds(m_fSeizingStartTimestamp) * factor;
 		m_fSeizingEndTimestamp = m_fSeizingStartTimestamp.PlusMilliseconds(duration);
 

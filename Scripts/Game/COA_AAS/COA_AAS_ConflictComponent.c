@@ -49,6 +49,21 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("0.5", desc: "How much shorter seizing gets when the attackers hold all the ground around it (0.5 = half the time)", params: "0 0.9 0.01", category: "Capture Bonus")]
 	protected float m_fGroundMaxSpeedup;
 
+	[Attribute("1", desc: "Seizing the live objective takes longer on a full server and less time on a quiet one", category: "Capture Time")]
+	protected bool m_bPopulationCaptureTime;
+
+	[Attribute("20", desc: "At this many players or fewer, seizing takes the low multiplier of its time", params: "0 256 1", category: "Capture Time")]
+	protected int m_iPopulationLowPlayers;
+
+	[Attribute("0.5", desc: "Seizing time multiplier at the low player count (0.5 = half as long)", params: "0.1 5 0.05", category: "Capture Time")]
+	protected float m_fPopulationLowMultiplier;
+
+	[Attribute("100", desc: "At this many players or more, seizing takes the high multiplier of its time", params: "1 256 1", category: "Capture Time")]
+	protected int m_iPopulationHighPlayers;
+
+	[Attribute("1.5", desc: "Seizing time multiplier at the high player count (1.5 = half as long again)", params: "0.1 5 0.05", category: "Capture Time")]
+	protected float m_fPopulationHighMultiplier;
+
 	[Attribute("10", desc: "XP each player on a territory square gets when their side takes it", params: "0 1000 1", category: "Rewards")]
 	protected int m_iSquareCaptureXP;
 
@@ -151,6 +166,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	protected static const float BEHIND_LINES_HINT_DURATION = 5;
 	protected static const float SPOTTED_HINT_COOLDOWN_MS = 30000;
 	protected static const int TASK_SYNC_DELAY_MS = 1000;
+	protected static const int POPULATION_RETIME_DELAY_MS = 1000;
 	protected static const int HQ_TOP_UP_DELAY_MS = 6000;		// after Setup: the services spawn 4 s after bases init
 	protected static const int HQ_TOP_UP_RETRY_MS = 2000;
 	protected static const int HQ_TOP_UP_ATTEMPTS = 5;
@@ -193,11 +209,36 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Capture bonus: how much of its usual time seizing the live objective takes for the faction - less the
-	//! more of the ground around it they hold (COA_AAS_SCR_CampaignSeizingComponent). 1 = no bonus.
+	//! How much of its usual time seizing the live objective takes for the faction
+	//! (COA_AAS_SCR_CampaignSeizingComponent): the server's population scales it, and holding the ground
+	//! around it shortens it. 1 = Conflict's own time.
 	float GetCaptureTimeFactor(notnull SCR_CampaignMilitaryBaseComponent base, Faction faction)
 	{
-		if (m_fGroundMaxSpeedup <= 0 || m_fGroundRadius <= 0 || !m_bHasTerritory || !IsLiveObjective(base))
+		if (!IsLiveObjective(base))
+			return 1;
+
+		return GetPopulationCaptureFactor() * GetGroundCaptureFactor(base, faction);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Seizing time multiplier for the players on the server: the low multiplier at the low count or fewer,
+	//! the high one at the high count or more, straight between
+	float GetPopulationCaptureFactor()
+	{
+		if (!m_bPopulationCaptureTime || m_iPopulationHighPlayers <= m_iPopulationLowPlayers)
+			return 1;
+
+		float players = GetGame().GetPlayerManager().GetPlayerCount();
+		float range = m_iPopulationHighPlayers - m_iPopulationLowPlayers;
+		float t = Math.Clamp((players - m_iPopulationLowPlayers) / range, 0, 1);
+		return Math.Lerp(m_fPopulationLowMultiplier, m_fPopulationHighMultiplier, t);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Capture bonus: shorter the more of the ground around the objective the faction holds. 1 = no bonus.
+	protected float GetGroundCaptureFactor(notnull SCR_CampaignMilitaryBaseComponent base, Faction faction)
+	{
+		if (m_fGroundMaxSpeedup <= 0 || m_fGroundRadius <= 0 || !m_bHasTerritory)
 			return 1;
 
 		int side = COA_AAS_Territory.OwnerOf(m_Campaign, faction);
@@ -832,11 +873,41 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 
 		// Server: a capture under way speeds up (or slows) as the ground around it changes hands
 		if (m_Campaign && !m_Campaign.IsProxy())
-		{
-			SCR_CampaignMilitaryBaseComponent live = GetLiveObjective();
-			if (live && live.GetCapturingFaction())
-				live.RefreshSeizingTimers();
-		}
+			RetimeLiveCapture();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Server: a capture under way picks up a new capture time (ground or population changed)
+	protected void RetimeLiveCapture()
+	{
+		SCR_CampaignMilitaryBaseComponent live = GetLiveObjective();
+		if (live && live.GetCapturingFaction())
+			live.RefreshSeizingTimers();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void OnPlayerConnected(int playerId)
+	{
+		super.OnPlayerConnected(playerId);
+		OnPopulationChanged();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void OnPlayerDisconnected(int playerId, KickCauseCode cause, int timeout)
+	{
+		super.OnPlayerDisconnected(playerId, cause, timeout);
+		OnPopulationChanged();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A moment later, once the player manager counts the change
+	protected void OnPopulationChanged()
+	{
+		if (!m_bPopulationCaptureTime || !m_bActive || !m_Campaign || m_Campaign.IsProxy())
+			return;
+
+		GetGame().GetCallqueue().Remove(RetimeLiveCapture);
+		GetGame().GetCallqueue().CallLater(RetimeLiveCapture, POPULATION_RETIME_DELAY_MS);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1194,6 +1265,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 			GetGame().GetCallqueue().Remove(Tick);
 			GetGame().GetCallqueue().Remove(SyncTasks);
 			GetGame().GetCallqueue().Remove(TopUpHQs);
+			GetGame().GetCallqueue().Remove(RetimeLiveCapture);
 			GetGame().GetCallqueue().Remove(Setup);
 			GetGame().GetCallqueue().Remove(RefreshMapIcons);
 		}

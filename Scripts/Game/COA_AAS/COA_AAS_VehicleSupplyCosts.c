@@ -166,8 +166,11 @@ class COA_AAS_VehicleSupplyCosts
 }
 
 //------------------------------------------------------------------------------------------------
-//! Applies COA_AAS_VehicleSupplyCosts once Conflict has read the prefab's own cost
-modded class SCR_EntityCatalogSpawnerData
+//! Applies COA_AAS_VehicleSupplyCosts once Conflict has read the prefab's own cost.
+//! A config-built class: the modded declaration repeats vanilla's attributes and parent, or configs can
+//! no longer create it ("Unknown class 'SCR_EntityCatalogSpawnerData'") and depots lose their vehicles.
+[BaseContainerProps(configRoot: true), BaseContainerCustomCheckIntTitleField("m_bEnabled", "SpawnerData", "DISABLED - SpawnerData", 1)]
+modded class SCR_EntityCatalogSpawnerData : SCR_BaseEntityCatalogData
 {
 	//------------------------------------------------------------------------------------------------
 	override void InitData(notnull SCR_EntityCatalogEntry entry)
