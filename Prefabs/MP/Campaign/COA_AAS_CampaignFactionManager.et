@@ -620,6 +620,117 @@ SCR_CampaignFactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/Fac
           }
          }
         }
+        SCR_EntityCatalogEntry "{6C9D3A1F4B5E6C01}" {
+         m_sEntityPrefab "{BC07885176C7FF8A}Prefabs/Vehicles/Tracked/T72A/T72A_Base.et"
+         m_aEntityDataList {
+          SCR_EntityCatalogEditorData "{6C9D3A1F4B5E6C02}" {
+           m_eValidEditorModes 33
+          }
+          SCR_EntityCatalogSpawnerData "{6C9D3A1F4B5E6C03}" {
+           m_eSlotTypes VEHICLE_MEDIUM
+          }
+         }
+        }
+        SCR_EntityCatalogEntry "{6C9D3A1F4B5E6C04}" {
+         m_sEntityPrefab "{726286E1F9570EA1}Prefabs/Vehicles/Tracked/T72B/T72B_Base.et"
+         m_aEntityDataList {
+          SCR_EntityCatalogEditorData "{6C9D3A1F4B5E6C05}" {
+           m_eValidEditorModes 33
+          }
+          SCR_EntityCatalogSpawnerData "{6C9D3A1F4B5E6C06}" {
+           m_eSlotTypes VEHICLE_MEDIUM
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+    SCR_EntityCatalogMultiList "{5C9E82F285C09E24}" {
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{6BED072E77BD6B4A}" {
+       m_aEntities {
+        SCR_EntityCatalogEntry "{6315720C3EFC3332}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{6315720C20DBA5C7}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{6315720C29BC0562}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{6315720C1C627A9F}" {
+         m_bEnabled 0
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{FE0E6DECCDA8C3C6}" {
+       m_aEntities {
+        SCR_EntityCatalogEntry "{65F80394BBF34308}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F80394308F3C2C}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F80394AE064159}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{69BD5A2C57AA309F}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F80394ABEB9ACC}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F80394A4A29CF2}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F80394A1F4981A}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F80394A36EA63B}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F803949CD64874}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F8039498C87046}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F8039495ECEAFD}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65F8039496EDB166}" {
+         m_bEnabled 0
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{605697836CAAD3A0}" {
+       m_aEntities {
+        SCR_EntityCatalogEntry "{627C9145E4844787}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{62B10747441A3F3D}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{630A1A7A6544E0A2}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{630A1A7A6A65CB50}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{65B11D63F5516D1E}" {
+         m_bEnabled 0
+        }
+        SCR_EntityCatalogEntry "{630A1A7A55D78C44}" {
+         m_bEnabled 0
+        }
+       }
+      }
+      SCR_EntityCatalogMultiListEntry "{6A65651A3E48086D}" {
+       m_aEntities {
+        SCR_EntityCatalogEntry "{6A65651A395CB74E}" {
+         m_bEnabled 0
+        }
        }
       }
      }
@@ -2006,6 +2117,15 @@ SCR_CampaignFactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/Fac
      }
     }
     SCR_EntityCatalogMultiList "{C0A5D7E1B2F34A61}" : "{5F7EC52FC40A03E2}Configs/EntityCatalog/US/InventoryItems_EntityCatalog_US.conf" {
+     m_aMultiLists {
+      SCR_EntityCatalogMultiListEntry "{5C68AD59AA6FA1B8}" {
+       m_aEntities {
+        SCR_EntityCatalogInventoryItem "{652959AC99950990}" {
+         m_bEnabled 0
+        }
+       }
+      }
+     }
     }
     SCR_EntityCatalogMultiList "{C0A5D7E1B2F34A62}" {
      m_eEntityCatalogType VEHICLE

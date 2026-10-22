@@ -11,6 +11,9 @@ class COA_AAS_VehicleSupplyCost
 
 	[Attribute("100", desc: "Supplies it costs from a depot or helipad", params: "0 inf 1")]
 	int m_iCost;
+
+	[Attribute(SCR_ECharacterRank.INVALID.ToString(), UIWidgets.ComboBox, desc: "Rank needed to request it - INVALID keeps the vehicle's own", enums: ParamEnumArray.FromEnum(SCR_ECharacterRank))]
+	SCR_ECharacterRank m_eRequiredRank;
 }
 
 //------------------------------------------------------------------------------------------------
@@ -26,6 +29,9 @@ class COA_AAS_VehicleSupplyCostRule
 
 	[Attribute("100", desc: "Supplies it costs", params: "0 inf 1")]
 	int m_iCost;
+
+	[Attribute(SCR_ECharacterRank.INVALID.ToString(), UIWidgets.ComboBox, desc: "Rank needed to request it - INVALID keeps the vehicle's own. Applies to any unlisted vehicle that matches, whatever its cost.", enums: ParamEnumArray.FromEnum(SCR_ECharacterRank))]
+	SCR_ECharacterRank m_eRequiredRank;
 }
 
 //------------------------------------------------------------------------------------------------
@@ -51,6 +57,7 @@ class COA_AAS_VehicleSupplyCosts
 	protected int m_iDefaultCost;
 
 	protected ref map<string, int> m_mCostByGuid;
+	protected ref map<string, SCR_ECharacterRank> m_mRankByGuid;
 
 	protected static ref COA_AAS_VehicleSupplyCosts s_Instance;
 	protected static bool s_bLoaded;
@@ -77,19 +84,7 @@ class COA_AAS_VehicleSupplyCosts
 	//! \return the entry's supply cost, -1 to leave it as it is
 	int GetCost(notnull SCR_EntityCatalogEntry entry, int current)
 	{
-		if (!m_mCostByGuid)
-		{
-			m_mCostByGuid = new map<string, int>();
-			if (m_aVehicles)
-			{
-				foreach (COA_AAS_VehicleSupplyCost vehicle : m_aVehicles)
-				{
-					if (vehicle && !vehicle.m_sPrefab.IsEmpty())
-						m_mCostByGuid.Set(Guid(vehicle.m_sPrefab), vehicle.m_iCost);
-				}
-			}
-		}
-
+		BuildLookup();
 		string guid = Guid(entry.GetPrefab());
 		if (m_mCostByGuid.Contains(guid))
 			return m_mCostByGuid.Get(guid);
@@ -109,6 +104,52 @@ class COA_AAS_VehicleSupplyCosts
 		}
 
 		return m_iDefaultCost;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! \return the rank needed to request the entry, INVALID to leave the vehicle's own
+	SCR_ECharacterRank GetRequiredRank(notnull SCR_EntityCatalogEntry entry)
+	{
+		BuildLookup();
+		string guid = Guid(entry.GetPrefab());
+		if (m_mRankByGuid.Contains(guid))
+			return m_mRankByGuid.Get(guid);
+
+		SCR_EntityCatalog catalog = entry.GetCatalogParent();
+		if (!catalog || catalog.GetCatalogType() != EEntityCatalogType.VEHICLE || !m_aFallbackRules)
+			return SCR_ECharacterRank.INVALID;
+
+		// The first matching rule that sets a rank
+		foreach (COA_AAS_VehicleSupplyCostRule rule : m_aFallbackRules)
+		{
+			if (rule && rule.m_eRequiredRank != SCR_ECharacterRank.INVALID && rule.m_aLabels && !rule.m_aLabels.IsEmpty() && entry.HasAllEditableEntityLabels(rule.m_aLabels))
+				return rule.m_eRequiredRank;
+		}
+
+		return SCR_ECharacterRank.INVALID;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void BuildLookup()
+	{
+		if (m_mCostByGuid)
+			return;
+
+		m_mCostByGuid = new map<string, int>();
+		m_mRankByGuid = new map<string, SCR_ECharacterRank>();
+		if (!m_aVehicles)
+			return;
+
+		foreach (COA_AAS_VehicleSupplyCost vehicle : m_aVehicles)
+		{
+			if (!vehicle || vehicle.m_sPrefab.IsEmpty())
+				continue;
+
+			string guid = Guid(vehicle.m_sPrefab);
+			m_mCostByGuid.Set(guid, vehicle.m_iCost);
+			if (vehicle.m_eRequiredRank != SCR_ECharacterRank.INVALID)
+				m_mRankByGuid.Set(guid, vehicle.m_eRequiredRank);
+		}
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -140,5 +181,9 @@ modded class SCR_EntityCatalogSpawnerData
 		int cost = costs.GetCost(entry, m_iSupplyCost);
 		if (cost >= 0)
 			m_iSupplyCost = cost;
+
+		SCR_ECharacterRank rank = costs.GetRequiredRank(entry);
+		if (rank != SCR_ECharacterRank.INVALID)
+			m_eMinimumRequiredRank = rank;
 	}
 }
