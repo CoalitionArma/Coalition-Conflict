@@ -239,6 +239,261 @@ VerticalLayoutWidgetClass {
           HorizontalAlign 3
          }
         }
+        OverlayWidgetClass "{7C1A0E5B2D4F0001}" {
+         Name "CoalitionPanel"
+         Slot LayoutSlot "{7C1A0E5B2D4F0002}" {
+          HorizontalAlign 3
+          Padding 0 22 0 0
+         }
+         {
+          ImageWidgetClass "{7C1A0E5B2D4F0003}" {
+           Name "CoalitionBg"
+           Slot OverlayWidgetSlot "{7C1A0E5B2D4F0004}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+           }
+           Color 0.011 0.0137 0.0212 1
+           Size 1 1
+          }
+          SizeLayoutWidgetClass "{7C1A0E5B2D4F0005}" {
+           Name "CoalitionAccentSize"
+           Slot OverlayWidgetSlot "{7C1A0E5B2D4F0006}" {
+            HorizontalAlign 0
+            VerticalAlign 3
+           }
+           AllowWidthOverride 1
+           WidthOverride 3
+           {
+            ImageWidgetClass "{7C1A0E5B2D4F0007}" {
+             Name "CoalitionAccent"
+             Slot AlignableSlot "{7C1A0E5B2D4F0008}" {
+              HorizontalAlign 3
+              VerticalAlign 3
+             }
+             Color 0.5841 0.0369 0.0369 1
+             Size 1 1
+            }
+           }
+          }
+          VerticalLayoutWidgetClass "{7C1A0E5B2D4F0009}" {
+           Name "CoalitionContent"
+           Slot OverlayWidgetSlot "{7C1A0E5B2D4F000A}" {
+            HorizontalAlign 3
+            VerticalAlign 3
+            Padding 18 14 18 14
+           }
+           {
+            RichTextWidgetClass "{7C1A0E5B2D4F000B}" {
+             Name "CoalitionKicker"
+             Slot LayoutSlot "{7C1A0E5B2D4F000C}" {
+             }
+             Text "COALITION"
+             "Font Size" 12
+             "Min Font Size" 8
+             Color 0.5841 0.0369 0.0369 1
+             FontProperties FontProperties "{7C1A0E5B2D4F000D}" {
+              Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+             }
+            }
+            RichTextWidgetClass "{7C1A0E5B2D4F000E}" {
+             Name "CoalitionTitle"
+             Slot LayoutSlot "{7C1A0E5B2D4F000F}" {
+             }
+             Text "Join the community"
+             "Font Size" 22
+             "Min Font Size" 18
+             Color 0.8632 0.8879 0.9301 1
+             FontProperties FontProperties "{7C1A0E5B2D4F0010}" {
+              Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+             }
+            }
+            RichTextWidgetClass "{7C1A0E5B2D4F0011}" {
+             Name "CoalitionBody"
+             Slot LayoutSlot "{7C1A0E5B2D4F0012}" {
+              Padding 0 2 0 12
+             }
+             Text "Get help on discord or explore our other ways to play Reforger on the website."
+             "Font Size" 14
+             "Min Font Size" 10
+             Wrap 1
+             Color 0.3968 0.4564 0.6038 1
+             FontProperties FontProperties "{7C1A0E5B2D4F0013}" {
+              Font "{3E7733BAC8C831F6}UI/Fonts/RobotoCondensed/RobotoCondensed_Regular.fnt"
+             }
+            }
+            ButtonWidgetClass "{7C1A0E5B2D4F0014}" {
+             Name "DiscordLink"
+             Slot LayoutSlot "{7C1A0E5B2D4F0015}" {
+              HorizontalAlign 3
+              Padding 0 0 0 6
+             }
+             Color 1 1 1 0
+             {
+              OverlayWidgetClass "{7C1A0E5B2D4F0016}" {
+               Name "DiscordLinkContent"
+               Slot ButtonWidgetSlot "{7C1A0E5B2D4F0017}" {
+                HorizontalAlign 3
+                VerticalAlign 3
+               }
+               {
+                ImageWidgetClass "{7C1A0E5B2D4F0018}" {
+                 Name "DiscordLinkBG"
+                 Slot OverlayWidgetSlot "{7C1A0E5B2D4F0019}" {
+                  HorizontalAlign 3
+                  VerticalAlign 3
+                 }
+                 Color 1 1 1 0.04
+                 Size 1 1
+                }
+                HorizontalLayoutWidgetClass "{7C1A0E5B2D4F001A}" {
+                 Name "DiscordLinkRow"
+                 Slot OverlayWidgetSlot "{7C1A0E5B2D4F001B}" {
+                  HorizontalAlign 3
+                  VerticalAlign 3
+                  Padding 12 9 12 9
+                 }
+                 {
+                  VerticalLayoutWidgetClass "{7C1A0E5B2D4F001C}" {
+                   Name "DiscordLinkText"
+                   Slot LayoutSlot "{7C1A0E5B2D4F001D}" {
+                    SizeMode Fill
+                    VerticalAlign 1
+                   }
+                   {
+                    RichTextWidgetClass "{7C1A0E5B2D4F001E}" {
+                     Name "DiscordLinkLabel"
+                     Slot LayoutSlot "{7C1A0E5B2D4F001F}" {
+                     }
+                     Text "DISCORD"
+                     "Font Size" 11
+                     "Min Font Size" 8
+                     Color 0.3968 0.4564 0.6038 1
+                     FontProperties FontProperties "{7C1A0E5B2D4F0020}" {
+                      Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+                     }
+                    }
+                    RichTextWidgetClass "{7C1A0E5B2D4F0021}" {
+                     Name "DiscordLinkValue"
+                     Slot LayoutSlot "{7C1A0E5B2D4F0022}" {
+                     }
+                     Text "discord.gg/the-coalition"
+                     "Font Size" 16
+                     "Min Font Size" 12
+                     Color 0.8632 0.8879 0.9301 1
+                     FontProperties FontProperties "{7C1A0E5B2D4F0023}" {
+                      Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+                     }
+                    }
+                   }
+                  }
+                  RichTextWidgetClass "{7C1A0E5B2D4F0024}" {
+                   Name "DiscordLinkOpen"
+                   Slot LayoutSlot "{7C1A0E5B2D4F0025}" {
+                    VerticalAlign 1
+                    Padding 12 0 0 0
+                   }
+                   Text "OPEN"
+                   "Font Size" 11
+                   "Min Font Size" 8
+                   Color 0.3968 0.4564 0.6038 1
+                   FontProperties FontProperties "{7C1A0E5B2D4F0026}" {
+                    Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+            ButtonWidgetClass "{7C1A0E5B2D4F0027}" {
+             Name "WebsiteLink"
+             Slot LayoutSlot "{7C1A0E5B2D4F0028}" {
+              HorizontalAlign 3
+             }
+             Color 1 1 1 0
+             {
+              OverlayWidgetClass "{7C1A0E5B2D4F0029}" {
+               Name "WebsiteLinkContent"
+               Slot ButtonWidgetSlot "{7C1A0E5B2D4F002A}" {
+                HorizontalAlign 3
+                VerticalAlign 3
+               }
+               {
+                ImageWidgetClass "{7C1A0E5B2D4F002B}" {
+                 Name "WebsiteLinkBG"
+                 Slot OverlayWidgetSlot "{7C1A0E5B2D4F002C}" {
+                  HorizontalAlign 3
+                  VerticalAlign 3
+                 }
+                 Color 1 1 1 0.04
+                 Size 1 1
+                }
+                HorizontalLayoutWidgetClass "{7C1A0E5B2D4F002D}" {
+                 Name "WebsiteLinkRow"
+                 Slot OverlayWidgetSlot "{7C1A0E5B2D4F002E}" {
+                  HorizontalAlign 3
+                  VerticalAlign 3
+                  Padding 12 9 12 9
+                 }
+                 {
+                  VerticalLayoutWidgetClass "{7C1A0E5B2D4F002F}" {
+                   Name "WebsiteLinkText"
+                   Slot LayoutSlot "{7C1A0E5B2D4F0030}" {
+                    SizeMode Fill
+                    VerticalAlign 1
+                   }
+                   {
+                    RichTextWidgetClass "{7C1A0E5B2D4F0031}" {
+                     Name "WebsiteLinkLabel"
+                     Slot LayoutSlot "{7C1A0E5B2D4F0032}" {
+                     }
+                     Text "WEBSITE"
+                     "Font Size" 11
+                     "Min Font Size" 8
+                     Color 0.3968 0.4564 0.6038 1
+                     FontProperties FontProperties "{7C1A0E5B2D4F0033}" {
+                      Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+                     }
+                    }
+                    RichTextWidgetClass "{7C1A0E5B2D4F0034}" {
+                     Name "WebsiteLinkValue"
+                     Slot LayoutSlot "{7C1A0E5B2D4F0035}" {
+                     }
+                     Text "coalitiongroup.net"
+                     "Font Size" 16
+                     "Min Font Size" 12
+                     Color 0.8632 0.8879 0.9301 1
+                     FontProperties FontProperties "{7C1A0E5B2D4F0036}" {
+                      Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+                     }
+                    }
+                   }
+                  }
+                  RichTextWidgetClass "{7C1A0E5B2D4F0037}" {
+                   Name "WebsiteLinkOpen"
+                   Slot LayoutSlot "{7C1A0E5B2D4F0038}" {
+                    VerticalAlign 1
+                    Padding 12 0 0 0
+                   }
+                   Text "OPEN"
+                   "Font Size" 11
+                   "Min Font Size" 8
+                   Color 0.3968 0.4564 0.6038 1
+                   FontProperties FontProperties "{7C1A0E5B2D4F0039}" {
+                    Font "{EABA4FE9D014CCEF}UI/Fonts/RobotoCondensed/RobotoCondensed_Bold.fnt"
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
        }
       }
      }

@@ -1,0 +1,28 @@
+SCR_ChimeraCharacter : "{32ECBCC4BB34A53D}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_TL.et" {
+ ID "B8E1A00E6FDB588C"
+ components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Jacket {
+     Prefab "{BB95A42A82B05B41}Prefabs/Clothing/ins_Lopotev/ins_Lopotev_Jacket/ins_Lopotev_Jacket.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{C5914F0A72AEF765}Prefabs/Clothing/ins_Lopotev/ins_Lopotev_Pants/ins_Lopotev_Pants.et"
+    }
+    LoadoutSlotInfo Boots {
+     Prefab "{86DA4D60F1786094}Prefabs/Clothing/ins_Lopotev/ins_Lopotev_Boots/ins_Lopotev_Boots.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{650321F63B533B78}" {
+     TargetStorage "Jacket/ins_Lopotev_Jacket.et"
+    }
+    ItemsInitConfigurationItem "{650321F63B533B49}" {
+     TargetStorage "Pants/ins_Lopotev_Pants.et"
+    }
+   }
+  }
+ }
+}

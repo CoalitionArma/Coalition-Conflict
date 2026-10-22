@@ -1,0 +1,31 @@
+SCR_ChimeraCharacter : "{352B4695DDB21FFE}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_SL.et" {
+ ID "301A9A4F337B42BB"
+ components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{F62036FBEE6E745E}Prefabs/Clothing/ins_Bardak/Cap/ins_Bardak Cap.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{701C3EF1A18CEC74}Prefabs/Clothing/ins_Bardak/Jacket/ins_Bardak Jacket.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{858F37169D414286}Prefabs/Clothing/ins_Bardak/Pants/ins_Bardak Pants.et"
+    }
+    LoadoutSlotInfo Boots {
+     Prefab "{8CD939971CAF7624}Prefabs/Clothing/ins_Bardak/Boots/ins_Bardak Boots.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{650321F633673613}" {
+     TargetStorage "Jacket/ins_Bardak Jacket.et"
+    }
+    ItemsInitConfigurationItem "{650321F633673661}" {
+     TargetStorage "Pants/ins_Bardak Pants.et"
+    }
+   }
+  }
+ }
+}

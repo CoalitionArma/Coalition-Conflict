@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DCDF708524070DBB}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_SquadLeader.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,6 +1,6 @@
 SCR_AIGroup : "{908BF313909635F2}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_ReconTeam_NotSpawned.et" {
  ID "C495A3B0340CDD08"
  m_aUnitPrefabSlots {
-  "{32ECBCC4BB34A53D}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_TL.et" "{B7570D6F100C57D5}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Scout.et" "{B7570D6F100C57D5}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Scout.et" "{288DC5CE90333A42}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Rifle.et"
+  "{1EF94CCFA42A1B12}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_TeamLeader.et" "{AA0E4EDB9F1FEB88}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Scout.et" "{AA0E4EDB9F1FEB88}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Scout.et" "{ABBCC93E7C8631BC}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Rifleman.et"
  }
 }

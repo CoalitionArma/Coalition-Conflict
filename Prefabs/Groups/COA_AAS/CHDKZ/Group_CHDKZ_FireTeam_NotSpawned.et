@@ -1,6 +1,6 @@
 SCR_AIGroup : "{8D5E0E187752F5FB}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_FireTeam_NotSpawned.et" {
  ID "76B8BE663AB969EC"
  m_aUnitPrefabSlots {
-  "{32ECBCC4BB34A53D}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_TL.et" "{4DE96232751C91FD}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Medic.et" "{288DC5CE90333A42}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Rifle.et" "{288DC5CE90333A42}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Rifle.et" "{800BDE4B96BFA3B1}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_AT.et"
+  "{1EF94CCFA42A1B12}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_TeamLeader.et" "{39440F9F0C55AACC}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Medic.et" "{ABBCC93E7C8631BC}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Rifleman.et" "{ABBCC93E7C8631BC}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Rifleman.et" "{67C03383DD13645E}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_RiflemanAT.et"
  }
 }

@@ -1,8 +1,40 @@
 //------------------------------------------------------------------------------------------------
 //! Advance & Secure: at any objective in the line that isn't the live one, only its owners count -
-//! attackers standing there can neither seize nor contest it (COA_AAS_ConflictComponent)
+//! attackers standing there can neither seize nor contest it (COA_AAS_ConflictComponent).
+//! Capture bonus: the live objective seizes faster the more of the ground around it the seizing side
+//! holds (COA_AAS_ConflictComponent.GetCaptureTimeFactor) - push the front up before the assault.
 modded class SCR_CampaignSeizingComponent
 {
+	//------------------------------------------------------------------------------------------------
+	override void RefreshSeizingTimer()
+	{
+		super.RefreshSeizingTimer();
+
+		if (!Replication.IsServer() || !m_Base || !m_fSeizingStartTimestamp || !m_fSeizingEndTimestamp)
+			return;
+
+		COA_AAS_ConflictComponent aas = COA_AAS_ConflictComponent.GetInstance();
+		if (!aas)
+			return;
+
+		float factor = aas.GetCaptureTimeFactor(m_Base, m_PrevailingFaction);
+		if (factor >= 1)
+			return;
+
+		// Conflict's whole capture time (players, services, radio links), shortened
+		float duration = m_fSeizingEndTimestamp.DiffMilliseconds(m_fSeizingStartTimestamp) * factor;
+		m_fSeizingEndTimestamp = m_fSeizingStartTimestamp.PlusMilliseconds(duration);
+
+		// Ground taken mid-capture can put the end in the past - finish it a moment from now instead
+		ChimeraWorld world = GetGame().GetWorld();
+		WorldTimestamp now = world.GetServerTimestamp();
+		if (m_fSeizingEndTimestamp.LessEqual(now))
+			m_fSeizingEndTimestamp = now.PlusMilliseconds(SCR_GameModeCampaign.DEFAULT_DELAY);
+
+		Replication.BumpMe();
+		OnSeizingTimestampChanged();
+	}
+
 	//------------------------------------------------------------------------------------------------
 	override protected SCR_Faction EvaluateEntityFaction(IEntity ent)
 	{

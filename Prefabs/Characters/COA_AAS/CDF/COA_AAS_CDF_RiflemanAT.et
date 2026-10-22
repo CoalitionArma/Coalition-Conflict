@@ -1,4 +1,4 @@
-SCR_ChimeraCharacter : "{BF643BE4ADBDFDD3}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_LAT.et" {
+SCR_ChimeraCharacter : "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et" {
  ID "6C65AA6E2440825A"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
@@ -18,26 +18,6 @@ SCR_ChimeraCharacter : "{BF643BE4ADBDFDD3}Prefabs/Characters/Factions/OPFOR/USSR
     Prefab "{722CE6FEC39EE896}Prefabs/Weapons/Launchers/RPG22/Launcher_RPG22.et"
    }
    WeaponTemplate "{722CE6FEC39EE896}Prefabs/Weapons/Launchers/RPG22/Launcher_RPG22.et"
-  }
-  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
-   Slots {
-    LoadoutSlotInfo Jacket {
-     Prefab "{216B50578ABB2947}Prefabs/Clothing/CDF/Jacket/CDF_Jacket_M88.et"
-    }
-    LoadoutSlotInfo Pants {
-     Prefab "{6307465BB003DF06}Prefabs/Clothing/CDF/Pants/CDF_Pants_M88.et"
-    }
-   }
-  }
-  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
-   InitialInventoryItems {
-    ItemsInitConfigurationItem "{5D7CC173E6675BF7}" {
-     TargetStorage "Pants/CDF_Pants_M88.et"
-    }
-    ItemsInitConfigurationItem "{5D7CC173E6675BF5}" {
-     TargetStorage "Jacket/CDF_Jacket_M88.et"
-    }
-   }
   }
  }
 }

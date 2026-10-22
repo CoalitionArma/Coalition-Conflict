@@ -1,6 +1,6 @@
 SCR_AIGroup : "{4FB92A28AC66B970}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_SniperTeam_NotSpawned.et" {
  ID "B50C6041F470485C"
  m_aUnitPrefabSlots {
-  "{7EC90F266FFE6EF6}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Sniper.et" "{B7570D6F100C57D5}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Scout.et"
+  "{F54B8019071C91F2}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Sniper.et" "{AA0E4EDB9F1FEB88}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Scout.et"
  }
 }

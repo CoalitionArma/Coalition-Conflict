@@ -1,4 +1,4 @@
-SCR_ChimeraCharacter : "{06E40E12B17F6E11}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AT.et" {
+SCR_ChimeraCharacter : "{F7BC87A063463585}Prefabs/Characters/Factions/CDF/Character_Base_CDF_AT.et" {
  ID "464BB7443741D6EF"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
@@ -18,34 +18,6 @@ SCR_ChimeraCharacter : "{06E40E12B17F6E11}Prefabs/Characters/Factions/OPFOR/RHS_
     Prefab "{7A82FE978603F137}Prefabs/Weapons/Launchers/RPG7/Launcher_RPG7.et"
    }
    WeaponTemplate "{7A82FE978603F137}Prefabs/Weapons/Launchers/RPG7/Launcher_RPG7.et"
-  }
-  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
-   Slots {
-    LoadoutSlotInfo Jacket {
-     Prefab "{ECCFBF86DA2C72B8}Prefabs/Clothing/CDF/Jacket/CDF_Jacket_M88_rolledup.et"
-    }
-    LoadoutSlotInfo Pants {
-     Prefab "{6307465BB003DF06}Prefabs/Clothing/CDF/Pants/CDF_Pants_M88.et"
-    }
-   }
-  }
-  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
-   InitialInventoryItems {
-    ItemsInitConfigurationItem "{6062F65EC3690C43}" {
-     TargetStorage "Pants/CDF_Pants_M88.et"
-    }
-    ItemsInitConfigurationItem "{6062F65EC3690C4B}" {
-     TargetStorage "Jacket/CDF_Jacket_M88_rolledup.et"
-    }
-    ItemsInitConfigurationItem "{607C14DEFAFFCB8B}" {
-     PrefabsToSpawn {
-      "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et" "{FD34D121FA55CB10}Prefabs/Weapons/Magazines/6l23_plastic/Magazine_545x39_plastic_AK_30rnd_Last_5Tracer.et"
-     }
-    }
-    ItemsInitConfigurationItem "{607C14DEFAFFCB8C}" {
-     TargetStorage "Jacket/CDF_Jacket_M88_rolledup.et"
-    }
-   }
   }
  }
 }

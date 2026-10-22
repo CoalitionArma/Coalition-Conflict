@@ -1,6 +1,6 @@
 SCR_AIGroup : "{265B11E8E53F9FBA}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_RifleSquad_NotSpawned.et" {
  ID "6819E5EA66986BFA"
  m_aUnitPrefabSlots {
-  "{352B4695DDB21FFE}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_SL.et" "{0AB469908179A90E}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MG.et" "{6C9CCC39A0C97AEA}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MGA.et" "{800BDE4B96BFA3B1}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_AT.et" "{3256FDB354A005BF}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_ATA.et" "{288DC5CE90333A42}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Rifle.et" "{1F9E1D3B5AA56923}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Gren.et" "{4DE96232751C91FD}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_Medic.et"
+  "{DCDF708524070DBB}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_SquadLeader.et" "{0D5239446223D760}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_MachineGunner.et" "{707D0A738A87889F}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_AssistantMachineGunner.et" "{67C03383DD13645E}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_RiflemanAT.et" "{563FE9B0AEE7948E}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_AssistantAT.et" "{ABBCC93E7C8631BC}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Rifleman.et" "{730AAE13706B76E7}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Grenadier.et" "{39440F9F0C55AACC}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_Medic.et"
  }
 }

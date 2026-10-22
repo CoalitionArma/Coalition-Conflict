@@ -34,6 +34,11 @@ class COA_AAS_WelcomeScreenView : Managed
 	protected static const int REFRESH_MS = 500;
 	protected static const int PULSE_MS = 50;
 
+	protected static const string DISCORD_URL = "https://discord.gg/the-coalition";
+	protected static const string WEBSITE_URL = "https://coalitiongroup.net";
+
+	protected ref array<ref COA_AAS_WelcomeLinkHandler> m_aLinks = {};
+
 	// COALITION palette (linear)
 	protected static const ref Color COLOR_TEXT = new Color(0.8632, 0.8879, 0.9301, 1);
 	protected static const ref Color COLOR_MUTED = new Color(0.3968, 0.4564, 0.6038, 1);
@@ -61,6 +66,8 @@ class COA_AAS_WelcomeScreenView : Managed
 		m_wClockLabel = RichTextWidget.Cast(root.FindAnyWidget("ClockLabel"));
 
 		FillHeader();
+		BindLink("DiscordLink", DISCORD_URL);
+		BindLink("WebsiteLink", WEBSITE_URL);
 		BuildCards(root.FindAnyWidget("FactionList"), factionLayout);
 		BuildNodes(root.FindAnyWidget("NodeList"), nodeLayout);
 		BuildRules(root.FindAnyWidget("RuleList"), ruleLayout);
@@ -103,6 +110,22 @@ class COA_AAS_WelcomeScreenView : Managed
 
 		if (m_wSubtitle)
 			m_wSubtitle.SetText(header.m_sDescription);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A COALITION panel row that opens the url in the player's browser
+	protected void BindLink(string name, string url)
+	{
+		Widget button = m_wRoot.FindAnyWidget(name);
+		if (!button)
+			return;
+
+		COA_AAS_WelcomeLinkHandler link = new COA_AAS_WelcomeLinkHandler();
+		link.m_sUrl = url;
+		link.m_wBackground = ImageWidget.Cast(button.FindAnyWidget(name + "BG"));
+		link.m_wOpen = RichTextWidget.Cast(button.FindAnyWidget(name + "Open"));
+		button.AddHandler(link);
+		m_aLinks.Insert(link);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -182,7 +205,7 @@ class COA_AAS_WelcomeScreenView : Managed
 		AddRule(list, layout, "01", "One objective at a time", "Only the LIVE objective can be seized. Everywhere else, attackers don't count - not even to contest it.");
 		AddRule(list, layout, "02", "Take it to advance", "Whoever captures the live objective keeps the initiative: the next objective toward the enemy goes live.");
 		AddRule(list, layout, "03", "Hold it to strike back", string.Format("Defenders who hold the live objective for %1 turn the attack around and push on the attackers' front line. The clock pauses while it is being seized.", hold));
-		AddRule(list, layout, "04", "Break through to win", "Capture the last objective before the enemy HQ and the battle is yours.");
+		AddRule(list, layout, "04", "Take the whole line to win", "Hold every objective in the line - up to the enemy HQ - and the battle is yours.");
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -512,6 +535,73 @@ class COA_AAS_WelcomeScreenView : Managed
 		Widget widget = parent.FindAnyWidget(name);
 		if (widget && color)
 			widget.SetColor(color);
+	}
+}
+
+//------------------------------------------------------------------------------------------------
+//! A link row in the COALITION panel: lifts on hover, deepens on press, opens the url in the
+//! player's own browser on click
+class COA_AAS_WelcomeLinkHandler : ScriptedWidgetComponent
+{
+	string m_sUrl;
+	ImageWidget m_wBackground;
+	RichTextWidget m_wOpen;
+
+	// Linear: white at these alphas over the dark card
+	protected static const float REST_ALPHA = 0.04;
+	protected static const float HOVER_ALPHA = 0.1;
+	protected static const float PRESS_ALPHA = 0.16;
+	protected static const ref Color OPEN_REST = new Color(0.3968, 0.4564, 0.6038, 1);
+	protected static const ref Color OPEN_HOVER = new Color(0.5841, 0.0369, 0.0369, 1);
+
+	//------------------------------------------------------------------------------------------------
+	override bool OnClick(Widget w, int x, int y, int button)
+	{
+		if (button != 0 || m_sUrl.IsEmpty())
+			return false;
+
+		PlatformService platform = GetGame().GetPlatformService();
+		if (platform)
+			platform.OpenBrowser(m_sUrl);
+
+		SetAlpha(HOVER_ALPHA);
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override bool OnMouseEnter(Widget w, int x, int y)
+	{
+		SetAlpha(HOVER_ALPHA);
+		if (m_wOpen)
+			m_wOpen.SetColor(OPEN_HOVER);
+
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override bool OnMouseLeave(Widget w, Widget enterW, int x, int y)
+	{
+		SetAlpha(REST_ALPHA);
+		if (m_wOpen)
+			m_wOpen.SetColor(OPEN_REST);
+
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override bool OnMouseButtonDown(Widget w, int x, int y, int button)
+	{
+		if (button == 0)
+			SetAlpha(PRESS_ALPHA);
+
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void SetAlpha(float alpha)
+	{
+		if (m_wBackground)
+			m_wBackground.SetColor(new Color(1, 1, 1, alpha));
 	}
 }
 

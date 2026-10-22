@@ -1,4 +1,4 @@
-SCR_ChimeraCharacter : "{78976C69F927A7B1}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Sharpshooter.et" {
+SCR_ChimeraCharacter : "{C305583581C78E63}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Sniper.et" {
  ID "816D521FC269758B"
  components {
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
@@ -12,26 +12,6 @@ SCR_ChimeraCharacter : "{78976C69F927A7B1}Prefabs/Characters/Factions/OPFOR/RHS_
     Prefab "{6415B7923DE28C1B}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_PSO.et"
    }
    WeaponTemplate "{6415B7923DE28C1B}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_PSO.et"
-  }
-  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
-   Slots {
-    LoadoutSlotInfo Jacket {
-     Prefab "{ECCFBF86DA2C72B8}Prefabs/Clothing/CDF/Jacket/CDF_Jacket_M88_rolledup.et"
-    }
-    LoadoutSlotInfo Pants {
-     Prefab "{6307465BB003DF06}Prefabs/Clothing/CDF/Pants/CDF_Pants_M88.et"
-    }
-   }
-  }
-  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
-   InitialInventoryItems {
-    ItemsInitConfigurationItem "{6062F65EC3690C43}" {
-     TargetStorage "Pants/CDF_Pants_M88.et"
-    }
-    ItemsInitConfigurationItem "{607C14DED48296E6}" {
-     TargetStorage "Jacket/CDF_Jacket_M88_rolledup.et"
-    }
-   }
   }
  }
 }

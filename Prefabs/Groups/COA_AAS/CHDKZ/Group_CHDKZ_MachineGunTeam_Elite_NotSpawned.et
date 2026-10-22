@@ -1,6 +1,6 @@
 SCR_AIGroup : "{870472E4AE81F971}Prefabs/Groups/INDFOR/AmbientPatrols/Group_FIA_MachineGunTeam_Elite_NotSpawned.et" {
  ID "DF0D9A898560FC1F"
  m_aUnitPrefabSlots {
-  "{32ECBCC4BB34A53D}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_TL.et" "{0AB469908179A90E}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MG.et" "{6C9CCC39A0C97AEA}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MGA.et" "{58A3B78AEF36BDED}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_AR.et"
+  "{1EF94CCFA42A1B12}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_TeamLeader.et" "{0D5239446223D760}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_MachineGunner.et" "{707D0A738A87889F}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_AssistantMachineGunner.et" "{729521A11590D01C}Prefabs/Characters/COA_AAS/CHDKZ/COA_AAS_CHDKZ_AutomaticRifleman.et"
  }
 }

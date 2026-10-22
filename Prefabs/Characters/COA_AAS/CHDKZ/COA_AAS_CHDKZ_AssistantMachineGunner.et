@@ -1,0 +1,31 @@
+SCR_ChimeraCharacter : "{6C9CCC39A0C97AEA}Prefabs/Characters/Factions/ChDKZ/Character_Base_ChDKZ_MGA.et" {
+ ID "3594951685DFDC41"
+ components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{D8334BA989950B5F}Prefabs/Clothing/ins_Soldier G/Ins_Soldier G 1/Hat/ins_Soldier Hat.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{7D78E9AF1288F204}Prefabs/Clothing/ins_Soldier G/Ins_Soldier G 1/Jacket/Jacket 2/ins_Soldier G Jacket 2.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{A35D79A180E9CD25}Prefabs/Clothing/ins_Soldier G/Ins_Soldier G 1/Pants/Pants Green/ins_Soldier G Pants Green.et"
+    }
+    LoadoutSlotInfo Boots {
+     Prefab "{AC0425DF3C089E91}Prefabs/Clothing/ins_Soldier G/Ins_Soldier G 1/Boots/ins_Soldier G Boots.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{650321F622B83248}" {
+     TargetStorage "Jacket/ins_Soldier G Jacket 2.et"
+    }
+    ItemsInitConfigurationItem "{650321F622B83257}" {
+     TargetStorage "Pants/ins_Soldier G Pants Green.et"
+    }
+   }
+  }
+ }
+}

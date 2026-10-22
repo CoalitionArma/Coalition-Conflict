@@ -7,6 +7,22 @@ SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Cam
    }
    m_fDefenseHoldTime 900
    m_fHoldWarningTime 300
+   m_aAssetXPCosts {
+    COA_AAS_AssetXPCost "{6C2A9E41B07D3F11}" {
+     m_sName "Tanks"
+     m_aLabels {
+      VEHICLE_TANK
+     }
+     m_iXPCost 1000
+    }
+    COA_AAS_AssetXPCost "{6C2A9E41B07D3F12}" {
+     m_sName "Attack helicopters"
+     m_aPrefabContains {
+      "gunship" "Mi24" "Mi-24" "Mi35" "Hind" "AH1" "AH-1" "AH64" "AH-64" "Ka52" "Ka-52" "Mi28" "Mi-28" "UH60_Pylon" "AH6M_M134" "AH6M_GAU19" "AH6M_RKT" "AH6M_ATGM" "AH6M_AIM92" "AH6M_OPFOR_M134" "AH6M_OPFOR_GAU19" "AH6M_OPFOR_RKT" "AH6M_OPFOR_ATGM" "AH6M_OPFOR_AIM92"
+     }
+     m_iXPCost 1000
+    }
+   }
   }
   COA_AAS_BaseServicesComponent "{5E2B7C91D04A3F68}" {
    m_aMainBaseServices {
@@ -69,6 +85,10 @@ SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Cam
   }
  }
  m_iControlPointsThreshold 99
+ m_iHQStartingSupplies 5000
+ m_iRegularSuppliesIncome 10
+ m_iSuppliesArrivalInterval 6
+ m_fQuickSuppliesReplenishMultiplier 1
  m_bEstablishingBasesEnabled 0
  m_bSpawnRandomCaches 0
  m_bRandomSpawnpointsEnabled 0

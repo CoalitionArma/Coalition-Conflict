@@ -13,28 +13,5 @@ SCR_ChimeraCharacter : "{2F14EE611ACF2BD9}Prefabs/Characters/Factions/CDF/Charac
    }
    WeaponTemplate "{5F365605E36597FB}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74N.et"
   }
-  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
-   Slots {
-    LoadoutSlotInfo Hat {
-     Prefab "{C666B46D8529EB3E}Prefabs/Clothing/CDF/Headgear/PASGT/CDF_Helmet_PASGT_01_v1.et"
-    }
-    LoadoutSlotInfo ArmoredVest {
-     Prefab "{ADE19B33DCBB9005}Prefabs/Characters/Vests/Vest_6B2/Vest_6B2.et"
-    }
-    LoadoutSlotInfo Vest {
-     Prefab "{9713FE6DDCC9510D}Prefabs/Characters/Vests/Vest_Lifchik/Vest_Lifchik.et"
-    }
-   }
-  }
-  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
-   InitialInventoryItems {
-    ItemsInitConfigurationItem "{650321ECCE53B546}" {
-     TargetStorage "Vest/Vest_Lifchik.et"
-    }
-    ItemsInitConfigurationItem "{650321E55CCFF462}" {
-     TargetStorage "Vest/Vest_Lifchik.et"
-    }
-   }
-  }
  }
 }
