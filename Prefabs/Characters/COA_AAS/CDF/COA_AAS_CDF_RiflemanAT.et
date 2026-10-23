@@ -1,6 +1,13 @@
 SCR_ChimeraCharacter : "{F26D4C09F495EDC6}Prefabs/Characters/Factions/CDF/Character_Base_CDF_Rifle.et" {
  ID "6C65AA6E2440825A"
  components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Back {
+     Prefab "{0D39750E5695B9D8}Prefabs/Items/Equipment/Backpacks/Backpack_RPG_Gunner.et"
+    }
+   }
+  }
   SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
     Name "Rifleman (Anti-Tank)"

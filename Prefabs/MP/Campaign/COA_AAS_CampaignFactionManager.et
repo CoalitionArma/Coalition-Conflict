@@ -2194,7 +2194,7 @@ SCR_CampaignFactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/Fac
        m_aEntityDataList {
         SCR_EntityCatalogLoadoutData "{18EBD85D820B1317}" {
          m_fSpawnSupplyCost 20
-         m_eRequiredRank LIEUTENANT
+         m_eRequiredRank CAPTAIN
         }
        }
       }
@@ -2203,7 +2203,7 @@ SCR_CampaignFactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/Fac
        m_aEntityDataList {
         SCR_EntityCatalogLoadoutData "{9791B2AEC4739C20}" {
          m_fSpawnSupplyCost 20
-         m_eRequiredRank LIEUTENANT
+         m_eRequiredRank CAPTAIN
         }
        }
       }
@@ -2212,7 +2212,7 @@ SCR_CampaignFactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/Fac
        m_aEntityDataList {
         SCR_EntityCatalogLoadoutData "{AC389F1E481D69A2}" {
          m_fSpawnSupplyCost 20
-         m_eRequiredRank LIEUTENANT
+         m_eRequiredRank CAPTAIN
         }
        }
       }
@@ -2221,7 +2221,7 @@ SCR_CampaignFactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/Fac
        m_aEntityDataList {
         SCR_EntityCatalogLoadoutData "{E584B2A5E5EE9658}" {
          m_fSpawnSupplyCost 20
-         m_eRequiredRank LIEUTENANT
+         m_eRequiredRank CAPTAIN
         }
        }
       }

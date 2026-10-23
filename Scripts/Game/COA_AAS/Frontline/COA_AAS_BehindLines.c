@@ -4,9 +4,10 @@
 //!  - Beyond it the player is told they're behind enemy lines, and from then on their rough position is
 //!    pinged on the enemy's map (COA_AAS_FrontlineMap) - every max interval just past the grace distance,
 //!    down to every min interval at the deep distance and beyond.
-//!  - Never in an aircraft (inserting, resupplying), near the live objective or on the way there from their
-//!    side's ground (the attackers have to cross the enemy's ground to reach it), or on CHDKz ground - only
-//!    the other side's territory counts.
+//!  - Never in an aircraft (inserting, resupplying), near the live objective, on the way from their side's
+//!    ground to it or to the enemy's front-line objective (the ground between that base and the front has
+//!    to be crossed to fight there - past it is behind their lines), or on CHDKz ground - only the other
+//!    side's territory counts.
 //! Players only, alive and conscious; needs the frontline's territory (COA_AAS_ConflictComponent).
 class COA_AAS_BehindLines
 {
@@ -25,6 +26,9 @@ class COA_AAS_BehindLines
 	// Distance of every cell from each side's territory [cells], rebuilt when the territory changes
 	protected ref map<int, ref array<float>> m_mDistance = new map<int, ref array<float>>();
 	protected int m_iTerritoryVersion = -1;
+
+	// Per side: where attackers head through its ground - the live objective and its front-line objectives
+	protected ref map<int, ref array<vector>> m_mApproaches = new map<int, ref array<vector>>();
 
 	// Players behind the lines -> seconds to their next ping
 	protected ref map<int, float> m_mNextPing = new map<int, float>();
@@ -74,6 +78,7 @@ class COA_AAS_BehindLines
 
 		SCR_CampaignMilitaryBaseComponent live = m_AAS.GetLiveObjective();
 		float objectiveRadiusSq = m_fObjectiveRadius * m_fObjectiveRadius;
+		BuildApproaches(live);
 
 		map<int, float> nextPing = new map<int, float>();
 		array<int> playerIds = {};
@@ -142,31 +147,64 @@ class COA_AAS_BehindLines
 		if (!enemySide || owner == side)
 			return 0;
 
-		vector objective;
-		if (live)
-		{
-			objective = live.GetOwner().GetOrigin();
-			if (vector.DistanceSqXZ(position, objective) <= objectiveRadiusSq)
-				return 0;
-		}
+		if (live && vector.DistanceSqXZ(position, live.GetOwner().GetOrigin()) <= objectiveRadiusSq)
+			return 0;
 
 		if (IsInAircraft(character))
 			return 0;
 
 		float depth = DepthAt(field, territory.Index(x, z)) * territory.m_fCell;
 
-		// On the way to the live objective: a straight push from their ground covers the objective's own
-		// depth, so going in that way adds up to about it - detours add more, and going past the objective
-		// adds twice the overshoot
-		int objectiveX, objectiveZ;
-		if (live && territory.CellAt(objective, objectiveX, objectiveZ))
+		// On the way to an objective: a straight push from their ground covers the objective's own depth, so
+		// going in that way adds up to about it - detours add more, and going past the objective adds twice
+		// the overshoot
+		array<vector> approaches = m_mApproaches.Get(owner);
+		if (approaches)
 		{
-			float objectiveDepth = DepthAt(field, territory.Index(objectiveX, objectiveZ)) * territory.m_fCell;
-			if (depth + vector.DistanceXZ(position, objective) <= objectiveDepth + m_fApproachSlack)
-				return 0;
+			foreach (vector objective : approaches)
+			{
+				int objectiveX, objectiveZ;
+				if (!territory.CellAt(objective, objectiveX, objectiveZ))
+					continue;
+
+				float objectiveDepth = DepthAt(field, territory.Index(objectiveX, objectiveZ)) * territory.m_fCell;
+				if (depth + vector.DistanceXZ(position, objective) <= objectiveDepth + m_fApproachSlack)
+					return 0;
+			}
 		}
 
 		return depth;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Per side, the objectives attackers cross its ground to reach: the live one, and each objective it holds
+	//! next to one it doesn't along the line (its front-line base)
+	protected void BuildApproaches(SCR_CampaignMilitaryBaseComponent live)
+	{
+		m_mApproaches.Clear();
+		array<int> sides = {COA_AAS_ETerritoryOwner.BLUFOR, COA_AAS_ETerritoryOwner.OPFOR};
+		int count = m_AAS.GetChainCount();
+		foreach (int side : sides)
+		{
+			array<vector> objectives = {};
+			if (live)
+				objectives.Insert(live.GetOwner().GetOrigin());
+
+			for (int i = 0; i < count; i++)
+			{
+				SCR_CampaignMilitaryBaseComponent base = m_AAS.GetChainBase(i);
+				if (!base || base == live || COA_AAS_Territory.OwnerOf(m_Campaign, base.GetFaction()) != side)
+					continue;
+
+				SCR_CampaignMilitaryBaseComponent previous = m_AAS.GetChainBase(i - 1);
+				SCR_CampaignMilitaryBaseComponent next = m_AAS.GetChainBase(i + 1);
+				if ((previous && COA_AAS_Territory.OwnerOf(m_Campaign, previous.GetFaction()) != side)
+					|| (next && COA_AAS_Territory.OwnerOf(m_Campaign, next.GetFaction()) != side))
+					objectives.Insert(base.GetOwner().GetOrigin());
+			}
+
+			m_mApproaches.Set(side, objectives);
+		}
 	}
 
 	//------------------------------------------------------------------------------------------------

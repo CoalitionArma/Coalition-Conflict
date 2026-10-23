@@ -1,6 +1,13 @@
 SCR_ChimeraCharacter : "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et" {
  ID "520EC961A090B1EE"
  components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Back {
+     Prefab "{9A26D311900C33EE}Prefabs/Items/Equipment/Backpacks/FILBE_hydration_pack.et"
+    }
+   }
+  }
   COA_AAS_VehicleRoleComponent "{6C9A4FB08198740D}" {
    m_eRole PILOT
   }

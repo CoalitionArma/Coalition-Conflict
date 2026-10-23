@@ -1,6 +1,13 @@
 SCR_ChimeraCharacter : "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et" {
  ID "520EC961A090B1EE"
  components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Back {
+     Prefab "{3DE0155EC9767B98}Prefabs/Items/Equipment/Backpacks/Backpack_Veshmeshok.et"
+    }
+   }
+  }
   COA_AAS_VehicleRoleComponent "{6C2B851C731E76C4}" {
    m_eRole CREW
   }

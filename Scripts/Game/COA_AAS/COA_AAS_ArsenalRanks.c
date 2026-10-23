@@ -80,7 +80,7 @@ class COA_AAS_ArsenalItemRank
 //!  - a weapon by its arsenal type (m_aTypeRanks), raised by the first name pattern it matches
 //!    (m_aPatternRanks: machine guns, heavy snipers, launchers...), and by whatever scope, suppressor
 //!    or launcher it comes fitted with (a scope built into the weapon counts too)
-//!  - m_aItems sets an item's rank by hand, over all of that
+//!  - m_aItems sets an item's rank by hand, over all of that - any item, not only weapons and attachments
 //! Other arsenal items (clothing, medical, ammo...) keep their own rank.
 [BaseContainerProps(configRoot: true)]
 class COA_AAS_ArsenalRanks
@@ -138,24 +138,27 @@ class COA_AAS_ArsenalRanks
 	//! \return the rank an arsenal item needs, INVALID to leave it as it is
 	SCR_ECharacterRank GetRank(ResourceName prefab, SCR_EArsenalItemType type, SCR_EArsenalItemMode mode)
 	{
-		bool weapon = mode == SCR_EArsenalItemMode.WEAPON || mode == SCR_EArsenalItemMode.WEAPON_VARIANTS;
-		bool attachment = mode == SCR_EArsenalItemMode.ATTACHMENT || type == SCR_EArsenalItemType.WEAPON_ATTACHMENT;
-		if (!weapon && !attachment)
-			return SCR_ECharacterRank.INVALID;
-
 		string guid = Guid(prefab);
 		int cached;
 		if (m_mCache.Find(guid, cached))
 			return cached;
 
-		SCR_ECharacterRank rank = SCR_ECharacterRank.INVALID;
+		// Set by hand: any item (binoculars...), not just weapons and attachments
 		if (!m_mItems)
 			BuildItems();
 
 		if (m_mItems.Contains(guid))
-			rank = m_mItems.Get(guid);
-		else
-			rank = Work(prefab, type, weapon);
+		{
+			m_mCache.Set(guid, m_mItems.Get(guid));
+			return m_mItems.Get(guid);
+		}
+
+		bool weapon = mode == SCR_EArsenalItemMode.WEAPON || mode == SCR_EArsenalItemMode.WEAPON_VARIANTS;
+		bool attachment = mode == SCR_EArsenalItemMode.ATTACHMENT || type == SCR_EArsenalItemType.WEAPON_ATTACHMENT;
+		if (!weapon && !attachment)
+			return SCR_ECharacterRank.INVALID;
+
+		SCR_ECharacterRank rank = Work(prefab, type, weapon);
 
 		m_mCache.Set(guid, rank);
 		return rank;

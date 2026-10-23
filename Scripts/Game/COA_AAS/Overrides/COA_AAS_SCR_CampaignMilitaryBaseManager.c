@@ -27,4 +27,17 @@ modded class SCR_CampaignMilitaryBaseManager
 				m_Campaign.SetControlPointsHeld(faction, aas.CountObjectivesHeld(faction));
 		}
 	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Comms everywhere: a side's whole territory is in its radio signal, not just the bases' radio ranges -
+	//! so the voice HUD's "no signal", the radio range notifications and what needs signal (radio spawn
+	//! points, fast travel) follow the front. Behind enemy lines there's none.
+	override bool IsEntityInFactionRadioSignal(notnull IEntity entity, notnull Faction faction)
+	{
+		if (super.IsEntityInFactionRadioSignal(entity, faction))
+			return true;
+
+		COA_AAS_ConflictComponent aas = COA_AAS_ConflictComponent.GetInstance();
+		return aas && aas.IsCommsEverywhere() && aas.IsInTerritory(entity.GetOrigin(), faction);
+	}
 }

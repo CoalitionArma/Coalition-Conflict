@@ -1,40 +1,6 @@
 SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
  ID "1FA386F1BCE8EB24"
  components {
-  COA_AAS_RankStoreComponent "{6CA1E3F52B7D4980}" {
-  }
-  COA_AAS_ConflictComponent "{8B8BB11B3C3E0C6C}" {
-   m_aInsurgentPatrolGroups {
-    "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et" "{461E94E5AA31913D}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_ReconTeam_NotSpawned.et" "{3396D736D25B7BB7}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{4D603DB9E34C29F8}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_SniperTeam_NotSpawned.et"
-   }
-   m_aInsurgentAmbushGroups {
-    "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{3396D736D25B7BB7}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et"
-   }
-   m_aInsurgentAttackGroups {
-    "{FDB6FD6DE4B3E7EE}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_RifleSquad_NotSpawned.et" "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{6A68B9351E8BF48F}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_Elite_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et"
-   }
-   m_aObjectiveChain {
-    "OBJ1_Chernogorsk" "OBJ2_Mogilevka" "OBJ3_Vyshnoye" "OBJ4_NovySobor" "OBJ5_Grishino" "OBJ6_DevilsCastle" "OBJ7_Ratnik"
-   }
-   m_fDefenseHoldTime 900
-   m_fHoldWarningTime 300
-   m_aAssetXPCosts {
-    COA_AAS_AssetXPCost "{6C2A9E41B07D3F11}" {
-     m_sName "Tanks"
-     m_aLabels {
-      VEHICLE_TANK
-     }
-     m_iXPCost 1000
-    }
-    COA_AAS_AssetXPCost "{6C2A9E41B07D3F12}" {
-     m_sName "Attack helicopters"
-     m_aPrefabContains {
-      "gunship" "Mi24" "Mi-24" "Mi35" "Hind" "AH1" "AH-1" "AH64" "AH-64" "Ka52" "Ka-52" "Mi28" "Mi-28" "UH60_Pylon" "AH6M_M134" "AH6M_GAU19" "AH6M_RKT" "AH6M_ATGM" "AH6M_AIM92" "AH6M_OPFOR_M134" "AH6M_OPFOR_GAU19" "AH6M_OPFOR_RKT" "AH6M_OPFOR_ATGM" "AH6M_OPFOR_AIM92"
-     }
-     m_iXPCost 1000
-    }
-   }
-  }
   COA_AAS_BaseServicesComponent "{5E2B7C91D04A3F68}" {
    m_aMainBaseServices {
     COA_AAS_ServiceSlot "{5E2B7C91D04A3F01}" {
@@ -90,51 +56,91 @@ SCR_GameModeCampaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Cam
     }
    }
   }
+  COA_AAS_ConflictComponent "{8B8BB11B3C3E0C6C}" {
+   m_aObjectiveChain {
+    "OBJ1_Chernogorsk" "OBJ2_Mogilevka" "OBJ3_Vyshnoye" "OBJ4_NovySobor" "OBJ5_Grishino" "OBJ6_DevilsCastle" "OBJ7_Ratnik"
+   }
+   m_fDefenseHoldTime 900
+   m_fHoldWarningTime 300
+   m_aAssetXPCosts {
+    COA_AAS_AssetXPCost "{6C2A9E41B07D3F11}" {
+     m_sName "Tanks"
+     m_aLabels {
+      VEHICLE_TANK
+     }
+     m_iXPCost 1000
+    }
+    COA_AAS_AssetXPCost "{6C2A9E41B07D3F12}" {
+     m_sName "Attack helicopters"
+     m_aPrefabContains {
+      "gunship" "Mi24" "Mi-24" "Mi35" "Hind" "AH1" "AH-1" "AH64" "AH-64" "Ka52" "Ka-52" "Mi28" "Mi-28" "UH60_Pylon" "AH6M_M134" "AH6M_GAU19" "AH6M_RKT" "AH6M_ATGM" "AH6M_AIM92" "AH6M_OPFOR_M134" "AH6M_OPFOR_GAU19" "AH6M_OPFOR_RKT" "AH6M_OPFOR_ATGM" "AH6M_OPFOR_AIM92"
+     }
+     m_iXPCost 1000
+    }
+   }
+   m_aInsurgentPatrolGroups {
+    "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et" "{461E94E5AA31913D}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_ReconTeam_NotSpawned.et" "{3396D736D25B7BB7}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{4D603DB9E34C29F8}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_SniperTeam_NotSpawned.et"
+   }
+   m_aInsurgentAttackGroups {
+    "{FDB6FD6DE4B3E7EE}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_RifleSquad_NotSpawned.et" "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{6A68B9351E8BF48F}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_Elite_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et"
+   }
+   m_aInsurgentAmbushGroups {
+    "{BA7C317BF0603B6E}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_FireTeam_NotSpawned.et" "{48779940CC53C003}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_Team_AT_NotSpawned.et" "{3396D736D25B7BB7}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_MachineGunTeam_NotSpawned.et" "{4BE85B6FF34C9166}Prefabs/Groups/COA_AAS/CHDKZ/Group_CHDKZ_PartisanTeam_NotSpawned.et"
+   }
+  }
+  COA_AAS_RankStoreComponent "{6CA1E3F52B7D4980}" {
+  }
+  SCR_GameModeHealthSettings "{5A22E11F9ACBB1DF}" {
+   m_bPermitUnconsciousVON 0
+  }
+  SCR_NightModeGameModeComponent "{5D50E84688D5A408}" {
+   m_bAllowGlobalNightMode 1
+  }
   SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
    m_BaseLayout COA_AAS_WelcomeScreenLayout "{6A1E3F0C92B4D758}" {
    }
   }
  }
  m_iControlPointsThreshold 99
- m_iHQStartingSupplies 5000
- m_iRegularSuppliesIncome 10
- m_iSuppliesArrivalInterval 6
  m_fQuickSuppliesReplenishMultiplier 1
+ m_iSuppliesArrivalInterval 6
+ m_iRegularSuppliesIncome 30
+ m_iHQStartingSupplies 5000
  m_bEstablishingBasesEnabled 0
+ m_bINDFORCanSpawnOnBases 0
  m_bSpawnRandomCaches 0
  m_bRandomSpawnpointsEnabled 0
- m_bINDFORCanSpawnOnBases 0
  {
-  SCR_CampaignFactionManager : "{029FDCE1C922F603}Prefabs/MP/Campaign/COA_AAS_CampaignFactionManager.et" {
-   ID "0AB95DC698357847"
+  SCR_DestructionManager : "{E5B570B5F32A7BAE}Prefabs/Systems/Destruction/DestructionManager.et" {
+   ID "0826E8C3BFD02FBA"
    coords 0 0 0
   }
-  SCR_LoadoutManager : "{7F3D8CEAB0CFE16E}Prefabs/MP/Campaign/COA_AAS_CampaignLoadoutManager.et" {
-   ID "B694ABB91091869D"
-   coords 0 0 0
-  }
-  PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+  PerceptionManager "6AAE126CA9255606" : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
    ID "2E841836453AD8FE"
    coords 0 0 0
   }
-  RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Systems/Radio/RadioManager.et" {
-   ID "92BA877210482D14"
+  SCR_CampaignFactionManager "6AAE126CA926A83D" : "{029FDCE1C922F603}Prefabs/MP/Campaign/COA_AAS_CampaignFactionManager.et" {
+   ID "0AB95DC698357847"
    coords 0 0 0
   }
   ScriptedChatEntity : "{536D80EB494DDC43}Prefabs/MP/Campaign/CampaignMPChatEntity.et" {
    ID "16527D8CEAEC16AF"
    coords 0 0 0
   }
-  ItemPreviewManagerEntity : "{9F18C476AB860F3B}Prefabs/World/Game/ItemPreviewManager.et" {
-   ID "40A4BC31F9EA1CE6"
+  RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Systems/Radio/RadioManager.et" {
+   ID "92BA877210482D14"
    coords 0 0 0
   }
   MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Campaign.et" {
    ID "98F2320A8B622B18"
    coords 0 0 0
   }
-  SCR_DestructionManager : "{E5B570B5F32A7BAE}Prefabs/Systems/Destruction/DestructionManager.et" {
-   ID "0826E8C3BFD02FBA"
+  SCR_LoadoutManager : "{7F3D8CEAB0CFE16E}Prefabs/MP/Campaign/COA_AAS_CampaignLoadoutManager.et" {
+   ID "B694ABB91091869D"
+   coords 0 0 0
+  }
+  ItemPreviewManagerEntity "6AAE126CA9257D9E" : "{9F18C476AB860F3B}Prefabs/World/Game/ItemPreviewManager.et" {
+   ID "40A4BC31F9EA1CE6"
    coords 0 0 0
   }
  }

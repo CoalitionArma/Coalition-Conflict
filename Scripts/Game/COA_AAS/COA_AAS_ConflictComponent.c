@@ -130,7 +130,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("400", desc: "Nobody is pinged this close to the live objective [m]", params: "0 3000 1", category: "Behind Enemy Lines")]
 	protected float m_fBehindLinesObjectiveRadius;
 
-	[Attribute("500", desc: "Nobody is pinged on the way from their side's ground to the live objective: a straight push is always clear, and a detour up to this much longer than straight is too (flanks). Past the objective or wider still counts [m]", params: "0 5000 1", category: "Behind Enemy Lines")]
+	[Attribute("500", desc: "Nobody is pinged on the way from their side's ground to the live objective or the enemy's front-line objective: a straight push is always clear, and a detour up to this much longer than straight is too (flanks). Past the objective or wider still counts [m]", params: "0 5000 1", category: "Behind Enemy Lines")]
 	protected float m_fBehindLinesApproachSlack;
 
 	[Attribute("45", desc: "How long a ping stays on the enemy's map [s]", params: "5 600 1", category: "Behind Enemy Lines")]
@@ -275,6 +275,12 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 			return false;
 
 		return base.IsHQ() || base.GetBuiltByPlayers() || IsObjective(base);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	bool IsCommsEverywhere()
+	{
+		return m_bCommsEverywhere;
 	}
 
 	//------------------------------------------------------------------------------------------------
