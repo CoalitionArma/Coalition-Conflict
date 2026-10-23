@@ -4,9 +4,10 @@
 //!    for good.
 //!  - It starts split between the bases: each land square goes to whoever owns the nearest base (within the
 //!    seed radius, if there is one) - a clean front halfway between enemy bases, right across the map.
-//!  - A square only one side's living players stand in, next to that side's territory, is taken once
-//!    they've held it for the capture time; defenders in it as well stop the clock, leaving resets it. The
-//!    "next to" rule keeps the front moving as a line - a lone infiltrator doesn't paint islands.
+//!  - A square only one side's living players stand in is taken once they've held it for the capture time;
+//!    defenders in it as well stop the clock, leaving resets it. One cut off from that side's territory (a
+//!    team dropped or driven past the front) takes the shortest strip of squares back to it along - the
+//!    front bulges out to them instead of leaving islands.
 //!  - A captured base takes the squares around it with it, and an objective or HQ its whole zone - every
 //!    square nearer to it than to any other of them that the previous owner held - so the front jumps
 //!    halfway to the next base instead of leaving the loser's ground stranded round it.
@@ -210,18 +211,19 @@ class COA_AAS_Frontline
 			if (side == COA_AAS_ETerritoryOwner.NONE || m_Territory.m_aOwners[cell] == side || !m_aLand[cell])
 				continue;
 
-			int x = cell % m_Territory.m_iWidth;
-			int z = cell / m_Territory.m_iWidth;
-			if (!Borders(x, z, side))
-				continue;
-
 			float held = m_fTick;
 			if (m_mTakingSide.Get(cell) == side)
 				held += m_mTakingTime.Get(cell);
 
 			if (held >= m_fCaptureTime)
 			{
+				int x = cell % m_Territory.m_iWidth;
+				int z = cell / m_Territory.m_iWidth;
+				bool cutOff = !Borders(x, z, side);
 				m_Territory.m_aOwners[cell] = side;
+				if (cutOff)
+					JoinToTerritory(cell, side);
+
 				changed = true;
 
 				// Only that side stands there, so everyone in it took it
@@ -284,6 +286,58 @@ class COA_AAS_Frontline
 	{
 		return m_Territory.OwnerAt(x - 1, z) == side || m_Territory.OwnerAt(x + 1, z) == side
 			|| m_Territory.OwnerAt(x, z - 1) == side || m_Territory.OwnerAt(x, z + 1) == side;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A square taken away from the side's territory: the shortest strip of land squares (edge to edge)
+	//! from it back to that territory goes to the side too. Nothing more when there's no way back by land.
+	protected void JoinToTerritory(int start, int side)
+	{
+		int width = m_Territory.m_iWidth;
+		array<int> stepX = {-1, 1, 0, 0};
+		array<int> stepZ = {0, 0, -1, 1};
+
+		// Breadth-first out from the pocket: square -> the square it was reached from
+		map<int, int> previous = new map<int, int>();
+		previous.Set(start, -1);
+		array<int> queue = {start};
+		int head;
+		int reached = -1;	// the last square before the side's territory
+		while (head < queue.Count() && reached == -1)
+		{
+			int cell = queue[head];
+			head++;
+
+			int x = cell % width;
+			int z = cell / width;
+			for (int i = 0; i < 4; i++)
+			{
+				int nx = x + stepX[i];
+				int nz = z + stepZ[i];
+				if (nx < 0 || nz < 0 || nx >= width || nz >= m_Territory.m_iHeight)
+					continue;
+
+				int next = m_Territory.Index(nx, nz);
+				if (previous.Contains(next) || !m_aLand[next])
+					continue;
+
+				if (m_Territory.m_aOwners[next] == side)
+				{
+					reached = cell;
+					break;
+				}
+
+				previous.Set(next, cell);
+				queue.Insert(next);
+			}
+		}
+
+		// Back along the way to the pocket
+		while (reached != -1)
+		{
+			m_Territory.m_aOwners[reached] = side;
+			reached = previous.Get(reached);
+		}
 	}
 
 	//------------------------------------------------------------------------------------------------

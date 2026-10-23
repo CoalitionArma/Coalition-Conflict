@@ -43,6 +43,9 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("1", desc: "Command trucks can build FOBs (Conflict's establish base) anywhere in their side's territory, without a commander or task. Needs the frontline for the territory - without it, anywhere.", category: "Logistics")]
 	protected bool m_bTerritoryFOBs;
 
+	[Attribute("1", desc: "Only Crewman loadouts can drive or man the guns of armour (APCs, IFVs, tanks), and only Pilot loadouts can fly aircraft - passenger seats and door guns stay open to anyone (COA_AAS_VehicleRoles)", category: "Logistics")]
+	protected bool m_bVehicleRoles;
+
 	[Attribute("600", desc: "Ground around the live objective counted for the capture bonus [m]. Needs the frontline.", params: "0 3000 1", category: "Capture Bonus")]
 	protected float m_fGroundRadius;
 
@@ -67,7 +70,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("1.5", desc: "Seizing time multiplier at the high player count (1.5 = half as long again)", params: "0.1 5 0.05", category: "Capture Time")]
 	protected float m_fPopulationHighMultiplier;
 
-	[Attribute("0.5", desc: "Scales all XP players earn (Conflict's rewards and the ones below) - lower = slower ranks and unlocks. Stacks with the server's own XP multiplier. Asset XP costs aren't scaled.", params: "0.05 5 0.05", category: "Rewards")]
+	[Attribute("0.3", desc: "Scales all XP players earn (Conflict's rewards and the ones below) - lower = slower ranks and unlocks. Stacks with the server's own XP multiplier. Asset XP costs aren't scaled.", params: "0.05 5 0.05", category: "Rewards")]
 	protected float m_fXPGainMultiplier;
 
 	[Attribute("10", desc: "XP each player on a territory square gets when their side takes it", params: "0 1000 1", category: "Rewards")]
@@ -100,7 +103,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	[Attribute("0", desc: "At the start each square goes to the nearest base's owner, if that base is within this distance [m]. 0 = no limit.", params: "0 20000 1", category: "Frontline")]
 	protected float m_fFrontlineSeedRadius;
 
-	[Attribute("30", desc: "How long one side's players must hold a square next to their territory to take it [s]", params: "1 600 1", category: "Frontline")]
+	[Attribute("30", desc: "How long one side's players must hold a square to take it - one away from their territory takes the shortest strip back to it along [s]", params: "1 600 1", category: "Frontline")]
 	protected float m_fFrontlineCaptureTime;
 
 	[Attribute("250", desc: "A captured base takes the squares within this distance with it [m]", params: "0 2000 1", category: "Frontline")]
@@ -126,6 +129,9 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 
 	[Attribute("400", desc: "Nobody is pinged this close to the live objective [m]", params: "0 3000 1", category: "Behind Enemy Lines")]
 	protected float m_fBehindLinesObjectiveRadius;
+
+	[Attribute("500", desc: "Nobody is pinged on the way from their side's ground to the live objective: a straight push is always clear, and a detour up to this much longer than straight is too (flanks). Past the objective or wider still counts [m]", params: "0 5000 1", category: "Behind Enemy Lines")]
+	protected float m_fBehindLinesApproachSlack;
 
 	[Attribute("45", desc: "How long a ping stays on the enemy's map [s]", params: "5 600 1", category: "Behind Enemy Lines")]
 	protected float m_fBehindLinesPingDuration;
@@ -238,6 +244,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	protected static const int HQ_TOP_UP_RETRY_MS = 2000;
 	protected static const int HQ_TOP_UP_ATTEMPTS = 5;
 	protected static const int FOB_PILES_DELAY_MS = 5000;
+	protected static const int RADIO_KEY_DELAY_MS = 1000;
 	protected int m_iHQTopUpAttempts;
 	protected ref array<SCR_CampaignMilitaryBaseComponent> m_aHQsEnlarged = {};	// HQs whose storage was raised (m_iHQStorageCapacity)
 	protected static const int TASK_SYNC_INTERVAL_MS = 5000;
@@ -526,6 +533,12 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	bool AreTerritoryFOBsEnabled()
 	{
 		return m_bTerritoryFOBs;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	bool AreVehicleRolesEnabled()
+	{
+		return m_bVehicleRoles;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -850,6 +863,10 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 		GetGame().GetCallqueue().CallLater(Tick, TICK_MS, true);
 		GetGame().GetCallqueue().CallLater(SyncTasks, TASK_SYNC_INTERVAL_MS, true);
 
+		// The score bar from the start: each side's objectives (later changes re-count via the base manager)
+		if (m_Campaign.GetBaseManager())
+			m_Campaign.GetBaseManager().EvaluateControlPoints();
+
 		Notify("Advance and Secure", string.Format("First objective: %1", GetBaseName(liveIndex)));
 	}
 
@@ -874,7 +891,7 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 		m_Frontline.Start(bases);
 
 		if (m_bBehindLines)
-			m_BehindLines = new COA_AAS_BehindLines(this, m_Campaign, m_fBehindLinesGrace, m_fBehindLinesDeep, m_fBehindLinesMaxInterval, m_fBehindLinesMinInterval, m_fBehindLinesObjectiveRadius, BEHIND_LINES_TICK);
+			m_BehindLines = new COA_AAS_BehindLines(this, m_Campaign, m_fBehindLinesGrace, m_fBehindLinesDeep, m_fBehindLinesMaxInterval, m_fBehindLinesMinInterval, m_fBehindLinesObjectiveRadius, m_fBehindLinesApproachSlack, BEHIND_LINES_TICK);
 
 		if (m_bInsurgents)
 		{
@@ -1023,6 +1040,45 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Server: the soldier's radios carry their own side's encryption key. Loadouts from other mods don't
+	//! always - Chernarussian Factions gives the CDF the US AN/PRC-68 - and with the same key both sides
+	//! hear each other whenever their squads share a frequency.
+	override void OnPlayerSpawnFinalize_S(SCR_SpawnRequestComponent requestComponent, SCR_SpawnHandlerComponent handlerComponent, SCR_SpawnData data, IEntity entity)
+	{
+		super.OnPlayerSpawnFinalize_S(requestComponent, handlerComponent, data, entity);
+
+		// The gadget manager registers the radios once the inventory is up
+		if (entity)
+			GetGame().GetCallqueue().CallLater(KeyRadios, RADIO_KEY_DELAY_MS, false, entity);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void KeyRadios(IEntity entity)
+	{
+		SCR_ChimeraCharacter character = SCR_ChimeraCharacter.Cast(entity);
+		if (!character || !character.GetFaction())
+			return;
+
+		string key = character.GetFaction().GetFactionRadioEncryptionKey();
+		SCR_GadgetManagerComponent gadgets = SCR_GadgetManagerComponent.GetGadgetManager(entity);
+		if (key.IsEmpty() || !gadgets)
+			return;
+
+		array<SCR_GadgetComponent> radios = {};
+		radios.Copy(gadgets.GetGadgetsByType(EGadgetType.RADIO));
+		radios.InsertAll(gadgets.GetGadgetsByType(EGadgetType.RADIO_BACKPACK));
+		foreach (SCR_GadgetComponent gadget : radios)
+		{
+			if (!gadget)
+				continue;
+
+			BaseRadioComponent radio = BaseRadioComponent.Cast(gadget.GetOwner().FindComponent(BaseRadioComponent));
+			if (radio && radio.GetEncryptionKey() != key)
+				radio.SetEncryptionKey(key);
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
 	override void OnPlayerConnected(int playerId)
 	{
 		super.OnPlayerConnected(playerId);
@@ -1164,6 +1220,31 @@ class COA_AAS_ConflictComponent : SCR_BaseGameModeComponent
 	bool HasObjectiveChain()
 	{
 		return m_aObjectiveChain && !m_aObjectiveChain.IsEmpty();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! How many objectives make up the line - what a side must hold to win
+	int GetObjectiveCount()
+	{
+		if (!m_aObjectiveChain)
+			return 0;
+
+		return m_aObjectiveChain.Count();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Objectives in the line the faction holds - the score in Conflict's top bar
+	//! (COA_AAS_SCR_CampaignMilitaryBaseManager)
+	int CountObjectivesHeld(Faction faction)
+	{
+		int held;
+		foreach (SCR_CampaignMilitaryBaseComponent base : m_aChain)
+		{
+			if (base && faction && base.GetFaction() == faction)
+				held++;
+		}
+
+		return held;
 	}
 
 	//------------------------------------------------------------------------------------------------

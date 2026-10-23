@@ -21,26 +21,6 @@ SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutMana
    m_sLoadoutResource "{997E78F3BDBD3C90}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_RiflemanAT.et"
    m_sAffiliatedFaction "US"
   }
-  SCR_FactionPlayerLoadout "{DCCAE387CF0BEC09}" {
-   m_sLoadoutName "Rifleman - Desert"
-   m_sLoadoutResource "{FEB0E71EA341634E}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_Rifleman.et"
-   m_sAffiliatedFaction "US"
-  }
-  SCR_FactionPlayerLoadout "{E4A32045BE16FF54}" {
-   m_sLoadoutName "Automatic Rifleman - Desert"
-   m_sLoadoutResource "{0B287D14ADD6C400}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_AutomaticRifleman.et"
-   m_sAffiliatedFaction "US"
-  }
-  SCR_FactionPlayerLoadout "{A00DCFE81EBDE679}" {
-   m_sLoadoutName "Assistant Automatic Rifleman - Desert"
-   m_sLoadoutResource "{8BF94987DFE94C4F}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_AssistantAutomaticRifleman.et"
-   m_sAffiliatedFaction "US"
-  }
-  SCR_FactionPlayerLoadout "{ABA242DD7CBA877F}" {
-   m_sLoadoutName "Rifleman (Anti-Tank) - Desert"
-   m_sLoadoutResource "{857E4297FCE2D0AB}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_D_RiflemanAT.et"
-   m_sAffiliatedFaction "US"
-  }
   SCR_FactionPlayerLoadout "{69B0D2C49408F0A5}" {
    m_sLoadoutName "Grenadier"
    m_sLoadoutResource "{106ED1533C617C8D}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Grenadier.et"
@@ -109,6 +89,16 @@ SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutMana
   SCR_FactionPlayerLoadout "{6E4D71F8C046ACC1}" {
    m_sLoadoutName "Anti-Tank (SMAW)"
    m_sLoadoutResource "{043E83A8F191AB4D}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_AntiTank.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{6C3851DB0616E066}" {
+   m_sLoadoutName "Crewman"
+   m_sLoadoutResource "{6CF0CA3E09143C4E}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Crewman.et"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{6C42FC86EB1FA588}" {
+   m_sLoadoutName "Pilot"
+   m_sLoadoutResource "{6C949809E0356071}Prefabs/Characters/COA_AAS/USMC/COA_AAS_USMC_Pilot.et"
    m_sAffiliatedFaction "US"
   }
   SCR_FactionPlayerLoadout "{529C90ECA80FDDD2}" {
@@ -219,6 +209,16 @@ SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutMana
   SCR_FactionPlayerLoadout "{2EC4726429E2FFBE}" {
    m_sLoadoutName "Anti-Tank (PGO-7)"
    m_sLoadoutResource "{5F90B0272E82061F}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_AntiTank.et"
+   m_sAffiliatedFaction "USSR"
+  }
+  SCR_FactionPlayerLoadout "{6CFF14ABCF2CAD66}" {
+   m_sLoadoutName "Crewman"
+   m_sLoadoutResource "{6C6C87F7C470470E}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Crewman.et"
+   m_sAffiliatedFaction "USSR"
+  }
+  SCR_FactionPlayerLoadout "{6C4F9953D5CCF7A1}" {
+   m_sLoadoutName "Pilot"
+   m_sLoadoutResource "{6C36362ACE73D6BE}Prefabs/Characters/COA_AAS/CDF/COA_AAS_CDF_Pilot.et"
    m_sAffiliatedFaction "USSR"
   }
   SCR_FactionPlayerLoadout "{68F4AC5621D40F11}" {

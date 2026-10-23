@@ -26,6 +26,17 @@ modded class SCR_GameModeCampaign
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! The top bar's target: the whole line (COA_AAS_SCR_CampaignMilitaryBaseManager scores the objectives)
+	override int GetControlPointTreshold()
+	{
+		COA_AAS_ConflictComponent aas = COA_AAS_ConflictComponent.GetInstance();
+		if (aas && aas.HasObjectiveChain())
+			return aas.GetObjectiveCount();
+
+		return super.GetControlPointTreshold();
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! Server only
 	void COA_AAS_EndMatch(SCR_CampaignFaction winner)
 	{

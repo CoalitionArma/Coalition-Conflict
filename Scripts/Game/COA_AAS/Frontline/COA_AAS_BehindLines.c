@@ -4,7 +4,9 @@
 //!  - Beyond it the player is told they're behind enemy lines, and from then on their rough position is
 //!    pinged on the enemy's map (COA_AAS_FrontlineMap) - every max interval just past the grace distance,
 //!    down to every min interval at the deep distance and beyond.
-//!  - Never in an aircraft (inserting, resupplying), or near the live objective (the attackers have to be there).
+//!  - Never in an aircraft (inserting, resupplying), near the live objective or on the way there from their
+//!    side's ground (the attackers have to cross the enemy's ground to reach it), or on CHDKz ground - only
+//!    the other side's territory counts.
 //! Players only, alive and conscious; needs the frontline's territory (COA_AAS_ConflictComponent).
 class COA_AAS_BehindLines
 {
@@ -17,6 +19,7 @@ class COA_AAS_BehindLines
 	protected float m_fMaxInterval;
 	protected float m_fMinInterval;
 	protected float m_fObjectiveRadius;
+	protected float m_fApproachSlack;
 	protected float m_fTick;
 
 	// Distance of every cell from each side's territory [cells], rebuilt when the territory changes
@@ -27,7 +30,7 @@ class COA_AAS_BehindLines
 	protected ref map<int, float> m_mNextPing = new map<int, float>();
 
 	//------------------------------------------------------------------------------------------------
-	void COA_AAS_BehindLines(COA_AAS_ConflictComponent aas, SCR_GameModeCampaign campaign, float grace, float deep, float maxInterval, float minInterval, float objectiveRadius, float tick)
+	void COA_AAS_BehindLines(COA_AAS_ConflictComponent aas, SCR_GameModeCampaign campaign, float grace, float deep, float maxInterval, float minInterval, float objectiveRadius, float approachSlack, float tick)
 	{
 		m_AAS = aas;
 		m_Campaign = campaign;
@@ -36,6 +39,7 @@ class COA_AAS_BehindLines
 		m_fMaxInterval = Math.Max(1, maxInterval);
 		m_fMinInterval = Math.Clamp(minInterval, 1, m_fMaxInterval);
 		m_fObjectiveRadius = objectiveRadius;
+		m_fApproachSlack = Math.Max(0, approachSlack);
 		m_fTick = Math.Max(1, tick);
 
 		GetGame().GetCallqueue().CallLater(Tick, m_fTick * 1000, true);
@@ -59,7 +63,7 @@ class COA_AAS_BehindLines
 		{
 			m_iTerritoryVersion = m_AAS.GetTerritoryVersion();
 			m_mDistance.Clear();
-			array<int> sides = {COA_AAS_ETerritoryOwner.BLUFOR, COA_AAS_ETerritoryOwner.OPFOR};
+			array<int> sides = {COA_AAS_ETerritoryOwner.BLUFOR, COA_AAS_ETerritoryOwner.OPFOR, COA_AAS_ETerritoryOwner.INDFOR};
 			foreach (int side : sides)
 			{
 				array<float> field = {};
@@ -126,23 +130,56 @@ class COA_AAS_BehindLines
 		if (!field)
 			return 0;
 
-		// Only enemy ground - not the sea or anywhere off the grid
+		// Only the other side's ground - not CHDKz ground (pushing into it is the fight), the sea, or
+		// anywhere off the grid
 		vector position = character.GetOrigin();
 		int x, z;
 		if (!territory.CellAt(position, x, z))
 			return 0;
 
 		int owner = territory.OwnerAt(x, z);
-		if (owner == COA_AAS_ETerritoryOwner.NONE || owner == side)
+		bool enemySide = owner == COA_AAS_ETerritoryOwner.BLUFOR || owner == COA_AAS_ETerritoryOwner.OPFOR;
+		if (!enemySide || owner == side)
 			return 0;
 
-		if (live && vector.DistanceSqXZ(position, live.GetOwner().GetOrigin()) <= objectiveRadiusSq)
-			return 0;
+		vector objective;
+		if (live)
+		{
+			objective = live.GetOwner().GetOrigin();
+			if (vector.DistanceSqXZ(position, objective) <= objectiveRadiusSq)
+				return 0;
+		}
 
 		if (IsInAircraft(character))
 			return 0;
 
-		return field[territory.Index(x, z)] * territory.m_fCell;
+		float depth = DepthAt(field, territory.Index(x, z)) * territory.m_fCell;
+
+		// On the way to the live objective: a straight push from their ground covers the objective's own
+		// depth, so going in that way adds up to about it - detours add more, and going past the objective
+		// adds twice the overshoot
+		int objectiveX, objectiveZ;
+		if (live && territory.CellAt(objective, objectiveX, objectiveZ))
+		{
+			float objectiveDepth = DepthAt(field, territory.Index(objectiveX, objectiveZ)) * territory.m_fCell;
+			if (depth + vector.DistanceXZ(position, objective) <= objectiveDepth + m_fApproachSlack)
+				return 0;
+		}
+
+		return depth;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Distance of a cell from the nearest ground that isn't the enemy's - the side's own or CHDKz - so
+	//! crossing CHDKz ground doesn't count toward the depth [cells]
+	protected float DepthAt(notnull array<float> field, int cell)
+	{
+		float depth = field[cell];
+		array<float> insurgentField = m_mDistance.Get(COA_AAS_ETerritoryOwner.INDFOR);
+		if (insurgentField)
+			depth = Math.Min(depth, insurgentField[cell]);
+
+		return depth;
 	}
 
 	//------------------------------------------------------------------------------------------------

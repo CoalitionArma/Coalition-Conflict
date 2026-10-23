@@ -1,0 +1,14 @@
+SCR_ChimeraCharacter : "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et" {
+ ID "520EC961A090B1EE"
+ components {
+  COA_AAS_VehicleRoleComponent "{6C2B851C731E76C4}" {
+   m_eRole CREW
+  }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Crewman"
+    m_sFaction "USSR"
+   }
+  }
+ }
+}

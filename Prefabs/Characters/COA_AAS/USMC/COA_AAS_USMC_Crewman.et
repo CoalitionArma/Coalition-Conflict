@@ -1,0 +1,14 @@
+SCR_ChimeraCharacter : "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et" {
+ ID "520EC961A090BBD5"
+ components {
+  COA_AAS_VehicleRoleComponent "{6C2FEDD9B019E38F}" {
+   m_eRole CREW
+  }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "Crewman"
+    m_sFaction "US"
+   }
+  }
+ }
+}
